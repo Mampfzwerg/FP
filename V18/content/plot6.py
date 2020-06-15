@@ -13,9 +13,12 @@ a = np.array([ ufloat(3493.0, 15.0), ufloat(535.0, 9.0), ufloat(1140.0, 6.0), uf
 b = np.array([ufloat(3.5, 0.0), ufloat(4.2, 0.2), ufloat(5.5, 0.1), ufloat(5.7, 0.6), ufloat(6.4, 0.5), ufloat(14.3, 0.5),
     ufloat(17.1, 2.0), ufloat(19.3, 0.8), ufloat(30.2, 2.3), ufloat(23.2, 1.7), ufloat(28.9, 1.1)])
 
+A = ufloat(1510, 22)
 Z = a * unp.sqrt(b * np.pi)
+#Q = 4 * Z / (1.73 * A * W)
 
-print(Z)
+#print(Z)
+print(unp.sqrt(Z))
 
 #params, covariance_matrix = np.polyfit(x, E, deg=1, cov=True)
 #
