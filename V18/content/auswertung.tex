@@ -15,7 +15,7 @@ Zur Energiekalibrierung des Detektors wird das Spektrum eines $\ce{^{152}Eu}$-St
   \label{fig:plot1}
 \end{figure}
 
-Dazu werden anhand der charakteristischen Peaks des Spektrums mittels linearer Regression Peakenergien $E$ und mittlere 
+Dazu werden anhand der charakteristischen Peaks des Spektrums mittels linearer Regression Peakenergien $E$ [1] und mittlere 
 Kanalnummern $\mu_0$ in Beziehung gesetzt.
 Die Peaks werden als Gaußverteilungen der Form 
 
@@ -108,7 +108,7 @@ Mit einer Anfangsaktivität $A_0 = \SI{4130 +- 60}{\becquerel}$ am 01.10.2000 un
 $t_{\sfrac{1}{2}} = \SI{4943 +- 5}{\day}$ ergibt sich nach einer Zeit von $t = \SI{7177}{\day}$
 eine Aktivität von $A_{25.05.2020} = \SI{1510 +- 22}{\becquerel}$.
 Der statistische Fehler von $A_{25.05.2020}$ ergibt sich nach 
-Gaußscher Fehlerfortpflanzungaus denen von $A_0$ und $t_{\sfrac{1}{2}}$.
+Gaußscher Fehlerfortpflanzung aus denen von $A_0$ und $t_{\sfrac{1}{2}}$.
 
 Zuletzt sind noch die Zählraten $Z$ der Peaks zu bestimmen. Dazu werden die gefitteten Gaußnäherungen integriert. 
 Der konstante Parameter $b$ wird dabei vernachlässigt, da er das Niveau des umgebenden Spektrums angibt und somit nicht zur 
@@ -122,7 +122,7 @@ Zählrate $Z$ des Peaks beiträgt. Aus der Integration folgt dann
 Der statistische Fehler der Zählrate wird aufgrund des poissonverteilten Zerfallswahrscheinlichkeit als $\sqrt{Z}$ angenommen.
 
 In der erweiterten Tabelle \ref{tab:mess2} sind die errechneten Effizienzen $Q$, Zählraten $Z$ und 
-Emmisionswahrscheinlichkeiten $W$ aufgeführt.
+Emmisionswahrscheinlichkeiten $W$ [1] aufgeführt.
 
 \begin{table}
   \centering
@@ -158,13 +158,6 @@ lineare Regression der Form
 
 durchgeführt, die in Abbildung \ref{fig:plot6} dargestellt ist.
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{content/plot6.pdf}
-  \caption{Lineare Regression der logarithmierten Effizienzen abhängig von den logarithmierten Energien}
-  \label{fig:plot6}
-\end{figure}
-
 Es ergeben sich die Regressionsparameter
 
 \begin{align*}
@@ -179,6 +172,13 @@ und somit der Zusammenhang
   Q(E) = \text{e}^e \cdot \left(\frac{E}{\SI{1}{\kilo\eV}}\right)^n 
   \approx \num{0.476} \cdot \left(\frac{E}{\SI{1}{\kilo\eV}}\right)^{\num{-0.934}} \; .
 \end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{content/plot6.pdf}
+  \caption{Lineare Regression der logarithmierten Effizienzen abhängig von den logarithmierten Energien}
+  \label{fig:plot6}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -229,7 +229,7 @@ Mit der Energieeichung \eqref{eqn:eich} lässt sich die Energie des Photopeaks a
 
 bestimmen.
 
-Der Literaturwert beträgt $E_\text{Photo, Lit} = \SI{661.657}{\kilo\eV}$ [1]. Die Abweichung vom Literaturwert 
+Der Literaturwert beträgt $E_\text{Photo, Lit} = \SI{661.657}{\kilo\eV}$ [2]. Die Abweichung vom Literaturwert 
 von ca. $\SI{0.3}{\kilo\eV}$ liegt über der statistischen Abweichung der Energieeichung, 
 ist mit $\SI{0.046}{\percent}$ aber dennoch sehr klein.
 
@@ -275,7 +275,7 @@ durch Fluktuation der Photonenanregung ausgeglichen werden.
 Die gemessene Halbwertsbreite $\Delta E_{\sfrac{1}{2}} \approx \SI{0.52 +- 0.05}{\kilo\eV}$ weicht um etwa
 \SI{49.47}{\percent} von der theoretischen $\Delta E_{\sfrac{1}{2}, \text{theo}} = \SI{1029.16 +- 0.04}{\eV}$ ab.
 
-Dieser Fehler kommt unter anderem durch Ablesefehler und die Näherung des Photopeaks als Gaußverteilung zustande.
+Dieser Fehler resultiert unter anderem aus Ablesefehlern und der Näherung des Photopeaks als Gaußverteilung.
 Die Näherung weicht für die niedrigen Wertepaare, von denen die Zehntelwertsbreite abhängt, stärker ab, als am Rest des Peaks. \\
 
 Die Comptonkante liegt etwa bei der Kanalnummer $\mu_{0,\text{K}} = \num{1180}$ und der Rückstreupeak etwa bei
@@ -406,7 +406,7 @@ entsprechen. Die Energien und Emmisionswahrscheinlichkeiten des Referenzspektrum
 
 \begin{table}
   \centering
-  \caption{Literaturwerte der Peakenergien und Emmisionswahrscheinlichkeiten des $\ce{^{133}Ba}$-Strahlers}
+  \caption{Literaturwerte der Peakenergien und Emmisionswahrscheinlichkeiten des $\ce{^{133}Ba}$-Strahlers [1]}
   \label{tab:mess6}
   \sisetup{table-format=2.1}
   \begin{tabular}{c c}
@@ -435,7 +435,8 @@ Die mittlere Aktivität beträgt:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Nuklididentifikation und Aktivitätsbestimmung eines unbekannten kristallinen Strahlers}
+\subsection{Nuklididentifikation %und Aktivitätsbestimmung 
+            eines unbekannten kristallinen Strahlers}
 
 Das vollständige Spektrum des Kristalls ist in Abbildung \ref{fig:plot41} abgebildet.
 
@@ -446,19 +447,54 @@ Das vollständige Spektrum des Kristalls ist in Abbildung \ref{fig:plot41} abgeb
   \label{fig:plot41}
 \end{figure}
 
-Zur Untersuchung der neun signifkanten Peaks werden diese gemäß Gleichung \eqref{eqn:gauss} 
+Zur Untersuchung der sieben signifkanten Peaks werden diese gemäß Gleichung \eqref{eqn:gauss} 
 mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy gaußgenähert.
 Dies ist in Abbildung \ref{fig:plot4} zu sehen.
 
 \begin{figure}
   \centering
   \includegraphics[scale=0.7]{content/plot4.pdf}
-  \caption{Gemessenes und gaußgenähertes Spektrum einesunbekannten kristallinen Strahlers,
+  \caption{Gemessenes und gaußgenähertes Spektrum eines unbekannten kristallinen Strahlers,
            abgeschnitten ab Kanalnummer $\num{1700}$}
   \label{fig:plot4} 
 \end{figure}
 
-Die Fitparameter, Energien $E$, sowie die identifizierten Nuklide und deren Referenzenergien $E_\text{N}$ sind in Tabelle
-\ref{tab:mess7} aufgelistet.
+Die Fitparameter, Energien $E$, sowie die identifizierten Nuklide, deren Referenzenergien $E_\text{N}$ und 
+Emmisionswahrscheinlichkeiten $W$ [1] sind in Tabelle \ref{tab:mess7} aufgelistet. \\
+
+\begin{table}
+  \centering
+  \caption{Fitparameter, Energien, Emmisionswahrscheinlichkeiten und identifizierte Nuklide des unbekannten Strahlers}
+  \label{tab:mess7}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c c c c}
+  \toprule
+  $\mu_0$ & $a$ & $b$ & $c$ & $E \;/\; \si{\kilo\eV}$ & $E_\text{N} \;/\; \si{\kilo\eV}$ & Nuklid \\
+  \midrule
+   197,82 &  -2054373,96 &   -8490,82 &  2056192,47 &  77,04 $\pm$ 0,05 &   - &               - \\
+   237,03 &  -4951747,22 &  -65164,91 &  4953165,50 &  92,84 $\pm$ 0,05 &  93 & $\ce{^{234}Th}$ \\
+   468,05 & -12252338,86 &  -90236,30 & 12254032,57 & 185,94 $\pm$ 0,05 & 186 & $\ce{^{226}Ra}$ \\
+   607,09 & -22934205,13 & -180267,05 & 22935710,52 & 241,97 $\pm$ 0,05 & 242 & $\ce{^{214}Pb}$ \\
+   739,04 & -76310651,18 & -294905,26 & 76313418,70 & 295,15 $\pm$ 0,05 & 295 & $\ce{^{214}Pb}$ \\  
+   879,60 & -27221198,74 & -143724,37 & 27224703,53 & 351,80 $\pm$ 0,05 & 352 & $\ce{^{214}Pb}$ \\
+  1517,94 &  -8988277,11 & -103001,94 &  8990390,62 & 609,05 $\pm$ 0,05 & 609 & $\ce{^{214}Bi}$ \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Mit den gefundenen Energien lassen sich die Nuklide $\ce{^{234}Th}$, $\ce{^{226}Ra}$, $\ce{^{214}Pb}$ und
+$\ce{^{214}Bi}$ identifizieren. Diese sind Bestandteile der Zerfallsreihe von $\ce{^{238}Uran}$.
+Die niedrigste Peakenergie kann zwar keinem der Nuklide der Zerfallsreihe zugeordnet werden, dennoch kann davon ausgegangen
+werden, dass es sich bei der unbekannten Strahlungsquelle um ein Urangestein handelt.
+Der nicht dazu passende Peak kann entweder aus einer anderen Zerfallsreihe stammen oder es handelt sich um eine Störung
+wie beispielsweise einen Rückstreupeak einer anderen Linie.
+
+
+%Aus den Fitparametren lassen sich nach Gleichung \eqref{eqn:eff} die Effizienzen $Q$, nach Gleichung \eqref{eqn:rate} 
+%die Zählraten $Z$ berechnen und nach Gleichung \eqref{eqn:akt} die Aktivitäten $A$ berechnen.
+%Die Messzeit beträgt $t_m = \SI{4797}{\second}$ und der Raumwinkel für einen Abstand zwischen Quelle und Detektor von
+%$l = \SI{1.5}{\centi\meter}$: $\Omega \approx \num{0.8906} \pi$.
+%
+%mit dem Raumwinkel $\Omega \approx \num{0.0538} \pi$ und einer Messzeit von $t_m = \SI{3771}{\second}$.
 
 

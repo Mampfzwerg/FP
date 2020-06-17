@@ -17,4 +17,5 @@
 \contentsline {subsection}{\numberline {3.2}Bestimmung der Effizienz bzw. Vollenergienachweiswahrscheinlichkeit anhand des Spektrums von $\ce {^{152}}$Europium}{10}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Untersuchung des monochromatischen Gammaspektrums von $\ce {^{137}}$Caesium}{12}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Aktivitätsbestimmung von $\ce {^{125}}$Stibnit oder $\ce {^{133}}$Barium}{16}{subsection.3.4}
-\contentsline {section}{\numberline {4}Literaturverzeichnis}{18}{section.4}
+\contentsline {subsection}{\numberline {3.5}Nuklididentifikation eines unbekannten kristallinen Strahlers}{18}{subsection.3.5}
+\contentsline {section}{\numberline {4}Literaturverzeichnis}{20}{section.4}
