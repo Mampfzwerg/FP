@@ -10,7 +10,7 @@ Zur Energiekalibrierung des Detektors wird das Spektrum eines $\ce{^{152}Eu}$-St
 
 \begin{figure}
   \centering
-  \includegraphics{content/plot1.pdf}
+  \includegraphics[scale=0.7]{content/plot1.pdf}
   \caption{Gemessenes Spektrum eines $\ce{^{152}Eu}$-Strahlers, abgeschnitten ab Kanalnummer $\num{4000}$}
   \label{fig:plot1}
 \end{figure}
@@ -21,6 +21,7 @@ Die Peaks werden als Gaußverteilungen der Form
 
 \begin{equation}
   f(x) = a \cdot \text{exp}\left( - \frac{(x-\mu_0)^2}{b}\right) + c
+  \label{eqn:gauss}
 \end{equation}
 
 genähert. Dazu wird die Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy verwendet.
@@ -66,10 +67,10 @@ Die Regressionsparameter betragen
   d &= \num{-2.683 +- 0.051} \; .
 \end{align*}
 
-\begin{figure}
+\begin{figure}[H]
   \centering
-  \includegraphics{content/plot5.pdf}
-  \caption{Lineare Regression der Energie-Kanalnummer-Wertepaare des $\ce{^{152}Eu}$}
+  \includegraphics[scale=0.7]{content/plot5.pdf}
+  \caption{Lineare Regression der Energie-Kanalnummer-Wertepaare des $\ce{^{152}Eu}$-Strahlers}
   \label{fig:plot5}
 \end{figure}
 
@@ -82,11 +83,12 @@ Die statistischen Fehler der Regressionskonstanten sind mit $\SI{0.0}{\percent}$
 Die Effizienz
 
 \begin{equation}
-  Q = \frac{4 \pi Z}{\Omega A W t}
+  Q = \frac{4 \pi Z}{\Omega A W t_m}
+  \label{eqn:akt}
 \end{equation}
 
-wird aus dem Zählergebnis $Z$, dem Raumwinkel $\Omega$, der Aktivität $A$ des Strahlers, 
-der Emmisionswahrscheinlichkeit $W$ und der Messzeit $t = \SI{4111}{\second}$ bestimmt.
+wird aus der Zählrate  $Z$, dem Raumwinkel $\Omega$, der Aktivität $A$ des Strahlers, 
+der Emmisionswahrscheinlichkeit $W$ und der Messzeit $t_m = \SI{4111}{\second}$ bestimmt.
 
 Der Raumwinkel ergibt sich zu 
 
@@ -114,6 +116,7 @@ Zählrate $Z$ des Peaks beiträgt. Aus der Integration folgt dann
 
 \begin{equation}
   Z = \int_{-\infty}^\infty \; a \cdot \text{exp}\left( - \frac{(x-\mu_0)^2}{b}\right) \; \text{d}x = a \sqrt{b\pi} \; .
+  \label{eqn:rate}
 \end{equation}
 
 Der statistische Fehler der Zählrate wird aufgrund des poissonverteilten Zerfallswahrscheinlichkeit als $\sqrt{Z}$ angenommen.
@@ -157,7 +160,7 @@ durchgeführt, die in Abbildung \ref{fig:plot6} dargestellt ist.
 
 \begin{figure}
   \centering
-  \includegraphics{content/plot6.pdf}
+  \includegraphics[scale=0.7]{content/plot6.pdf}
   \caption{Lineare Regression der logarithmierten Effizienzen abhängig von den logarithmierten Energien}
   \label{fig:plot6}
 \end{figure}
@@ -172,6 +175,7 @@ Es ergeben sich die Regressionsparameter
 und somit der Zusammenhang
 
 \begin{equation}
+  \label{eqn:eff}
   Q(E) = \text{e}^e \cdot \left(\frac{E}{\SI{1}{\kilo\eV}}\right)^n 
   \approx \num{0.476} \cdot \left(\frac{E}{\SI{1}{\kilo\eV}}\right)^{\num{-0.934}} \; .
 \end{equation}
@@ -184,7 +188,7 @@ Das gemessene Spektrum von $\ce{^{137}Cs}$ ist in den Abbildungen \ref{fig:plot2
 
 \begin{figure}
   \centering
-  \includegraphics{content/plot2.pdf}
+  \includegraphics[scale=0.7]{content/plot2.pdf}
   \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Hier ist der
   Photopeak bzw. Vollenergielinie gut zu erkennen.}
   \label{fig:plot2}
@@ -192,7 +196,7 @@ Das gemessene Spektrum von $\ce{^{137}Cs}$ ist in den Abbildungen \ref{fig:plot2
 
 \begin{figure}
   \centering
-  \includegraphics{content/plot21.pdf}
+  \includegraphics[scale=0.7]{content/plot21.pdf}
   \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Zur Erkennung
     des Compton-Kontinuums, des Rückstreupeaks und der Compton-Kante wurde ein kleinerer Bereich der Ereignisanzahl gewählt.}
   \label{fig:plot21}
@@ -203,7 +207,7 @@ Um die Lage des Photopeaks bzw. der Vollenergielinie zu bestimmen, wird dieser d
 
 \begin{figure}
   \centering
-  \includegraphics{content/plot22.pdf}
+  \includegraphics[scale=0.7]{content/plot22.pdf}
   \caption{Gemessener und gaußgenäherter Photopeak eines $\ce{^{137}Cs}$-Strahlers}
   \label{fig:plot22}
 \end{figure}
@@ -336,6 +340,125 @@ Detektor noch photoelektrisch wechselwirken.
 
 \subsection{Aktivitätsbestimmung von  $\ce{^{125}}$Stibnit oder  $\ce{^{133}}$Barium }
 
+Zur Identifikation, welches Nuklid das in Abbildung \ref{fig:plot3} abgebildete Spektrum besitzt, werden die Peaks gemäß
+Gleichung \eqref{eqn:gauss} mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy
+gaußgenähert.
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{content/plot3.pdf}
+  \caption{Gemessenes und genähertes Spektrum eines $\ce{^{125}Sb}$- oder  $\ce{^{133}Ba}$-Strahlers,
+           abgeschnitten ab Kanalnummer $\num{1200}$}
+  \label{fig:plot3}
+\end{figure}
+
+Aus den Fitparametren lassen sich nach Gleichung \eqref{eqn:eich} die Energien $E$, nach Gleichung \eqref{eqn:eff} 
+die Effizienzen $Q$ und nach Gleichung \eqref{eqn:rate} die Zählraten $Z$ berechnen.
+
+Nach Umstellung der Gleichung \eqref{eqn:akt} ergibt sich die Aktivität
+
+\begin{equation}
+  A = \frac{4 \pi Z}{\Omega Q W t_m}
+\end{equation}
+
+mit dem Raumwinkel $\Omega \approx \num{0.0538} \pi$ und einer Messzeit von $t_m = \SI{3771}{\second}$.
+Diese gefitteten Parameter sind in Tabelle \ref{tab:mess4} und die errechneten Größen in Tabelle \ref{tab:mess5} aufgelistet.
+
+\begin{table}
+  \centering
+  \caption{Fitparameter der Gaußnäherungen des $\ce{^{125}Sb}$- oder $\ce{^{133}Ba}$-Strahlers}
+  \label{tab:mess4}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c c}
+  \toprule
+  $E \;/\; \si{\kilo\eV}$ & $\mu_0$ & $a$ & $b$ & $c$ \\
+  \midrule
+     81,01 $\pm$ 0,05 & 207,667 $\pm$ 0,023 & 2400 $\pm$ 40 & 3,06 $\pm$ 0,11 & 99,0 $\pm$ 7,0 \\
+    276,39 $\pm$ 0,05 & 692,477 $\pm$ 0,026 &  301 $\pm$  5 & 4,08 $\pm$ 0,15 & 20,0 $\pm$ 0,9 \\
+    302,84 $\pm$ 0,05 & 758,120 $\pm$ 0,016 &  685 $\pm$  6 & 4,53 $\pm$ 0,10 & 17,4 $\pm$ 1,3 \\
+    355,98 $\pm$ 0,05 & 889,976 $\pm$ 0,008 & 1769 $\pm$  7 & 5,46 $\pm$ 0,05 &  8,9 $\pm$ 1,6 \\
+    383,82 $\pm$ 0,05 & 959,058 $\pm$ 0,035 &  231 $\pm$  4 & 5,37 $\pm$ 0,23 &  6,3 $\pm$ 0,9 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Aktiviäten und zu deren Berechnung notwendige Größen des $\ce{^{125}Sb}$- oder $\ce{^{133}Ba}$-Strahlers}
+  \label{tab:mess5}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c c}
+  \toprule
+  $E \;/\; \si{\kilo\eV}$ & $W \;\text{in}\; \si{\percent}$ & $Z$ & $Q$ & $A \;/\; \si{\becquerel}$ \\
+  \midrule
+     81,01 $\pm$ 0,05 & 34,1 & 7440 $\pm$ 180 & 0,0079 $\pm$ 0,0021 &   550 $\pm$  150 \\
+    276,39 $\pm$ 0,05 &  0,5 & 1078 $\pm$  27 & 0,0025 $\pm$ 0,0007 & 17000 $\pm$ 5000 \\
+    302,84 $\pm$ 0,05 & 18,3 & 2580 $\pm$  40 & 0,0023 $\pm$ 0,0007 &  1200 $\pm$  400 \\
+    355,98 $\pm$ 0,05 & 62,1 & 7330 $\pm$  40 & 0,0020 $\pm$ 0,0006 &  1200 $\pm$  400 \\
+    383,82 $\pm$ 0,05 &  8,9 &  949 $\pm$  26 & 0,0018 $\pm$ 0,0006 &  1140 $\pm$  350 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Aus dem Vergleich der berechneten Energien mit den Literaturwerten der Energiespektren von $\ce{^{125}Sb}$ und $\ce{^{133}Ba}$
+lässt sich erkennen, dass die gemessenen Energien denen des $3$., $5$., $6$., $7$., und $8$. Peaks des $\ce{^{133}Ba}$-Spektrums
+entsprechen. Die Energien und Emmisionswahrscheinlichkeiten des Referenzspektrums sind in Tabelle \ref{tab:mess6} aufgeführt. \\
+
+\begin{table}
+  \centering
+  \caption{Literaturwerte der Peakenergien und Emmisionswahrscheinlichkeiten des $\ce{^{133}Ba}$-Strahlers}
+  \label{tab:mess6}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c}
+  \toprule
+  $E \;/\; \si{\kilo\eV}$ & $W \;\text{in}\; \si{\percent}$ \\
+  \midrule
+     53,16 &  2,2 \\
+     79,62 &  2,6 \\
+     81,00 & 34,1 \\
+    160,61 &  0,6 \\
+    223,25 &  0,5 \\
+    302,85 & 18,3 \\
+    356,02 & 62,1 \\
+    383,85 &  8,9 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Zur Bestimmung der Aktivität $A$ des vorliegenden $\ce{^{133}Ba}$-Strahlers wird der Mittelwert der Aktivitäten der letzten drei
+Peaks genommen, da die ersten beiden Werte stark nach unten und oben abweichen.
+Die mittlere Aktivität beträgt:
+
+\begin{equation*}
+  \bar{A} = \SI{1180 +- 383}{\becquerel} \; .
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Nuklididentifikation und Aktivitätsbestimmung eines unbekannten kristallinen Strahlers}
+
+Das vollständige Spektrum des Kristalls ist in Abbildung \ref{fig:plot41} abgebildet.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{content/plot41.pdf}
+  \caption{Gemessenes Spektrum eines unbekannten kristallinien Strahlers}
+  \label{fig:plot41}
+\end{figure}
+
+Zur Untersuchung der neun signifkanten Peaks werden diese gemäß Gleichung \eqref{eqn:gauss} 
+mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy gaußgenähert.
+Dies ist in Abbildung \ref{fig:plot4} zu sehen.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{content/plot4.pdf}
+  \caption{Gemessenes und gaußgenähertes Spektrum einesunbekannten kristallinen Strahlers,
+           abgeschnitten ab Kanalnummer $\num{1700}$}
+  \label{fig:plot4} 
+\end{figure}
+
+Die Fitparameter, Energien $E$, sowie die identifizierten Nuklide und deren Referenzenergien $E_\text{N}$ sind in Tabelle
+\ref{tab:mess7} aufgelistet.
 
 
