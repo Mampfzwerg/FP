@@ -8,12 +8,7 @@
 Zur Energiekalibrierung des Detektors wird das Spektrum eines $\ce{^{152}Eu}$-Strahlers aufgenommen, welches in Abbildung
 \ref{fig:plot1} zu sehen ist.
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{content/plot1.pdf}
-  \caption{Gemessenes Spektrum eines $\ce{^{152}Eu}$-Strahlers, abgeschnitten ab Kanalnummer $\num{4000}$}
-  \label{fig:plot1}
-\end{figure}
+
 
 Dazu werden anhand der charakteristischen Peaks des Spektrums mittels linearer Regression Peakenergien $E$ [1] und mittlere 
 Kanalnummern $\mu_0$ in Beziehung gesetzt.
@@ -27,6 +22,30 @@ Die Peaks werden als Gaußverteilungen der Form
 genähert. Dazu wird die Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy verwendet.
 
 Die den Peakenergien $E$ zugeordneten Näherungsparameter sind in Tabelle \ref{tab:mess1} aufgelistet.
+
+Mit den Wertepaaren der Peakenergien $E$ und der mittleren Kanalnummern $\mu$ wird eine lineare Regression der Form
+
+\begin{equation}
+  E(\mu) = m \cdot \mu_0 + d
+  \label{eqn:eich}
+\end{equation}
+  
+durchgeführt, die in Abildung \ref{fig:plot5} dargestellt ist.
+Die Regressionsparameter betragen
+
+\begin{align*}
+  m &= \num{0.403 +- 0.000} \\
+  d &= \num{-2.683 +- 0.051} \; .
+\end{align*}
+
+Die statistischen Fehler der Regressionskonstanten sind mit $\SI{0.0}{\percent}$ und $\SI{1.9}{\percent}$ sehr gering.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{content/plot1.pdf}
+  \caption{Gemessenes Spektrum eines $\ce{^{152}Eu}$-Strahlers, abgeschnitten ab Kanalnummer $\num{4000}$}
+  \label{fig:plot1}
+\end{figure}
 
 \begin{table}
   \centering
@@ -52,21 +71,6 @@ Die den Peakenergien $E$ zugeordneten Näherungsparameter sind in Tabelle \ref{t
   \end{tabular}
   \end{table}
 
-Mit den Wertepaaren der Peakenergien $E$ und der mittleren Kanalnummern $\mu$ wird eine lineare Regression der Form
-
-\begin{equation}
-  E(\mu) = m \cdot \mu_0 + d
-  \label{eqn:eich}
-\end{equation}
-  
-durchgeführt, die in Abildung \ref{fig:plot5} dargestellt ist.
-Die Regressionsparameter betragen
-
-\begin{align*}
-  m &= \num{0.403 +- 0.000} \\
-  d &= \num{-2.683 +- 0.051} \; .
-\end{align*}
-
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{content/plot5.pdf}
@@ -74,7 +78,6 @@ Die Regressionsparameter betragen
   \label{fig:plot5}
 \end{figure}
 
-Die statistischen Fehler der Regressionskonstanten sind mit $\SI{0.0}{\percent}$ und $\SI{1.9}{\percent}$ sehr gering.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -124,30 +127,6 @@ Der statistische Fehler der Zählrate wird aufgrund des poissonverteilten Zerfal
 In der erweiterten Tabelle \ref{tab:mess2} sind die errechneten Effizienzen $Q$, Zählraten $Z$ und 
 Emmisionswahrscheinlichkeiten $W$ [1] aufgeführt.
 
-\begin{table}
-  \centering
-  \caption{Effizienzen und zu deren Berechnung notwendige Größen des $\ce{^{152}Eu}$-Strahlers}
-  \label{tab:mess2}
-  \sisetup{table-format=2.1}
-  \begin{tabular}{c c c c c c}
-  \toprule
-  $E \;/\; \si{\kilo\eV}$ & $W \;\text{in}\; \si{\percent}$ & $a$ & $b$ & $Z$ & $Q$ \\
-  \midrule
-        121,78 & 28,6 & 3493,0 $\pm$ 15,0 &  3,5 $\pm$ 0,0 & 11582,64 $\pm$ 107,62 & 0.0048506 $\pm$  7,37 $\cdot 10^{-5}$ \\
-        244,70 &  7,6 &  535,0 $\pm$  9,0 &  4,2 $\pm$ 0,2 &  1943,36 $\pm$  44,08 & 0.0030626 $\pm$  9,98 $\cdot 10^{-5}$ \\
-        344,30 & 26,5 & 1140,0 $\pm$  6,0 &  5,5 $\pm$ 0,1 &  4738,72 $\pm$  68,84 & 0.0021417 $\pm$  3,85 $\cdot 10^{-5}$ \\
-        411,12 &  2,2 &   74,7 $\pm$  3,5 &  5,7 $\pm$ 0,6 &   316,11 $\pm$  17,78 & 0.0017209 $\pm$ 12,38 $\cdot 10^{-5}$ \\
-        443,96 &  3,1 &   94,2 $\pm$  3,0 &  6,4 $\pm$ 0,5 &   422,39 $\pm$  20,55 & 0.0016320 $\pm$  8,56 $\cdot 10^{-5}$ \\
-        778,90 & 12,9 &  143,3 $\pm$  2,4 & 14,3 $\pm$ 0,5 &   960,48 $\pm$  30,99 & 0.0008918 $\pm$  2,52 $\cdot 10^{-5}$ \\
-        867,37 &  4,2 &   42,5 $\pm$  2,1 & 17,1 $\pm$ 2,0 &   311,50 $\pm$  17,65 & 0.0008883 $\pm$  6,92 $\cdot 10^{-5}$ \\
-        964,08 & 14,6 &  120,3 $\pm$  2,2 & 19,3 $\pm$ 0,8 &   936,74 $\pm$  30,61 & 0.0007685 $\pm$  2,40 $\cdot 10^{-5}$ \\
-       1085,90 & 10,2 &   67,5 $\pm$  2,2 & 30,2 $\pm$ 2,3 &   657,48 $\pm$  25,64 & 0.0007720 $\pm$  4,03 $\cdot 10^{-5}$ \\
-       1112,10 & 13,6 &   88,5 $\pm$  2,6 & 23,2 $\pm$ 1,7 &   755,55 $\pm$  27,49 & 0.0006654 $\pm$  3,27 $\cdot 10^{-5}$ \\
-       1408,00 & 21,0 &   90,7 $\pm$  1,4 & 28,9 $\pm$ 1,1 &   864,23 $\pm$  29,40 & 0.0004929 $\pm$  1,41 $\cdot 10^{-5}$ \\
-  \bottomrule
-  \end{tabular}
-  \end{table}
-
 Um eine Potenzfunktion mit Zusammenhang zwischen Effizienz und Energie zu bestimmen,
 werden die logarithmierte Effizienzen der Peaks gegen deren logarithmierten Energien aufgetragen und eine
 lineare Regression der Form
@@ -173,6 +152,31 @@ und somit der Zusammenhang
   \approx \num{0.476} \cdot \left(\frac{E}{\SI{1}{\kilo\eV}}\right)^{\num{-0.934}} \; .
 \end{equation}
 
+\begin{table}
+  \small
+  \centering
+  \caption{Effizienzen und zu deren Berechnung notwendige Größen des $\ce{^{152}Eu}$-Strahlers}
+  \label{tab:mess2}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c c c}
+  \toprule
+  $E \;/\; \si{\kilo\eV}$ & $W \;\text{in}\; \si{\percent}$ & $a$ & $b$ & $Z$ & $Q$ \\
+  \midrule
+        121,78 & 28,6 & 3493,0 $\pm$ 15,0 &  3,5 $\pm$ 0,0 & 11582,64 $\pm$ 107,62 & 0.0048506 $\pm$  7,37 $\cdot 10^{-5}$ \\
+        244,70 &  7,6 &  535,0 $\pm$  9,0 &  4,2 $\pm$ 0,2 &  1943,36 $\pm$  44,08 & 0.0030626 $\pm$  9,98 $\cdot 10^{-5}$ \\
+        344,30 & 26,5 & 1140,0 $\pm$  6,0 &  5,5 $\pm$ 0,1 &  4738,72 $\pm$  68,84 & 0.0021417 $\pm$  3,85 $\cdot 10^{-5}$ \\
+        411,12 &  2,2 &   74,7 $\pm$  3,5 &  5,7 $\pm$ 0,6 &   316,11 $\pm$  17,78 & 0.0017209 $\pm$ 12,38 $\cdot 10^{-5}$ \\
+        443,96 &  3,1 &   94,2 $\pm$  3,0 &  6,4 $\pm$ 0,5 &   422,39 $\pm$  20,55 & 0.0016320 $\pm$  8,56 $\cdot 10^{-5}$ \\
+        778,90 & 12,9 &  143,3 $\pm$  2,4 & 14,3 $\pm$ 0,5 &   960,48 $\pm$  30,99 & 0.0008918 $\pm$  2,52 $\cdot 10^{-5}$ \\
+        867,37 &  4,2 &   42,5 $\pm$  2,1 & 17,1 $\pm$ 2,0 &   311,50 $\pm$  17,65 & 0.0008883 $\pm$  6,92 $\cdot 10^{-5}$ \\
+        964,08 & 14,6 &  120,3 $\pm$  2,2 & 19,3 $\pm$ 0,8 &   936,74 $\pm$  30,61 & 0.0007685 $\pm$  2,40 $\cdot 10^{-5}$ \\
+       1085,90 & 10,2 &   67,5 $\pm$  2,2 & 30,2 $\pm$ 2,3 &   657,48 $\pm$  25,64 & 0.0007720 $\pm$  4,03 $\cdot 10^{-5}$ \\
+       1112,10 & 13,6 &   88,5 $\pm$  2,6 & 23,2 $\pm$ 1,7 &   755,55 $\pm$  27,49 & 0.0006654 $\pm$  3,27 $\cdot 10^{-5}$ \\
+       1408,00 & 21,0 &   90,7 $\pm$  1,4 & 28,9 $\pm$ 1,1 &   864,23 $\pm$  29,40 & 0.0004929 $\pm$  1,41 $\cdot 10^{-5}$ \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{content/plot6.pdf}
@@ -185,32 +189,8 @@ und somit der Zusammenhang
 \subsection{Untersuchung des monochromatischen Gammaspektrums von $\ce{^{137}}$Caesium}
 
 Das gemessene Spektrum von $\ce{^{137}Cs}$ ist in den Abbildungen \ref{fig:plot2} und \ref{fig:plot21} dargestellt.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{content/plot2.pdf}
-  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Hier ist der
-  Photopeak bzw. Vollenergielinie gut zu erkennen.}
-  \label{fig:plot2}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{content/plot21.pdf}
-  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Zur Erkennung
-    des Compton-Kontinuums, des Rückstreupeaks und der Compton-Kante wurde ein kleinerer Bereich der Ereignisanzahl gewählt.}
-  \label{fig:plot21}
-\end{figure}
-
 Um die Lage des Photopeaks bzw. der Vollenergielinie zu bestimmen, wird dieser durch eine Gaußglocke genähert, die in Abbildung
 \ref{fig:plot22} dargestellt ist.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{content/plot22.pdf}
-  \caption{Gemessener und gaußgenäherter Photopeak eines $\ce{^{137}Cs}$-Strahlers}
-  \label{fig:plot22}
-\end{figure}
 
 Die Näherung erfolgt mittels der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy und für
 das Maximum der Gaußglocke ergibt sich die Kanalnummer
@@ -336,6 +316,31 @@ $5 \sfrac{1}{2}$-mal geringer und die Absorptionswahrscheinlichkeit über $30$-m
 Daraus ist zu schließen, dass der Comptoneffekt Einfluss auf den Photopeak hat. Compton-gestreute Photonen können im 
 Detektor noch photoelektrisch wechselwirken.
 
+\begin{figure}{H}
+  \centering
+  \includegraphics[scale=0.7]{content/plot21.pdf}
+  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Zur Erkennung
+    des Compton-Kontinuums, des Rückstreupeaks und der Compton-Kante wurde ein kleinerer Bereich der Ereignisanzahl gewählt.}
+  \label{fig:plot21}
+\end{figure}
+
+\begin{figure}{H}
+  \centering
+  \includegraphics[scale=0.7]{content/plot22.pdf}
+  \caption{Gemessener und gaußgenäherter Photopeak eines $\ce{^{137}Cs}$-Strahlers}
+  \label{fig:plot22}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{content/plot2.pdf}
+  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Hier ist der
+  Photopeak bzw. Vollenergielinie gut zu erkennen.}
+  \label{fig:plot2}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Aktivitätsbestimmung von  $\ce{^{125}}$Stibnit oder  $\ce{^{133}}$Barium }
@@ -427,11 +432,7 @@ entsprechen. Die Energien und Emmisionswahrscheinlichkeiten des Referenzspektrum
 
 Zur Bestimmung der Aktivität $A$ des vorliegenden $\ce{^{133}Ba}$-Strahlers wird der Mittelwert der Aktivitäten der letzten drei
 Peaks genommen, da die ersten beiden Werte stark nach unten und oben abweichen.
-Die mittlere Aktivität beträgt:
-
-\begin{equation*}
-  \bar{A} = \SI{1180 +- 383}{\becquerel} \; .
-\end{equation*}
+Die mittlere Aktivität beträgt $\bar{A} = \SI{1180 +- 383}{\becquerel}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
