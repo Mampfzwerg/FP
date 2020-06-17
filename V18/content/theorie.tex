@@ -8,7 +8,7 @@ einer solchen Wechselwirkung ist der Wirkungsquerschnitt $\sigma$, welcher propo
 ist. Dabei ist $\bar{x}$ die mittlere freie Weglänge. Für die Strahlintensität gilt mit $\mu$
 
 \begin{equation}
-    N\left(D\right) = N_0 \exp{-\mu D}
+    N\left(D\right) = N_0 \cdot \text{e}^{-\mu D}
     \label{eqn:Strahl}
 \end{equation}
 
@@ -36,17 +36,18 @@ wobei $\num{4}<\alpha<\num{5}$ und $\delta \approx \num{3.5} $.
 Der Compton-Effekt beschreibt die unelastische Streuung eines Photons an einem ruhenden Elektron. Dabei gibt das Photon ein Teil seiner Energie ab 
 und ändert seine Ausbreitungsrichtung. Mithilfe des Energie- und Impulserhaltungssatzes lässt sich die Energie des gestoßenen Elektrons zu 
 
-\begin{equation*}
+\begin{equation}
     E_l = E_\gamma \frac{\epsilon\left(1-\cos{\theta}\right)}{1+\epsilon\left(1-\cos{\theta}\right)}
-\end{equation*}
+    \label{eqn:Compton}
+\end{equation}
 
 mit $\epsilon = \frac{E_\gamma}{m_0 c^2}$ und $\theta \angle (\vec{p_\gamma}, \vec{p_{e'}})$ bestimmen. Bei $\theta = 180°$ beträgt der 
 maximale Energieübertrag somit
 
-\begin{equation*}
+\begin{equation}
     E_{l,max} = E_\gamma \frac{2\epsilon}{1+2\epsilon}.
     \label{eqn:Kante}
-\end{equation*}
+\end{equation}
 
 Demnach gilt für alle $\theta$ $E_l < E_\gamma$. Der Wirkungsquerschnitt ergibt sich zu 
 

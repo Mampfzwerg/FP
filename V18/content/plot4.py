@@ -17,8 +17,8 @@ x = np.arange(0, 8192)
 
 plt.plot(x, y, 'b-', label='4')
 #plt.plot(z, gerade (z, *params), 'b-', label='Ausgleichsgerade')
-plt.xlabel(r'Counts')
-plt.ylabel(r'Channel')
+plt.xlabel(r'Channel')
+plt.ylabel(r'Counts')
 plt.legend(loc='best')
 
 plt.tight_layout()

@@ -13,30 +13,35 @@ a = np.array([ ufloat(3493.0, 15.0), ufloat(535.0, 9.0), ufloat(1140.0, 6.0), uf
 b = np.array([ufloat(3.5, 0.0), ufloat(4.2, 0.2), ufloat(5.5, 0.1), ufloat(5.7, 0.6), ufloat(6.4, 0.5), ufloat(14.3, 0.5),
     ufloat(17.1, 2.0), ufloat(19.3, 0.8), ufloat(30.2, 2.3), ufloat(23.2, 1.7), ufloat(28.9, 1.1)])
 
+t = 4111
 A = ufloat(1510, 22)
 Z = a * unp.sqrt(b * np.pi)
-#Q = 4 * Z / (1.73 * A * W)
+Q = 4 * Z / (0.0538 * A * W * t)
 
 #print(Z)
-print(unp.sqrt(Z))
+#print(unp.sqrt(Z))
 
-#params, covariance_matrix = np.polyfit(x, E, deg=1, cov=True)
-#
-#errors = np.sqrt(np.diag(covariance_matrix))
-#
-#print('a = {:.3f} ± {:.4f}'.format(params[0], errors[0]))
-#print('b = {:.3f} ± {:.4f}'.format(params[1], errors[1]))
-#
-#def gerade (x, m, b):
-#    return m*x+b
-#
-#z = np.linspace(np.min(x) - 100, np.max(x) + 100)
-#
-#plt.plot(x, E, 'bx', label='Data')
-#plt.plot(z, gerade (z, *params), 'r-', label='Linear Regression')
-#plt.xlabel(r'$\mu_i$')
-#plt.ylabel(r'$E_i \: / \: keV$')
-#plt.legend(loc='best')
-#
-#plt.tight_layout()
-#plt.savefig('plot6.pdf')
+E = np.log(E)
+Q = np.log(unp.nominal_values(Q))
+#print(E)
+
+params, covariance_matrix = np.polyfit(E, Q, deg=1, cov=True)
+
+errors = np.sqrt(np.diag(covariance_matrix))
+
+print('a = {:.3f} ± {:.4f}'.format(params[0], errors[0]))
+print('b = {:.3f} ± {:.4f}'.format(params[1], errors[1]))
+
+def gerade(x, m, b):
+    return m*x+b
+
+z = np.linspace(4, 8)
+
+plt.plot(E, Q, 'bx', label='Data')
+plt.plot(z, gerade(z, *params), 'r-', label='Linear Regression')
+plt.xlabel(r'$ln(E / 1keV)$')
+plt.ylabel(r'$ln(Q)$')
+plt.legend(loc='best')
+
+plt.tight_layout()
+plt.savefig('plot6.pdf')

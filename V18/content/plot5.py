@@ -18,8 +18,8 @@ z = np.linspace(np.min(x) - 100, np.max(x) + 100)
 
 plt.plot(x, E, 'bx', label='Data')
 plt.plot(z, gerade (z, *params), 'r-', label='Linear Regression')
-plt.xlabel(r'$\mu_i$')
-plt.ylabel(r'$E_i \: / \: keV$')
+plt.xlabel(r'$\mu_0$')
+plt.ylabel(r'$E \: / \: keV$')
 plt.legend(loc='best')
 
 plt.tight_layout()

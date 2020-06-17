@@ -157,8 +157,8 @@ plt.plot(x1, gauss(x1, *par), 'r-')
 
 
 plt.xlim(0, 4000)
-plt.xlabel(r'Counts')
-plt.ylabel(r'Channel')
+plt.xlabel(r'Channel')
+plt.ylabel(r'Counts')
 plt.legend(loc='best')
 
 plt.tight_layout()
