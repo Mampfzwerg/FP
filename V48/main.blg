@@ -1,0 +1,21 @@
+[0] Config.pm:304> INFO - This is Biber 2.13
+[3] Config.pm:307> INFO - Logfile is 'main.blg'
+[40] biber:315> INFO - === Sa Jun 20, 2020, 13:36:14
+[59] Biber.pm:375> INFO - Reading 'main.bcf'
+[145] Biber.pm:905> INFO - Found 1 citekeys in bib section 0
+[165] Biber.pm:4196> INFO - Processing section 0
+[167] Utils.pm:75> INFO - Globbing data source 'lit.bib'
+[167] Utils.pm:91> INFO - Globbed data source 'lit.bib' to lit.bib
+[167] Utils.pm:75> INFO - Globbing data source 'programme.bib'
+[167] Utils.pm:91> INFO - Globbed data source 'programme.bib' to programme.bib
+[180] Biber.pm:4373> INFO - Looking for bibtex format file 'lit.bib' for section 0
+[182] bibtex.pm:1462> INFO - LaTeX decoding ...
+[186] bibtex.pm:1281> INFO - Found BibTeX data source 'lit.bib'
+[195] Utils.pm:300> WARN - Entry 'Anleitung' (lit.bib): Invalid format '20.06.2020' of date field 'date' - ignoring
+[208] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[209] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[209] Biber.pm:4024> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[209] Biber.pm:4030> INFO - No sort tailoring available for locale 'de-DE'
+[219] bbl.pm:648> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[221] bbl.pm:751> INFO - Output to main.bbl
+[222] Biber.pm:110> INFO - WARNINGS: 1

@@ -1,0 +1,166 @@
+\section{Zielsetzung}
+
+Ziel des Versuches ist es, die Dipolrelaxation bei Ionenkristallen zu untersuchen. Explizit sind die Aktivierungsenergie $W$ und die charakteristische 
+Relaxationszeit $\tau_0$ zu bestimmen.
+
+\section{Theorie}
+\label{sec:Theorie}
+
+Zunächst werden die Kaliumbromid $\symup{K}^{+}\symup{B}\symup{r}^{-}$ sowie Cäsiumiodid $\symup{Cs}^{+}\symup{J}\symup{r}^{-}$ Proben betrachtet, welche 
+jeweils mit Strontium dotiert werden. 
+
+\subsection{Kristallstruktur und Dipole}
+
+Beide proben kristallisieren in einem kubischen Gitter. Dabei nimmt das Kaliumbromid eine NaCl-Struktur an. Diese ist oktaedrisch und es sind je 6 Nachbarionen um jedes 
+negativ geladene Brom angeordnet. Die Gitterkonstante beträgt $a = \SI{6.598}{\angstrom}$. Das Cäsiumiodid hingegen kristallisiert in einer CsCl-Struktur, bei der 
+ein negatives Jodion von jeweils 8 Cäsiumionen umgeben ist. Die Gitterkonstante von Cäsiumiodid beträgt $a = \SI{4.566}{\angstrom}$.\\
+Ein Ionenkristall ist aus abwechselnd positiv und negativen Ionen aufgebaut und somit von außen betrachtet neutral. Die Dotierung fügt doppelt positiv geladene 
+Strontiumionen hinzu, sodass Kationen-Leerstellen entstehen, um die lokale Ladungsneutralität zu erhalten.\\
+Die Richtung des Dipols wird durch den Vektor zwischen Strontium und Leerstelle bestimmt. Da die Gitterplätze diskret sind, sind auch die Ausrichtungsachsen diskret. 
+Unter einer Temperatur $T$ von ungefähr $\SI{500}{\degree}$ ist eine Richtungsänderung durch Leerstellendiffusion möglich, welche bei der Aktivierungsenergie $W$
+auftritt. Diese Energie ist eine materialspezifische Größe. Die temperaturabhängige Energieverteilung, die diese Arbeit leisten kann, ist durch die Stefan-Boltzmann-Verteilung
+gegeben, welche die Form 
+
+\begin{equation*}
+    E \approx \exp{\left(\frac{W}{k_B T}\right)}
+\end{equation*}
+
+hat. Die Relaxationszeit ist dann dementsprechend mit 
+
+\begin{equation*}
+    \tau\left(T\right) = \tau_0 \exp{\left(\frac{W}{k_B T}\right)}
+\end{equation*}
+
+gegeben. Dabei entspricht die charakteristische Relaxationszeit $\tau_0$ der Relaxationszeit für unendlich große Temperaturen. 
+
+\subsection{Messmethodik}
+
+Die Probe befindet sich innerhalb eines Plattenkondensators. Durch das Anlegen eines starken äußeren Feldes wird die Probe zunächst 
+polarisiert. Der Anteil 
+
+\begin{equation}
+    x'\left(T\right) = \frac{pE}{3k_BT}
+    \label{eqn:DipolAnteil}
+\end{equation}
+
+der Dipole ist nun ausgerichtet. Dabei ist $p$ das Dipolmoment. Als nächster Schritt wird die Temperatur auf $T_0$ abgesenkt, sodass die Polarisation der 
+Probe bestehen bleibt. Das äußere Feld wird abgestellt und die übrige Ladung durch Kurzschließen entfernt. Der folgende Effekt der Dipolrelaxation
+hat nun einen induzierten Depolarisationsstrom $T_\text{relax}\left(t\right)$ zur Folge, der eintritt, sobald das Material wieder geheizt wird. 
+Die Heizrate ist linear mit 
+
+\begin{equation*}
+    b = 2 \si{\kelvin\per\minute},
+\end{equation*}
+
+sodass sich eine Temperaturentwicklung von
+
+\begin{equation*}
+    T(t) = T_0 + b\cdot t(min)
+\end{equation*}
+
+ergibt. $I(t)$ kann beschrieben werden durch 
+
+\begin{equation*}
+    I(t) = x'\left(T_{\symup{p}}\right)p\frac{\symup{d}N}{\symup{d}t},
+\end{equation*}
+
+wobei $ = x'\left(T_{\symup{p}}\right)$ den Anteil $x'$ der polarisierten Elemente bei der Polarisationstemperatur $T_{\symup{p}}$ und $\frac{\symup{d}N}{\symup{d}t}$ 
+die pro Zeit und Volumeneinheit relaxierenden Dipole darstellt. Unter Verwendung der Gleichung \eqref{eqn:DipolAnteil} ergibt sich
+
+\begin{equation*}
+    x'\left(T_{\symup{p}}\right)p = \frac{p^2 E}{3k_B T_{\symup{p}}}.
+\end{equation*}
+
+Da die Dipolrelaxation ein thermisch aktiver Prozess ist, stellt sich für $\frac{\symup{d}N}{\symup{d}t}$ eine Proportionalität zu $N$ mit der Relaxationsfrequenz 
+$\frac{1}{\tau}$ als Proportionalitätsfaktor gemäß 
+
+\begin{equation*}
+    \frac{\symup{d}N}{\symup{d}t} = -\frac{N}{\tau\left(T\right)}
+\end{equation*}
+
+ein. Eine Integration dieses Terms führt zu 
+
+\begin{equation*}
+    N = N_{\symup{p}}\exp{\left(-\frac{1}{b}\int_{T_0}^{T}\frac{\symup{d}T'}{\tau\left(T'\right)}\right)}
+\end{equation*}
+
+mit $N_{\symup{p}}$ als Zahl der zu Beginn des Ausheizens vorhandenen orientierten Dipole pro Volumeneinheit. Für den Depolarisationsstrom $I(T)$ ergibt sich
+
+\begin{equation*}
+    I\left(T\right) = \frac{p^2E}{3k_B T_{\symup{p}}}\frac{N_{\symup{p}}}{\tau_0} \exp{\left(-\frac{1}{b\tau_0}\int_{T_0}^{T}\exp{\left(-\frac{W}{k_B T'}\right)}\symup{d}T'\right)}\exp{\left(-\frac{W}{k_B T}\right)}
+\end{equation*}
+
+Es wird angenommen, dass das Maximum dieses Stroms bei $T_{\text{max}}$ lieft. Diese ist unabhängig von der Starttemperatur.
+
+\begin{equation*}
+    T_m^2 = \frac{bW\left(T_{\text{max}}\right)}{k}
+\end{equation*}
+
+Für den Grenzwert kleiner Temperaturen gilt damit 
+
+\begin{equation*}
+    \ln{\left(I\left(T\right)\right)} = \text{const.}-\frac{W}{k_B T }.
+\end{equation*}
+
+Das Intergral über den Strom ist proportional zu der Zahl der Dipole pro Volumen. Es gilt somit 
+
+\begin{equation*}
+    \int_{T_0}^{T_1} I(T)\symup{d}T = P_0 A = \frac{Np^2E}{3k_B T}
+\end{equation*}
+
+mit Querschnittsfläche $A$ der Probe, und $P_0$ als Polarisation bei der Temperatur $T_0$. Aus der Integration über die im Material 
+verbliebenen, noch nicht ausgerichteten Dipole und die Multiplikation mit der Ausrichtungsrate ergibt sich 
+
+\begin{equation*}
+    \tau{T} = \tau_0 \exp{\left(\frac{W}{k_B T}\right)} = \int_{I\left(T\right)}^{\infty} \frac{I\left(t'\right)\symup{d}t'}{I\left(T\right)},
+\end{equation*}
+
+und 
+
+\begin{equation*}
+    \ln{\left(\tau\left(T\right)\right)} = \ln{\left(\tau_0\right)} + \frac{W}{k_B T} = \left(\ln{\int_{I\left(T\right)}^{\infty}I\left(T'\right)\symup{d}T'}\right)-\ln{\left(I\left(T\right)\right)}.
+\end{equation*}
+
+Dieses Integral ist im Versuch graphisch zu bestimmen. Diese Gleichung ist unabhängig von der Heizrate.
+
+\subsection{Berechnung der Aktivierungsenergie $W$}
+
+Es werden zwei verschieden Ansätze zur Berechnung der Aktivierungsenergie $W$ betrachtet. Das erste Verfahren nimmt für das Integral
+
+\begin{equation*}
+    \int_{T_0}^T \exp{\left(-\frac{W}{k_B T}\right)} \approx 0
+\end{equation*}
+
+an. Diese Nährung folgt aus der Nährung für Temperaturen unterhalb der Aktivierungsenergie $W$. Für den Strom ergibt sich somit: 
+
+\begin{equation*}
+    I\left(T\right) \approx \frac{p^2 E}{3 k_B T_{\symup{p}}}\frac{N_{\symup{p}}}{\tau_0}\exp{\left(-\frac{W}{k_B T}\right)}.
+\end{equation*}
+
+Wird nun eine logarithmische Darstellung gewählt, kann somit $W$ berechnet werden. \\
+Das zweite Verfahren bestimmt $W$ über den gesamten Kurvenverlauf. Für die zeitliche Änderung der Polarisation gilt
+
+\begin{equation*}
+    \frac{\symup{d}P}{\symup{d}t} = -\frac{P\left(t\right)}{\tau\left(T\left(t\right)\right)}.
+\end{equation*}
+
+Diese erzeugt einen äußeren Strom pro Probenquerschnitt $F$ 
+
+\begin{equation*}
+    \frac{\symup{d}P}{\symup{d}t} = \frac{I\left(t\right)}{F}.
+\end{equation*}
+
+Da $T$ eine lineare Funktion von $t$ sein soll, ergibt sich aus den vorangegangenen Gleichungen 
+
+\begin{equation*}
+    \tau\left(T\right) = \frac{\int_T^\infty j\left(T'\right)\symup{d}T'}{bI\left(T\right)}
+\end{equation*}
+
+und mit Ersetzen von $\tau\left(T\right)$
+
+\begin{equation*}
+    \frac{W}{k_B T} = \ln{\left(\frac{\int_T^\infty I\left(T'\right)\symup{d}T'}{bI\left(T\right)\tau_0}\right)}.
+\end{equation*}
+
+Mit dieser Gleichung lässt sich nun $W$ berechnen. In der Praxis wird die obere Integrationsgrenze von $\infty$ in $T^*$ geändert, wobei
+$j\left(T^*\right)\approx 0$ gilt. $T^*$ soll demnach groß genug sein, um eine Gleichverteilung der Dipole herbeizuführen. 
