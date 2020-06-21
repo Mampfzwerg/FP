@@ -1,13 +1,147 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Aus den Messwerten wird zunächst die Molwärme für konstanten Druck $C_p$ errechnet. Anschließend wird diese in die Molwärme bei 
+konstanten Volumen $C_V$ umgerechnet. Aus den beiden Molwärmen wird die Debye-Temperatur $\theta_\text{D}$ bestimmt. Um diesen 
+vergleichen zu können, wird ein theoretischer Wert für $\theta_\text{D}$ berechnet. 
+
 \subsection{Bestimmung von $C_p$ und $C_V$}
 
+Um $C_p$ zu bestimmen wird 
+
+\begin{equation*}
+    C_p = \frac{U I \symup{\Delta}t M}{\symup{\Delta} T m}
+\end{equation*}
+
+verwendet. Dabei ist $U$ die Heizspannung, $I$ der Heizstrom, $\symup{\Delta}t$ das Heizintervall, $M = \SI{63.5}{\gram\per\mole}$ die molare Masse \cite{Molare}, 
+$\symup{\Delta}T$ die Temperaturerhöhung und $m = \SI{342}{\gram}$ \cite{Anleitung} die Masse der Probe. Für Kupfer werden weiterhin die Dichte $\rho = \SI{8.96}{\gram\per\cubic\centi\meter}$
+\cite{KompDichte} und der Kompressionsmodul $\kappa = \SI{137.8}{\giga\pascal}$ \cite{KompDichte} angenommen.\\
+
+Für $C_p$ ergeben sich die Werte in Tabelle \ref{tab:mess1}. Mithilfe von Gleichung \eqref{eqn:Temp} sind die Temperaturen umgerechnet worden. 
+
+\begin{table}
+    \centering
+    \caption{Messwerte zur Berechnung der Molwärme bei konstantem Druck $C_p$. Die Temperaturen wurden dabei aus \eqref{eqn:Temp} berechnet.}
+    \label{tab:mess1}
+    \sisetup{table-format=2.1}
+    \begin{tabular}{c c c c c c}
+    \toprule
+    $T_\text{Probe} \,/\, \si{\kelvin}$ & $T_\text{Gehäuse} \,/\, \si{\kelvin}$ & $U \,/\, \si{\volt}$
+    & $I \,/\, \si{\ampere}$ & $\symup{\Delta}t \,/\, \si{\second}$
+    & $C_p \,/\, \si{\joule\per\kelvin\mole}$\\
+    \midrule 
+        2999 & 2,00 & 7,02 & 5,02 & 0,99 & 663,45 \\
+        3000 & 2,00 & 7,03 & 5,03 & 1,00 & 664,55 \\
+        3003 & 8,00 & 2,91 & 5,09 & 1,01 & 671,81 \\
+        3000 & 2,50 & 7,54 & 5,04 & 1,00 & 665,87 \\
+        3001 & 7,54 & 2,49 & 5,05 & 1,00 & 666,97 \\
+        3000 & 2,49 & 7,53 & 5,04 & 1,00 & 665,87 \\
+        3001 & 7,53 & 2,49 & 5,04 & 1,00 & 665,65 \\
+        3016 & 2,49 & 7,55 & 5,06 & 1,00 & 664,97 \\
+        3000 & 7,55 & 2,51 & 5,04 & 1,00 & 665,87 \\
+        3000 & 2,51 & 7,55 & 5,04 & 1,00 & 665,87 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Zur Umrechnung von $C_p$ zu $C_V$ wird die Gleichung \eqref{eqn:Umrechnung} verwendet. Die Werte für $\alpha$ werden \cite{Anleitung} entnommen und die 
+Temperatur $\bar{T}$ in jedem Intervall gemittelt. Die Ergebnisse sind in Tabelle \ref{tab:mess2} aufgeführt.
 
 
-%\begin{figure}
-%  \centering
-%  \includegraphics{plot.pdf}
-%  \caption{Plot.}
-%  \label{fig:plot}
-%\end{figure}
+\begin{table}
+    \centering
+    \caption{Berechnete Werte der Molwärme bei konstantem Volumen $C_V$.}
+    \label{tab:mess2}
+    \sisetup{table-format=2.1}
+    \begin{tabular}{c c c c}
+    \toprule
+    $\bar{T} \,/\, \si{\kelvin}$ & $\alpha \,/\, 1\cdot 10^{-5}\si{\degree}$ & $C_p \,/\, \si{\joule\per\kelvin\mole}$
+    & $C_V \,/\, \si{\joule\per\kelvin\mole}$\\
+    \midrule 
+        2999 & 2,00 & 7,02 & 5,02\\
+        3000 & 2,00 & 7,03 & 5,03\\
+        3003 & 8,00 & 2,91 & 5,09\\
+        3000 & 2,50 & 7,54 & 5,04\\
+        3001 & 7,54 & 2,49 & 5,05\\
+        3000 & 2,49 & 7,53 & 5,04\\
+        3001 & 7,53 & 2,49 & 5,04\\
+        3016 & 2,49 & 7,55 & 5,06\\
+        3000 & 7,55 & 2,51 & 5,04\\
+        3000 & 2,51 & 7,55 & 5,04\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Anschließend werden die Ergebnisse für $C_V$ gegen die gemittelte Temperatur $\bar{T}$ in Abbildung \ref{fig:plot} aufgetragen. 
+
+\begin{figure}
+  \centering
+  \includegraphics{content/plot.pdf}
+  \caption{Molwärme $C_V$ aufgetragen gegen die durchschnittliche Temperatur $\bar{T}$ im jeweiligen Intervall.}
+  \label{fig:plot}
+\end{figure}
+
+\subsection{Experimentelle Bestimmung der Debye-Temperatur}
+
+Um die Debye-Temperatur $\theta_\text{D}$ zu bestimmen, werden die $\bar{T}$ mit den entsprechenden Werten $\frac{\theta_\text{D}}{T}$ \cite{Anleitung} multipliziert. 
+Die Ergebnisse sind in Tabelle \ref{tab:mess3} zu sehen.\\
+
+\begin{table}
+    \centering
+    \caption{Experimentell bestimmte Werte für die Debye-Temperatur $\theta_\text{D}$.}
+    \label{tab:mess3}
+    \sisetup{table-format=2.1}
+    \begin{tabular}{c c c c}
+    \toprule
+    $\bar{T} \,/\, \si{\kelvin}$ & $C_V \,/\, \si{\joule\per\kelvin\mole}$ & $\frac{\theta_\text{D}}{T}$
+    & $\theta_\text{D} \,/\, \si{\kelvin}$\\
+    \midrule 
+        2999 & 2,00 & 7,02 & 5,02\\
+        3000 & 2,00 & 7,03 & 5,03\\
+        3003 & 8,00 & 2,91 & 5,09\\
+        3000 & 2,50 & 7,54 & 5,04\\
+        3001 & 7,54 & 2,49 & 5,05\\
+        3000 & 2,49 & 7,53 & 5,04\\
+        3001 & 7,53 & 2,49 & 5,04\\
+        3016 & 2,49 & 7,55 & 5,06\\
+        3000 & 7,55 & 2,51 & 5,04\\
+        3000 & 2,51 & 7,55 & 5,04\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Der Mittelwert aller bestimmten Debye-Temperaturen $\theta_\text{D}$ ergibt sich zu 
+
+\begin{equation*}
+    \bar{\theta_\text{D}} = \SI{290+-80}{\kelvin}.
+\end{equation*}
+
+\subsection{Theoriewert der Debye-Temperatur}
+
+Die Debye-Temperatur lässt sich mit \eqref{eqn:Natome} und \eqref{eqn:Debye} berechnen. Hierzu werden die Werte $v_\text{long} = \SI{4.7}{\kilo\meter\per\second}$ und
+$v_\text{trans} = \SI{2.26}{\kilo\meter\per\second}$ \cite{Anleitung} verwendet. Daraus ergibt sich die Schallgeschwindigkeit zu 
+
+\begin{align*}
+    \frac{1}{v_\text{s}^3} &= \frac{1}{3} \sum_{i=1}^3 \frac{1}{v_1^3}\\
+    \rightarrow v_\text{s} &= \SI{2.54}{\kilo\meter\per\second}. 
+\end{align*}
+
+Das Volumen $L^3$ berechnet sich mit 
+
+\begin{equation*}
+    L^3 = \frac{m}{\rho}
+\end{equation*}
+
+und die Teilchenzahl $N$ mit 
+
+\begin{equation*}
+    N = \frac{m}{M}\cdot N_\text{A},
+\end{equation*}
+
+wodurch sich $w_\text{D} = \SI{43.5}{\tera\hertz}$ und schließlich 
+
+\begin{equation*}
+    \theta_\text{D,theo.} = \SI{332.6}{\kelvin}
+\end{equation*}
+
+ergibt.
