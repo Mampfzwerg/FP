@@ -1,19 +1,133 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+Zweck des Versuchs ist die Bestimmung der Molwärme $C_m$ kristalliner Festkörper in Abhängigkeit der Temperatur
+und mithilfe der Modelle nach Einstein oder Debye. Hier sollen die spezifische Wärmekapazitäten $C_p$ und $C_V$ von Kupfer
+und dessen materialspezifische Debye-Temperatur $\theta_\text{D}$ ermittelt werden.
+
+Die Wärmekapazität definiert sich über die nötige Wärmemenge $\text{d}Q$, um einen Stoff um $\text{d}T = \SI{1}{\kelvin}$
+zu erhöhen:
+
 \begin{equation}
-    C_p - C_V = 9\alpha^2\kappa V_0 T
+    C = \frac{\text{d}Q}{\text{d}T} \; .
+\end{equation}
+
+In Bezug zur Stoffmenge $n$ oder Masse $m$ ergeben sich die spezifischen Wärmekapazitäten
+
+\begin{align}
+    C_m &= \frac{C}{n} = \frac{\text{d}Q}{\text{d}T \cdot n} \left[\frac{\si{\joule}}{\si{\kelvin\mol}}\right] \\
+    c &= \frac{C}{m} = \frac{\text{d}Q}{\text{d}T \cdot m} \left[\frac{\si{\joule}}{\si{\kelvin\kilo\gram}}\right] \; .
+\end{align}
+
+Nach dem 1. Hauptsatz der Thermodynamik 
+
+\begin{equation}
+ \text{d}Q = \text{d}U - \text{d}W = \text{d}U + p\text{d}V
+\end{equation}
+
+ergeben sich die Wärmekapazitäten bei konstantem Druck $C_p$ und konstantem Volumen $C_V$ zu 
+
+\begin{align}
+    C_p &= \left. \frac{\partial Q}{\partial T}\right|_p = \left. \frac{\partial U}{\partial T}\right|_p \\
+    C_V &= \left. \frac{\partial Q}{\partial T}\right|_V = \left. \frac{\partial U}{\partial T}\right|_V
+\end{align}
+
+und unterscheiden sich quantitativ um
+
+\begin{equation}
+    C_p - C_V = T V_0 \alpha^2 B
     \label{eqn:Umrechnung}
 \end{equation}
 
-\subsection{Debye-Modell}
+mit dem Volumenausdehnungskoeffizienten $\alpha$ und dem Bulkmodul $B$.
+
+$C_V$ lässt sich demnach aus dem gemessenen $C_p$, das um den Anteil der Volumenausdehnungsarbeit größer ist, bestimmen.
+Für hohe Temperaturen nähert sich $C_p$ dem Dulong-Petit-Gesetz $C = 3 N k_\text{B}$ und für tiefe nimmt sie proportional
+zu $T^3$ ab.
+
+\subsection{Quantenmechanische Betrachtung}
+
+Unter quantenmechanischer Betrachtung [?] ergibt sich die mittlere Freie Energie $\bigl<U\bigr>$ mit diskreten
+Oszillationsenergien $E_n = \hbar \omega \left(n + \sfrac{1}{2}\right)$ als
 
 \begin{equation}
-    \int_0^{w_D} Z\left(w\right)\text{d}w = 3N
-    \label{eqn:Natome}
+    \bigl<U\bigr> = U_\text{G} + 3N \hbar\omega \left(\bigl<n\bigr> + \sfrac{1}{2} \right) 
 \end{equation}
 
+mit der Energie $U_\text{G}$ des statischen Gitters, der Teilchenanzahl $N$ und dem Scharmittel
+
 \begin{equation}
-    \theta_\text{D} = \frac{\hbar w_\text{D}}{k_\text{B}} = \frac{\hbar v_\text{s}}{k_\text{B}}\left(\frac{6\pi^2N}{L^3}\right)^{\frac{3}{2}}
+    \bigl<n\bigr> = \frac{1}{\text{exp}\left(\frac{\hbar \omega}{k_\text{B}T}\right)-1} \; \; .
+\end{equation}
+
+\subsection{Einsteinmodell}
+
+Das Einstein-Modell gibt die temperaturabhängige spezifische Wärmekapazität $C_V^\text{E}$ unter der Annahme für die Zustandsdichte,
+dass die $3N$ Eigenschwingungen dieselbe Einsteinfrequenz $\omega_\text{E}$ teilen, an und es ergibt sich die genäherte 
+mittlere innere Energie
+
+\begin{equation}
+    \bigl<U\bigr> = 3N \hbar\omega_\text{E} \left(\sfrac{1}{2} + \text{exp}\left(\frac{\hbar \omega_\text{E}}{k_\text{B}T}\right)
+     - 1\right) \; .
+\end{equation}
+
+Die  Gitterenergie beträgt $U_\text{G} = 0$ und durch die Ableitung nach der Temperatur ergibt sich schließlich
+
+\begin{equation}
+    C_V^\text{E} = 3Nk_\text{B} \left(\sfrac{\theta_\text{E}}{T}\right)^2 \frac{\text{exp}\left(\sfrac{\theta_\text{E}}{T}\right)}
+    {\left[\text{exp}\left(\sfrac{\theta_\text{E}}{T}\right) - 1\right]^2} = 
+    \begin{cases}
+        3Nk_\text{B} \left(\sfrac{\theta_\text{E}}{T}\right)^2 \text{exp}\left(\sfrac{-\theta_\text{E}}{T}\right), 
+        & T \ll \theta_\text{E} \\
+        3Nk_\text{B} , & T \gg \theta_\text{E}
+    \end{cases}
+\end{equation}
+
+mit der spezifischen Einsteintemperatur $\theta_\text{E} = \frac{\hbar\omega_\text{E}}{k_\text{B}}$.
+
+Das Modell eignet sich gut für hohe Temperaturen, in denen das Dulong-Petit-Gesetz gilt und optische Phononen bei der Schwingung
+dominieren, für tiefe Temperaturen hingegen ergibt sich nicht die erwartete $T^3$-Abnahme. Dort dominieren die akkustischen
+Phononen, die besser durch das Debye-Modell beschrieben werden können.
+
+\subsection{Debye-Modell}
+
+Im Debye-Modell werden für die Zustandsdichte folgende Annahmen vorgenommen:
+
+\begin{enumerate}
+    \item Für tiefe Temperaturen können die optischen Phononen vernachlässigt und alle Phononenzweige durch drei Nährungen der Form $\omega = v \cdot k$ beschrieben werden
+    \item Der Debyewellenwektor $k_\text{D}$ als Summe über $N = \left(\frac{2\pi}{L}\right)^3   = \frac{4}{3} \pi k_\text{D}^3$ Wellenvektoren ergibt sich zu $k_\text{D} = \left(6\pi^2\sfrac{N}{V}\right)^{\sfrac{1}{3}}$. Dabei wird die Summe durch eine Integration über die erste Brillouinzone ersetzt.
+\end{enumerate}
+
+Es ergeben sich die Zustandsdichte 
+
+\begin{equation}
+    D(\omega) = \frac{Vk^2}{2\pi^2v}
+\end{equation}
+
+und die spezifische Wärmekapazität
+
+\begin{equation}
+    C_V^\text{E} = 9Nk_\text{B} \left(\sfrac{T}{\theta_\text{D}}\right)^3 \int_0^{\sfrac{\theta_\text{D}}{T}} 
+    \frac{x^4\text{e}^x \; \text{d}x}{(\text{e}^x - 1)^2} = 
+    \begin{cases}
+        \frac{12\pi^4}{5}Nk_\text{B}\left(\sfrac{T}{\theta_\text{D}}\right)^3, & T \ll \theta_\text{E} \\
+        3Nk_\text{B} , & T \gg \theta_\text{E}
+    \end{cases}
+\end{equation}
+
+mit der materialspezifischen Debyetemperatur 
+
+\begin{equation}
     \label{eqn:Debye}
+    \theta_\text{D} = \frac{\hbar\omega_\text{D}}{k_\text{B}} = \
+    \frac{\hbar v}{k_\text{B}} \left(6\pi^2\sfrac{N}{V}\right)^{\sfrac{1}{3}} \; .
+\end{equation}
+
+Durch diese sind die auftretenden Phononenfrequenzen aufgezeigt und sie teilt den Temperaturbereich der klassischen ($T > \theta_\text{D}$)
+von dem der quantenmechanischen Beschreibung ($T < \theta_\text{D}$).
+Für die Zustandssumme $Z(\omega)$ gilt die Bedingung [?]:
+
+\begin{equation}
+    \label{eqn:Natome}
+    \int_0^{w_D} Z\left(w\right)\text{d}w = 3N \; .
 \end{equation}
