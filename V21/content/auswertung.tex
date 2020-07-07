@@ -1,9 +1,64 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
+\subsection{Daten der verwendeten Helmholtzspulenpaare}
+
+Die verwendeten Spulen haben folgende Abmessungen, wobei der Radius mit $R$ und die Windungszahl mit $N$ gegeben ist:
+
+\begin{align*}
+  R_\text{Horizontalfeldspule} &= \SI{15.79}{\centi\meter}\,,\\
+  R_\text{Sweepfeldspule} &= \SI{16.39}{\centi\meter}\,,\\
+  R_\text{Vertikalfeldspule} &= \SI{11.735}{\centi\meter}\,,\\
+  N_\text{Horizontalfeldspule} &= \num{154}\,,\\
+  N_\text{Sweepfeldspule} &= \num{11}\,,\\
+  N_\text{Vertikalfeldspule} &= \num{20}\,.\\  
+\end{align*}
+
+\subsection{Korrektur des vertikalen Erdmagnetfeldes}
+
+Zur Korrektur des vertikalen Erdmagnetfeldes wird der Aufbau entsprechend \label{sec:Durchführung} ausgerichtet und das Feld der Vertikalfeldspule auf $T_\text{vert} = \SI{0.202}{\ampere}$
+eingestellt. Gemäß \eqref{eqn:helm} kompensiert das Feld der Vertikalfeldspule also ein vertikales Erdmagnetfeld von 
+
+\begin{equation*}
+  B_\text{vert} = \SI{30.96}{\micro\tesla}\,.
+\end{equation*}
+
+\subsection{Vermessen des Magnetfeldes in Abhängigkeit von der Resonanzfrequenz}
+
+Die im Versuch gemessenen Ströme in Abhängigkeit von der Frequenz des Wechselfeldes sind in Tabelle \ref{tab:mess1} angegeben.
+
+\begin{table}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+  \caption{Die für die Horiuontalfeld- und Sweepspulen gemessenen Ströme $I_\text{H}$ und $I_\text{S}$ für die Resonanzen 1 und 2 und daraus errechneten Magnetfeldstärken $B$ in Abhängigkeit der angelegten Frequenz $f$.}
+  \label{tab:mess1}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c c c c}
+  \toprule
+  $f \,/\, \si{\kilo\hertz}$ & $I_\text{H1} \,/\, \si{\ampere}$ & $I_\text{S1} \,/\, \si{\ampere}$
+  & $B_\text{hor,1} \,/\, \si{\micro\tesla}$ & $I_\text{H2} \,/\, \si{\ampere}$ & $I_\text{S2} \,/\, \si{\ampere}$
+  & $B_\text{hor,2} \,/\, \si{\micro\tesla}$\\
+  \midrule 
+       100& & & & & & \\
+       200& & & & & & \\
+       300& & & & & & \\
+       400& & & & & & \\
+       500& & & & & & \\
+       600& & & & & & \\
+       700& & & & & & \\
+       800& & & & & & \\
+       900& & & & & & \\
+      1000& & & & & & \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Hierbei bezeichnet $I_\text{H}$, $I_\text{S}$ und $B_\text{hor}$ die für die jeweiligen Resonanzen eingestellten Stromstärken an Horizontal- und 
+Sweepspule, sowie das daraus resultierende gesamte horizontale Magnetfeld. Dieses ist durch die lineare Superposition der einzelnen Magnetfelder
+errechenbar.\\
+
+%\begin{figure}
+%  \centering
+%  \includegraphics{plot.pdf}
+%  \caption{Plot.}
+%  \label{fig:plot}
+%\end{figure}
