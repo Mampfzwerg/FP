@@ -11,4 +11,3 @@
 \contentsline {subsection}{\numberline {3.2}Experimentelle Bestimmung der Debye-Temperatur}{7}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Theoriewert der Debye-Temperatur}{7}{subsection.3.3}
 \contentsline {section}{\numberline {4}Diskussion}{11}{section.4}
-\contentsline {section}{\nonumberline Literatur}{12}{section*.7}
