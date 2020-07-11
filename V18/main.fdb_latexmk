@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1590752198 "/home/sara/Desktop/Uni/FP/V18/main.tex" "/home/sara/Desktop/Uni/FP/V18/main.pdf" "main" 1590752418
-  "/dev/null" 1590743469 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1594464159 "/home/sara/Desktop/Uni/FP/V18/main.tex" "/home/sara/Desktop/Uni/FP/V18/main.pdf" "main" 1594466325
+  "/dev/null" 1594458490 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/sara/.local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/home/sara/.local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/home/sara/.local/texlive/2019/texmf-dist/tex/generic/oberdiek/bigintcalc.sty" 1463608860 40505 00cd7d66904273677d96039436aaa328 ""
@@ -46,12 +46,12 @@
   "/home/sara/.local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1566248362 39543 a0bd1f17d0daea30a3905c0b020d0959 ""
   "/home/sara/.local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1570213409 4268254 b14c3b1c4970fe1c9e774c9ff6304d13 ""
   "/home/sara/.local/texlive/2019/texmf.cnf" 1570213374 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "/home/sara/Desktop/Uni/FP/V18/main.aux" 1590752198 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/sara/Desktop/Uni/FP/V18/main.aux" 1594464159 8 a94a2480d3289e625eea47cd1b285758 ""
   "/home/sara/Desktop/Uni/FP/V18/main.tex" 1590744099 414 bde5be4031dfdc36ff0e3e5dced19cfa ""
   "header.tex" 1590744161 3631 e90aef850c97623e43c9aab332034b96 ""
-  "main.aux" 1590752198 8 a94a2480d3289e625eea47cd1b285758 ""
+  "main.aux" 1594464159 8 a94a2480d3289e625eea47cd1b285758 ""
   "main.tex" 1590744099 414 bde5be4031dfdc36ff0e3e5dced19cfa ""
   (generated)
-  "/home/sara/Desktop/Uni/FP/V18/main.log"
   "main.log"
   "/home/sara/Desktop/Uni/FP/V18/main.pdf"
+  "/home/sara/Desktop/Uni/FP/V18/main.log"

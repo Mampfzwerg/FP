@@ -1,9 +1,9 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\subsection{Wechselwirkung von Photonen mit Materie}
+\subsection{Wechselwirkung von Gammaquanten mit Materie}
 
-Tritt ein Photon $\gamma$ in Materie ein, so kann es mit Atomkernen oder Elektronen wechselwirken. Ein Maß für die Wahrscheinlichkeit von 
+Tritt ein Gammaquant $\gamma$ in Materie ein, so kann es mit Atomkernen oder Elektronen wechselwirken. Ein Maß für die Wahrscheinlichkeit von 
 einer solchen Wechselwirkung ist der Wirkungsquerschnitt $\sigma$, welcher proportional zum Extinktionskoeffizienten $\mu = \frac{1}{\bar{x}} \propto \sigma$
 ist. Dabei ist $\bar{x}$ die mittlere freie Weglänge. Für die Strahlintensität gilt mit $\mu$
 
@@ -14,26 +14,26 @@ ist. Dabei ist $\bar{x}$ die mittlere freie Weglänge. Für die Strahlintensitä
 
 nach Durchdringen einer Absorberschicht der Dicke $D$ mit ursprünglicher Strahlintensität $N_0$.\\
 
-Es gibt drei besonders relevante Wechselwirkungsprozesse für die $\gamma$-Spektroskopie. Der Photo- und Comptoneffekt und die Paarbildung.
+Es gibt drei besonders relevante Wechselwirkungsprozesse für die $\gamma$-Spektroskopie: Der Photo- und Comptoneffekt und die Paarbildung.
 
 \subsubsection{Photo-Effekt}
 
 Beim Photo-Effekt wechselwirkt ein $\gamma$-Quant mit einem Hüllenelektron. Aus Impulserhaltungsgründen tut es dies bevorzugt mit Elektronen der 
-K-Schale. Damit dies geschehen kann, muss die Energie des Photons $E_\gamma$ mindestens so groß wie die Bindungsenergie des Elektrons $E_B$ sein, 
+K-Schale. Damit dies geschehen kann, muss die Energie des Gammaquants $E_\gamma$ mindestens so groß wie die Bindungsenergie des Elektrons $E_B$ sein, 
 um dieses aus seinem Zustand zu entfernen. Falls $E_\gamma > E_B$ gilt, erhält das Elektron als kinetische Energie $E_\gamma - E_B$. Das "Loch", 
-das durch diesen Prozess entsteht, wird durch ein Elektron aus einer höheren Schale ausgefüllt und das so entstehende Loch wiederem durch ein 
-Elektron einer noch höheren Schale etc. Dabei werden charakteristische Röntgen-Strahlung emittiert, die den Absorber jedoch nur in seltenen 
+das durch diesen Prozess entsteht, wird durch ein Elektron aus einer höheren Schale ausgefüllt und das so entstehende Loch wiederum durch ein 
+Elektron einer noch höheren Schale etc. Dabei wird charakteristische Röntgen-Strahlung emittiert, die den Absorber jedoch nur in seltenen 
 Fällen verlässt, sodass das gesamte $E_\gamma$ in diesem verbleibt. Der Wirkungsquerschnitt ist dabei gegeben mit 
 
 \begin{equation*}
-    \sigma_{Ph} = Z^\alpha E^\delta,
+    \sigma_{Ph} \propto Z^\alpha E_\gamma^\delta,
 \end{equation*}
 
-wobei $\num{4}<\alpha<\num{5}$ und $\delta \approx \num{3.5} $.
+wobei $\num{4}<\alpha<\num{5}$ und $\delta \approx \num{3.5} $ und $Z$ die Kernladungszahl ist.
 
 \subsubsection{Compton-Effekt}
 
-Der Compton-Effekt beschreibt die unelastische Streuung eines Photons an einem ruhenden Elektron. Dabei gibt das Photon ein Teil seiner Energie ab 
+Der Compton-Effekt beschreibt die unelastische Streuung eines Gammaquants an einem ruhenden Elektron. Dabei gibt das Gammaquant einen Teil seiner Energie ab 
 und ändert seine Ausbreitungsrichtung. Mithilfe des Energie- und Impulserhaltungssatzes lässt sich die Energie des gestoßenen Elektrons zu 
 
 \begin{equation}
@@ -49,7 +49,14 @@ maximale Energieübertrag somit
     \label{eqn:Kante}
 \end{equation}
 
-Demnach gilt für alle $\theta$ $E_l < E_\gamma$. Der Wirkungsquerschnitt ergibt sich zu 
+Demnach gilt für alle $\theta$ $E_l < E_\gamma$. Der Wirkungsquerschnitt ergibt sich nach Klein und Nishina zu 
+
+\begin{equation*}
+    \sigma_{Co} = \frac{3}{4}\sigma_{Th}\left(\frac{1+\epsilon}{\epsilon^2}\left[\frac{2+2\epsilon}{1+2\epsilon}-\frac{1}{\epsilon}\ln{\left(1+2\epsilon\right)}\right]+\frac{1}{2\epsilon}\ln{\left(1+2\epsilon\right)}-\frac{1+3\epsilon}{\left(1+2\epsilon\right)^2}\right).
+\end{equation*}
+
+Hierbei bedeutet $\sigma_{Co}$ den über alle Streuwinkel integrierte Wirkungsquerschnitt und $\epsilon$ die normierte Energie. 
+Für $\epsilon \ll 1$ gilt damit
 
 \begin{equation*}
     \sigma_{Co} = \frac{3}{4}\sigma_{Th}\left(1-2\epsilon+\frac{26}{5}\epsilon^2+\ddots\right)
@@ -62,44 +69,51 @@ mit
 \end{equation*}
 
 Dabei ist $r_e$ der klassische Elektronenradius. Für $\epsilon\rightarrow 0$ gilt $\sigma_{Co} \approx \sigma_{Th}$.
+Es ergibt sich für den differentiellen Wirkungsquerschnitt:
+
+\begin{equation*}
+    \frac{\symup{d}\sigma}{\symup{d}E} = \frac{3}{8}\sigma_{Th}\cdot\frac{1}{m_0 c^2 \epsilon^2}\left(2+\left(\frac{E}{h\nu - E}\right)^2\left[\frac{1}{\epsilon^2}+\frac{h\nu-E}{h\nu}-\frac{2}{\epsilon}\left(\frac{h\nu-E}{h\nu}\right)\right]\right)\,.
+\end{equation*}
+
+Dabei ist $E$ die Energie des gestoßenen Elektrons und $h\nu$ die Energie des einfallenden Gammaquants.
 
 \subsubsection{Paarbildung}
 
 Die Paarbildung kann stattfinden, wenn $E_\gamma>2m_0c^2$ gilt, wenn ein Atom der Stoßpartner ist oder wenn $E_\gamma > 4m_0c^2$, falls 
-ein Elektron der Stoßpartner ist. Dabei wandelt sich das Photon unter Anwesenheit des Stoßpartners in ein Elektron und Positron um, 
+ein Elektron der Stoßpartner ist. Dabei wandelt sich das Gammaquant unter Anwesenheit des Stoßpartners in ein Elektron und Positron um, 
 auf die sich aufgrung der Impulserhaltung die übrige Energie gleichmäßig in Form kinetischer Energie verteilt. Der Wirkungsquerschnitt
 der Paarbildung lässt sich durch 
 
 \begin{align*}
-    \sigma_{\symup{Pa}} &= \alpha r_e^2 z^2\left(\frac{28}{9}\ln{\left(2\epsilon\right)}-\frac{218}{27}\right)\textrm{Verschwindene Abschirmung}\\
-    \sigma_{\symup{Pa}} &= \alpha r_e^2 z^2\left(\frac{28}{9}\ln{\left(\frac{183}{z^{3/2}}\right)}-\frac{2}{27}\right) \textrm{Vollständige Abschirmung}
+    \sigma_{\symup{Pa}} &= \alpha r_e^2 Z^2\left(\frac{28}{9}\ln{\left(2\epsilon\right)}-\frac{218}{27}\right)\textrm{verschwindene Abschirmung}\\
+    \sigma_{\symup{Pa}} &= \alpha r_e^2 Z^2\left(\frac{28}{9}\ln{\left(\frac{183}{Z^{3/2}}\right)}-\frac{2}{27}\right) \textrm{Vollständige Abschirmung}
 \end{align*}
 
-für die beiden Extremfälle verschwindender (bei $10<E_\gamma<\SI{25}{\mega\eV}$) oder vollständiger Abschirmung (bei $\SI{500}{\mega\eV}<E_\gamma$) beschreiben.
+für die beiden Extremfälle verschwindender (bei $\SI{10}{\mega\eV}<E_\gamma<\SI{25}{\mega\eV}$) oder vollständiger Abschirmung (bei $\SI{500}{\mega\eV}<E_\gamma$) beschreiben.
 
-\subsubsection{Extinktionskoeffizient}
+\subsubsection*{Extinktionskoeffizient}
 
 Aus den Wirkungsquerschnitten lassen sich die Extinktionskoeffizienten bestimmen. Abbildung \ref{fig:Ext} zeigt die Energieabhängigkeit des Extinktionskoeffizient
 für Germanium getrennt nach den verschiedenen Wechselwirkungsprozessen.
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.3]{content/Ext.png}
-    \caption{Energieabhängigkeit des Extinktionskoeffizient für Germanium getrennt nach den verschiedenen Wechselwirkungsprozessen [1].}
+    \includegraphics[scale=0.5]{content/Ext.png}
+    \caption{Energieabhängigkeit des Extinktionskoeffizienten für Germanium getrennt nach den verschiedenen Wechselwirkungsprozessen [1].}
     \label{fig:Ext}
 \end{figure}
 
-\subsection{Aufbau und Wirkungsweise eines Germanium Detektors}
+\subsection{Aufbau und Wirkungsweise eines Germaniumdetektors}
 
-Der Germanium Detektor ist ein Halbleiterdetektor. Demnach besteht dieser im Wesentlichen aus einer Halbleiterdiode. Im Detekorkristall 
-existieren zwei aneinandergrenzende Bereiche die p- und n-dotiert sind. Durch Rekombination der Ladungsträger entsteht eine ladungsträgerarme 
-Zone. Die übrig gebliebenen Akzeptoren bzw. Donatoren bilden ein Elektrisches Feld aus, das die Diffusion der beweglichen Ladungsträger unterbindet. 
-Die Breite diese ladungsträgerarmen Zone beträgt nur einige Millimeter, lässt sich aber durch das Anlegen einer äußeren Spannung an die dotierten 
+Der Germaniumdetektor ist ein Halbleiterdetektor. Demnach besteht dieser im Wesentlichen aus einer Halbleiterdiode. Im Detekorkristall 
+existieren zwei aneinandergrenzende Bereiche, die p- und n-dotiert sind. Durch Rekombination der freien Ladungsträger entsteht eine ladungsträgerarme 
+Zone. Die übrig gebliebenen Akzeptoren bzw. Donatoren bilden ein elektrisches Feld aus, das die Diffusion der beweglichen Ladungsträger unterbindet. 
+Die Breite diese ladungsträgerarmen Zone beträgt nur einige Mikrometer, lässt sich aber durch das Anlegen einer äußeren Spannung an die dotierten 
 Bereiche vergrößern. \\
-Wenn ein Photon in die ladungsträgerarme Zone eintritt, kann es durch die beschriebenen Prozesse ein energiereiches Elektron freisetzen. Dieses Elektron
-kann dann wiederrum solange mit Elektronen aus dem Festkörper stoßen, bis seine kinetische Energie verbraucht ist. Die gestoßenen Elektronen können 
+Wenn ein Gammaquant in die ladungsträgerarme Zone eintritt, kann es durch die beschriebenen Prozesse ein energiereiches Elektron freisetzen. Dieses Elektron
+kann dann wiederum solange mit Elektronen aus dem Festkörper stoßen, bis seine kinetische Energie verbraucht ist. Die gestoßenen Elektronen können 
 aus dem Valenzband gehoben werden, sodass sich entlang des Weges des ersten Elektrons ein "Schlauch" von Elektronen und Löchern bildet.\\
-Nach Gleichung \eqref{eqn:Strahl} ist die Absorptionswahrscheinlichkeit eines Photons exponentiell von der Dicke des Absorbers abhängig, 
+Nach Gleichung \eqref{eqn:Strahl} ist die Absorptionswahrscheinlichkeit eines Gammaquants exponentiell von der Dicke des Absorbers abhängig, 
 sodass eine große Breite der ladungsträgerarmen Zone wichtig ist. Die Breiten der ladungsträgerarmen Zonen sind durch 
 
 \begin{align}
@@ -107,32 +121,31 @@ sodass eine große Breite der ladungsträgerarmen Zone wichtig ist. Die Breiten 
     d_p^2 &= \frac{2\epsilon\epsilon_0}{e_0}\left(U_D+U\right)\frac{n_D}{n_A\left(n_A+n_D\right)}
 \end{align}
 
-gegeben, dabei reichen die Zonen jeweils in die p- bzw. n-dotierte Schicht. Demnach ist eine extrem unsymetrische Dotierung geeignet, um eine 
+gegeben, dabei reichen die Zonen jeweils in die p- bzw. n-dotierte Schicht. Hier ist $U$ die angelegte äußere Spannung, $U_D$ der Potentialsprung, $n_A$ die 
+Akzeptordichte und $n_D$ die Donatorendichte. Demnach ist eine extrem unsymetrische Dotierung geeignet, um eine 
 breite ladungsträgerarme Zone zu erreichen. Dabei sind $d_n$ bzw. $d_p$ proportional zu $\sqrt{U}$, sodass eine Erhöhung der Spannung die Breite 
 ebenfalls erhöht. Allerdings erzeugt die Spannung durch Beschleunigung von Ladungsträgern einen Strom, der die Eigenschaften des Detekotrs 
 verschlechtert. Um diesen Strom niedrig zu halten, kann die Temperatur des Detektors auch niedrig gehalten werden. Üblicherweise wählt man 
-für Germanium Detektoren die Siedetemperatur von flüssigen Stickstoff ($T=\SI{77}{\kelvin}$), sodass eine Spannung von $\SI{5}{\kilo\volt}$
+für Germaniumdetektoren die Siedetemperatur von flüssigem Stickstoff ($T=\SI{77}{\kelvin}$), sodass eine Spannung von $\SI{5}{\kilo\volt}$
 gewählt werden kann. Unter diesen Bedingungen werden Breiten von $\SI{3}{\centi\meter}$ erreicht. Somit lassen sich Energien von einigen $\si{\mega\eV}$
 messen.  
   
-\subsection{Durch Germanium Detektor erzeugtes Spektrum eines monochromatischen Photonenstrahlers}
+\subsection{Durch Germaniumdetektor erzeugtes Spektrum eines monochromatischen Gammastrahlers}
 
-Wenn ein Germanium Detektor ein Spektrum misst, das durch einen monochromatischen Photonenstrahler erzeugt wurde, so nimmt dieses in etwa die Gestalt von 
+Wenn ein Germaniumdetektor ein Spektrum misst, das durch einen monochromatischen Gammastrahler erzeugt wurde, so nimmt dieses in etwa die Gestalt von 
 Abbildung \ref{fig:spektrum} an. 
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.3]{content/spektrum.png}
-    \caption{Spektrum eines monochromatischen Photonenstrahlers der Energie $E_\gamma$ aufgenommen mit einem Germanium Detektor [1].}
+    \caption{Spektrum eines monochromatischen Gammastrahlers der Energie $E_\gamma$ aufgenommen mit einem Germaniumdetektor [1].}
     \label{fig:spektrum}
 \end{figure}
 
 Die Komponenten dieses Spektrums sind der Photopeak, das Compton-Kontinuum mit der Compton-Kante und dem Rückstreupeak. Der Photopeak entsteht, 
-wenn die gesamte Photonenenergie im Detektor deponiert wird. Dieser kann demnach nur beim Photoeffekt entstehen. Somit ist der Photopeak die 
+wenn die gesamte Gammaquantenenergie im Detektor deponiert wird. Dieser kann demnach nur beim Photoeffekt entstehen. Somit ist der Photopeak die 
 Größe von Interesse, deren Halbwertsbreite ein Maß für die Energieauflösung des Detektors ist. Das Compton-Kontinuum ist bei der Spektroskopie
 eher störend. Auch oberhalb der Compton-Kante kann aufgrund von mehrfahr gestreuten Quanten eine Intensität beobachtet werden. Die Lage der 
 Compton-Kante ist durch Gleichung \eqref{eqn:Kante} gegeben. Der Rückstreupeak entsteht durch Quanten, die den Detektor nicht direkt, sondern
 durch Compton-Streuung in der Detektorumgebung erreichen. Auf Grund der hohen Energieschwelle der Paarbildung, spielt diese hier kaum eine 
 Rolle. 
-
-\cite{sample}
