@@ -11,7 +11,7 @@ I = np.abs(I)
 
 Tx = T[12:32]
 Ix = I[12:32]
-print(T[12], T[32])
+#print(T[12], T[32])
 
 def f(x, a, b):
     return np.exp(a/x) * b
@@ -22,11 +22,22 @@ err = np.sqrt(np.diag(cov))
 # Parameter
 a = ufloat(params[0], err[0])
 b = ufloat(params[1], err[1])
-print(a, b)
+#print(a, b)
 
 kB = 8.617333262e-5
 W = -a * kB
-print(kB, W)
+#print(kB, W)
+
+Tmax = [T[33], T[34]]
+Tmax = ufloat(np.mean(Tmax), np.std(Tmax))
+print(Tmax)
+
+diff = np.zeros(T.size - 1)
+for i in range(T.size - 1):
+    diff[i] = abs(T[i+1] - T[i])
+H = ufloat(np.mean(diff), np.std(diff))
+tau = H * a / (60 * Tmax)
+print(tau)
 
 
 z = np.linspace(T[12], T[32], 500)
