@@ -26,11 +26,11 @@ b = ufloat(params[1], err[1])
 
 kB = 8.617333262e-5
 W = -a * kB
-#print(kB, W)
+#print(W)
 
 Tmax = [T[27], T[28]]
 Tmax = ufloat(np.mean(Tmax), np.std(Tmax))
-print(Tmax)
+#print(Tmax)
 
 diff = np.zeros(T.size - 1)
 for i in range(T.size - 1):
@@ -38,7 +38,8 @@ for i in range(T.size - 1):
     
 H = ufloat(np.mean(diff), np.std(diff))
 tau = H * a / (60 * Tmax)
-print(tau)
+tau0 = tau * unp.exp(-W/(kB * Tmax))
+print(tau, tau0)
 
 
 z = np.linspace(T[9], T[30], 500)
@@ -49,8 +50,8 @@ plt.plot(z, f(z, *params), 'b-', label='Exponentielle Approximation')
 plt.ylim(1e-2, 10)
 plt.yscale('log')
 plt.grid(linestyle='dotted', which="both")
-plt.xlabel(r'$T/K$')
-plt.ylabel(r'ln($I$)')
+plt.xlabel(r'$T$/K')
+plt.ylabel(r'ln($I \: /$ pA)')
 plt.legend(loc='best')
 
 plt.tight_layout()
