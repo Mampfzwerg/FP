@@ -41,8 +41,8 @@ mittels der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothe
 Die Fitparameter $a$ in den Exponenten ergeben sich also zu
 
 \begin{align*}
-  a_1 &= (\num{-7.04 +- 0.16})\cdot 10^3 \\
-  a_2 &= (\num{-6.52 +- 0.15})\cdot 10^3  \; .
+  a_1 &= (\num{-7.04 +- 0.16})\cdot 10^3 \si{\kelvin} \\
+  a_2 &= (\num{-6.52 +- 0.15})\cdot 10^3 \si{\kelvin} \; .
 \end{align*}
 
 Durch den Vergleich mit Gleichung \eqref{eqn:exp} ergeben sich die Aktivierungsenergien
@@ -86,38 +86,37 @@ Zur Approximation dient erneut die Funktion \textit{scipy.optimize.curve\_fit} a
 Die Parameter ergeben sich zu:
 
 \begin{align*}
-  c_1 &= (\num{1.63 +- 0.35})\cdot 10^-6 \\
-  d_1 &= \num{0.0462 +- 0.0008} \\
-  c_2 &= (\num{6.0 +- 0.8})\cdot 10^-6 \\
-  d_2 &= \num{0.0411 +- 0.0005} \; .
+  c_1 &= (\num{1.63 +- 0.35})\cdot 10^-6 \si{\pico\ampere} \\
+  d_1 &= \num{0.0462 +- 0.0008} \si{\per\kelvin}\\
+  c_2 &= (\num{6.0 +- 0.8})\cdot 10^-6 \si{\pico\ampere}\\
+  d_2 &= \num{0.0411 +- 0.0005} \si{\per\kelvin}\; .
 \end{align*}
 
 Nach Approximationsvorschrift \eqref{eqn:fit} und Gleichung \eqref{eqn:int} ergeben sich die
 Fitparameter 
 
 \begin{align*}
-  a_1 &\approx \num{-18.134} \cdot 10^3 \\
-  a_2 &\approx \num{-18.763} \cdot 10^3  \; ,
+  a_{1,\text{int}} &\approx \num{-18.134} \cdot 10^3 \si{\kelvin} \\
+  a_{2,\text{int}} &\approx \num{-18.763} \cdot 10^3 \si{\kelvin}  \; ,
 \end{align*}
 
 die Aktivierungsenergien
 
 \begin{align*}
-  W_1 &= -a_1 \cdot k_\text{B} \approx \SI{1.563}{\eV} \\
-  W_2 &= -a_2 \cdot k_\text{B} \approx \SI{1.617}{\eV}
+  W_{1,\text{int}} &= -a_1 \cdot k_\text{B} \approx \SI{1.563}{\eV} \\
+  W_{2,\text{int}} &= -a_2 \cdot k_\text{B} \approx \SI{1.617}{\eV}
 \end{align*}
 
 und materialspezifischen Relaxationszeiten durch Umstellung der Gleichung \eqref{eqn:relax} zu
 
 \begin{align*}
-  \tau_{0,1} &= (\num{6.64} \cdot 10^{-32} \si{\second}\\
-  \tau_{0,2} &= (\num{7.55} \cdot 10^{-32} \si{\second} \; .
+  \tau_{0,1} &= \num{6.64} \cdot 10^{-32} \si{\second}\\
+  \tau_{0,2} &= \num{7.55} \cdot 10^{-32} \si{\second} \; .
 \end{align*}
 
 Zur Integration dient das Paket \textit{scipy.integrate} aus der Python-Bibliothek SkiPy.
 
-
-
+\subsection{Temperaturabhängigkeit der Relaxationszeiten }
 
 
 
@@ -154,7 +153,7 @@ Zur Integration dient das Paket \textit{scipy.integrate} aus der Python-Biblioth
 \begin{table}
   \centering
   \caption{Messwerte der Temperatur $T$ und des Depolarisationsstromes $I(T)$ in Abhängigkeit von der Zeit $t$ für eine
-  Heizrate von $H_1= \SI{999}{\kelvin\per\minute}$}
+  Heizrate von $H_1 = \SI{1.60 +- 0.28}{\kelvin\per\minute}$}
   \label{tab:mess1}
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c c c c}
@@ -208,7 +207,7 @@ Zur Integration dient das Paket \textit{scipy.integrate} aus der Python-Biblioth
   \begin{table}
     \centering
     \caption{Messwerte der Temperatur $T$ und des Depolarisationsstromes $I(T)$ in Abhängigkeit von der Zeit $t$ für eine
-    Heizrate von $H_2= \SI{999}{\kelvin\per\minute}$}
+    Heizrate von $H_2 = \SI{1.65 +- 0.25}{\kelvin\per\minute}$}
     \label{tab:mess2}
     \sisetup{table-format=2.1}
     \begin{tabular}{c c c c c c}

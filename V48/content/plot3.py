@@ -51,7 +51,7 @@ A = -integrate.simps(Ix,Tx) / (Ix * unp.nominal_values(H))
 def g(T, e, f):
     return e * np.exp(f/T)
 
-par, cov2 = curve_fit(g, Tx[17:21], A[17:21])#, p0=[1e2, 1e2])
+par, cov2 = curve_fit(g, Tx, A)#, p0=[1e2, 1e2])
 err2 = np.sqrt(np.diag(cov2))
 
 e = ufloat(par[0], err2[0])
@@ -77,15 +77,15 @@ def f(x, c, d):
 z = np.linspace(T[0], T[45], 500)
 plt.plot(Tx, Ix, 'x', color='#1891fc', label=' Bereinigte Messwerte')
 plt.fill_between(T[16:43], I[16:43], f(T[16:43], 1.63e-6, 0.0462), color="b", alpha=0.3)
-plt.plot(Tx[17:21], np.abs(A[17:21]), 'rx', label='Fitwerte')
-plt.plot(z, g(z, *par), 'r-', label='Fit')
+#plt.plot(Tx[17:21], np.abs(A[17:21]), 'rx', label='Fitwerte')
+#plt.plot(z, g(z, *par), 'r-', label='Fit')
 
 plt.grid(linestyle='dotted', which="both")
 plt.xlabel(r'$T$/K')
 plt.ylabel(r'$I$/pA')
 plt.legend(loc='best')
-#plt.ylim(0, 1.5)
-plt.ylim(0,50)
+plt.ylim(0, 1.5)
+#plt.ylim(0,50)
 
 plt.tight_layout()
 plt.savefig('plot3.pdf')
