@@ -1,2 +1,52 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+Relative Fehler der Mesergebnisse werden im Folgenden gemäß der Formel
+
+\begin{equation}
+    \Delta x = \left| \frac{x_\text{mess} - x_\text{theo}}{x_\text{theo}}\right|
+\end{equation}
+
+bestimmt. 
+
+Von dem Theoriewert der Aktivierungsenergie $W_\text{theo} = \SI{0.66 +- 0.01}{\eV}$ 
+weichen die Ergebnisse der Approximationsmethode um
+
+\begin{align*}
+    \Delta W_1 &= \SI{8.18}{\percent} \\
+    \Delta W_2 &= \SI{14.85}{\percent}
+\end{align*}
+
+und die der Integrationsmethode um
+
+\begin{align*}
+    \Delta W_1 &= \SI{136.82}{\percent} \\
+    \Delta W_2 &= \SI{145.00}{\percent} 
+\end{align*}
+
+ab.
+
+Es ist zu beobachten, dass die Ergebnisse der Integrationsmethode sehr viel stärker vom Theoriewert abweichen, 
+als die der Näherungsmethode. Mögliche Fehlerquellen sind die numerische Natur der Integration, sowie Abweichungen der
+Heizraten der einzelnen Messschritte von ihrem Mittelwert. Zudem ist der Fit der Daten komplexer als bei der
+Näherungsmethode. Aufgrund des sehr unsicher bestimmten Fitparameters $a$, konnten dort keine aussagekräftigen Fehlerangaben
+gemacht werden. \\
+
+Dies spiegelt sich auch in den Relaxationszeiten wieder, die mit den Werten der Aktivierungsenergie berechnet wurden.
+Die nach der Integrationsmethode bestimmten Werte
+
+\begin{align*}
+    \tau_{0,1} &\approx \num{6.64} \cdot 10^{-32} \si{\second}\\
+    \tau_{0,2} &\approx \num{7.55} \cdot 10^{-32} \si{\second} \; .
+\end{align*}
+
+weichen um achtzehn Größenornungen vom Theoriewert
+$\tau_{0,\text{theo}} = \SI{4 +- 2}{\second}$ nach unten ab. Zum Teil kann dafür die hohe Abhängigkeit der Relaxationszeitberechnung
+von den gemessenen Maximaltemperaturen $T_\text{max}$ Ursache sein.
+
+Die nach der Näherungsmethode bestimmten Relaxationszeiten weichen nur um eine Größenordung ab.\\
+
+Weiterhin ist zu beachten, dass in den gemessenen Spektren zwei Peaks vorkommen. Die höheren sind auf Relaxationsprozesse
+höherer Ordnung durch Wechselwirkung nicht direkter Nachbarn der Ionen im Gitter zurückzuführen. 
+
+

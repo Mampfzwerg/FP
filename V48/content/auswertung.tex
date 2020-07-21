@@ -64,8 +64,8 @@ berechnen.
 Daraus ergeben sich die materialspezifischen Relaxationszeiten durch Umstellung der Gleichung \eqref{eqn:relax} zu
 
 \begin{align*}
-  \tau_{0,1} &= (\num{-0.46 +- 0.30}) \cdot 10^{-12} \si{\second}\\
-  \tau_{0,2} &= (\num{-8.00 +- 5.00}) \cdot 10^{-12} \si{\second} \; .
+  \tau_{0,1} &= (\num{0.46 +- 0.30}) \cdot 10^{-12} \si{\second}\\
+  \tau_{0,2} &= (\num{8.00 +- 5.00}) \cdot 10^{-12} \si{\second} \; .
 \end{align*}
 
 \subsection{Bestimmung der Aktivierungsenergie $W$ nach der Integrationsmethode}
@@ -110,26 +110,38 @@ die Aktivierungsenergien
 und materialspezifischen Relaxationszeiten durch Umstellung der Gleichung \eqref{eqn:relax} zu
 
 \begin{align*}
-  \tau_{0,1} &= \num{6.64} \cdot 10^{-32} \si{\second}\\
-  \tau_{0,2} &= \num{7.55} \cdot 10^{-32} \si{\second} \; .
+  \tau_{0,1} &\approx \num{6.64} \cdot 10^{-32} \si{\second}\\
+  \tau_{0,2} &\approx \num{7.55} \cdot 10^{-32} \si{\second} \; .
 \end{align*}
 
 Zur Integration dient das Paket \textit{scipy.integrate} aus der Python-Bibliothek SkiPy.
 
-\subsection{Temperaturabhängigkeit der Relaxationszeiten }
+\subsection{Temperaturabhängigkeit der Relaxationszeiten}
+
+Zum Vergleich der für die Heizraten $H_1$ und $H_2$ nach den beiden Methoden und Gleichung \eqref{eqn:rel} berechneten 
+Relaxationszeiten $\tau(T)$ sind diese in Abbildung \ref{fig:plot5} abgebildet.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.75]{content/plot5.pdf}
+  \caption{Die nach den Näherungs- und Integrationsmethode bestimmten Relaxationszeiten für die Heizraten $H_1$ und $H_2$}
+  \label{fig:plot5}
+\end{figure}
+
+
 
 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.75]{content/plot1.pdf}
+  \includegraphics[scale=0.7]{content/plot1.pdf}
   \caption{Exponentiell gefittete $I(T)$-Messwerte mit der Heizrate $H_1 = \SI{1.60 +- 0.28}{\kelvin\per\minute}$}
   \label{fig:plot1}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.75]{content/plot2.pdf}
+  \includegraphics[scale=0.7]{content/plot2.pdf}
   \caption{Exponentiell gefittete $I(T)$-Messwerte mit der Heizrate $H_2 = \SI{1.65 +- 0.25}{\kelvin\per\minute}$}
   \label{fig:plot2}
 \end{figure}
@@ -137,14 +149,14 @@ Zur Integration dient das Paket \textit{scipy.integrate} aus der Python-Biblioth
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.75]{content/plot3.pdf}
+  \includegraphics[scale=0.7]{content/plot3.pdf}
   \caption{Integrierte $I(T)$-Messwerte mit der Heizrate $H_1 = \SI{1.60 +- 0.28}{\kelvin\per\minute}$}
   \label{fig:plot3}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.75]{content/plot4.pdf}
+  \includegraphics[scale=0.7]{content/plot4.pdf}
   \caption{Integrierte $I(T)$-Messwerte mit der Heizrate $H_2 = \SI{1.65 +- 0.25}{\kelvin\per\minute}$}
   \label{fig:plot4}
 \end{figure}
