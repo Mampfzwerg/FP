@@ -10,4 +10,4 @@
 \contentsline {subsection}{\numberline {3.1}Bestimmung der maximalen magnetischen Flussdichte $|\vec {B}|_\text {max}$}{8}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Bestimmung der effektiven Masse von $\ce {GaAs}$}{10}{subsection.3.2}
 \contentsline {section}{\numberline {4}Diskussion}{13}{section.4}
-\contentsline {section}{\nonumberline Literatur}{14}{section*.14}
+\contentsline {section}{\nonumberline Literatur}{13}{section*.14}

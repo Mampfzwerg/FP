@@ -51,24 +51,24 @@ z = np.linspace(np.min(l1**2), np.max(l1**2), 500)
 plt.plot(l2**2, diff1, 'x', color='r', label=r'n-dotiertes GaAs mit $N = 2,8 \cdot 10^{18} \frac{1}{cm^3}$')
 plt.plot(l3**2, diff2, 'x', color='b', label=r'n-dotiertes GaAs mit $N = 1,2 \cdot 10^{18} \frac{1}{cm^3}$')
 
-def gerade(x, m, b):
-    return m*x+b
+def gerade(x, m):
+    return m*x + 0
 
-params1, cov1 = np.polyfit(l2**2, diff1, deg=1, cov=True)
+params1, cov1 = curve_fit(gerade, l2**2, diff1)
 errors1 = np.sqrt(np.diag(cov1))
 
 print('a1 = {:.3f} ± {:.4f}'.format(params1[0], errors1[0]))
-print('b1 = {:.3f} ± {:.4f}'.format(params1[1], errors1[1]))
+#print('b1 = {:.3f} ± {:.4f}'.format(params1[1], errors1[1]))
 
-plt.plot(z, gerade(z, *params1), 'r-', label='Fit $f(\lambda^2) = a_1 \lambda^2 + b_1$')
+plt.plot(z, gerade(z, params1[0]), 'r-', label='Fit $f(\lambda^2) = a_1 \lambda^2$')
 
-params2, cov2 = np.polyfit(l3**2, diff2, deg=1, cov=True)
+params2, cov2 = curve_fit(gerade, l3**2, diff2)
 errors2 = np.sqrt(np.diag(cov2))
 
 print('a2 = {:.3f} ± {:.4f}'.format(params2[0], errors2[0]))
-print('b2 = {:.3f} ± {:.4f}'.format(params2[1], errors2[1]))
+#print('b2 = {:.3f} ± {:.4f}'.format(params2[1], errors2[1]))
 
-plt.plot(z, gerade(z, *params2), 'b-', label='Fit $f(\lambda^2) = a_2 \lambda^2 + b_2$')
+plt.plot(z, gerade(z, params2[0]), 'b-', label='Fit $f(\lambda^2) = a_2 \lambda^2$')
 plt.grid(linestyle='dotted', which="both")
 plt.xlabel(r'$\lambda^2$/$\mu$m$^2$')
 plt.ylabel(r'$\frac{\Theta}{d}$/radm$^{-1}$')
