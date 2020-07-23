@@ -2130,13 +2130,15 @@
     <bcf:datasource type="file" datatype="bibtex">programme.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Molare</bcf:citekey>
+    <bcf:citekey order="1">Anleitung</bcf:citekey>
     <bcf:citekey order="2">Anleitung</bcf:citekey>
-    <bcf:citekey order="3">KompDichte</bcf:citekey>
-    <bcf:citekey order="4">KompDichte</bcf:citekey>
-    <bcf:citekey order="5">Anleitung</bcf:citekey>
-    <bcf:citekey order="6">Anleitung</bcf:citekey>
+    <bcf:citekey order="3">Molare</bcf:citekey>
+    <bcf:citekey order="4">Anleitung</bcf:citekey>
+    <bcf:citekey order="5">KompDichte</bcf:citekey>
+    <bcf:citekey order="6">Molare</bcf:citekey>
     <bcf:citekey order="7">Anleitung</bcf:citekey>
+    <bcf:citekey order="8">Anleitung</bcf:citekey>
+    <bcf:citekey order="9">Anleitung</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

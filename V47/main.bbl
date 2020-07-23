@@ -19,6 +19,33 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{Molare}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=51a298c7715000df93def0682570b62e}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={Orson\bibnamedelima L.},
+           giveni={O\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{51a298c7715000df93def0682570b62e}
+      \strng{fullhash}{51a298c7715000df93def0682570b62e}
+      \strng{bibnamehash}{51a298c7715000df93def0682570b62e}
+      \strng{authorbibnamehash}{51a298c7715000df93def0682570b62e}
+      \strng{authornamehash}{51a298c7715000df93def0682570b62e}
+      \strng{authorfullhash}{51a298c7715000df93def0682570b62e}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{29. Juni 2019}
+      \field{title}{Thermodynamic Functions and Properties of MgO at High Compression and High Temperature}
+      \verb{urlraw}
+      \verb https://aip.scitation.org/doi/pdf/10.1063/1.555873
+      \endverb
+      \verb{url}
+      \verb https://aip.scitation.org/doi/pdf/10.1063/1.555873
+      \endverb
+    \endentry
     \entry{Anleitung}{manual}{}
       \name{author}{1}{}{%
         {{hash=2821a70f99517ac7757c95300d43e95c}{%
@@ -40,51 +67,26 @@
       \field{title}{Versuch 47 - Temperaturabhängigkeit der Molwärme von Festkörpern}
       \field{year}{2020}
     \endentry
-    \entry{Molare}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=4d62a21aba142830bc26f490205265d3}{%
-           family={Lenntech},
-           familyi={L\bibinitperiod}}}%
-      }
-      \strng{namehash}{4d62a21aba142830bc26f490205265d3}
-      \strng{fullhash}{4d62a21aba142830bc26f490205265d3}
-      \strng{bibnamehash}{4d62a21aba142830bc26f490205265d3}
-      \strng{authorbibnamehash}{4d62a21aba142830bc26f490205265d3}
-      \strng{authornamehash}{4d62a21aba142830bc26f490205265d3}
-      \strng{authorfullhash}{4d62a21aba142830bc26f490205265d3}
-      \field{sortinit}{L}
-      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Kupfer(CU)}
-      \field{year}{2020}
-      \verb{urlraw}
-      \verb https://www.lenntech.de/pse/elemente/cu.htm
-      \endverb
-      \verb{url}
-      \verb https://www.lenntech.de/pse/elemente/cu.htm
-      \endverb
-    \endentry
     \entry{KompDichte}{misc}{}
       \name{author}{1}{}{%
-        {{hash=7a8ceaa08f00d19c4128cc6bad4819f5}{%
-           family={Rausch},
-           familyi={R\bibinitperiod},
-           given={Rene},
-           giveni={R\bibinitperiod}}}%
+        {{hash=8b589b38e8244526bc44eda9a9c62f8d}{%
+           family={Poluektov},
+           familyi={P\bibinitperiod},
+           given={Yu.M.},
+           giveni={Y\bibinitperiod}}}%
       }
-      \strng{namehash}{7a8ceaa08f00d19c4128cc6bad4819f5}
-      \strng{fullhash}{7a8ceaa08f00d19c4128cc6bad4819f5}
-      \strng{bibnamehash}{7a8ceaa08f00d19c4128cc6bad4819f5}
-      \strng{authorbibnamehash}{7a8ceaa08f00d19c4128cc6bad4819f5}
-      \strng{authornamehash}{7a8ceaa08f00d19c4128cc6bad4819f5}
-      \strng{authorfullhash}{7a8ceaa08f00d19c4128cc6bad4819f5}
-      \field{sortinit}{R}
-      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \strng{namehash}{8b589b38e8244526bc44eda9a9c62f8d}
+      \strng{fullhash}{8b589b38e8244526bc44eda9a9c62f8d}
+      \strng{bibnamehash}{8b589b38e8244526bc44eda9a9c62f8d}
+      \strng{authorbibnamehash}{8b589b38e8244526bc44eda9a9c62f8d}
+      \strng{authornamehash}{8b589b38e8244526bc44eda9a9c62f8d}
+      \strng{authorfullhash}{8b589b38e8244526bc44eda9a9c62f8d}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{29, Kupfer(CU)}
-      \field{year}{2020}
+      \field{note}{13. April 2020}
+      \field{title}{The two-parameter Debye model}
       \verb{urlraw}
       \verb http://www.periodensystem-online.de/index.php?el=29&id=modify
       \endverb
