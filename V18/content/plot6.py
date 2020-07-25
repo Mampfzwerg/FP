@@ -14,33 +14,31 @@ b = np.array([ufloat(3.5, 0.0), ufloat(4.2, 0.2), ufloat(5.5, 0.1), ufloat(5.7, 
     ufloat(17.1, 2.0), ufloat(19.3, 0.8), ufloat(30.2, 2.3), ufloat(23.2, 1.7), ufloat(28.9, 1.1)])
 
 t = 4111
-A = ufloat(1510, 22)
+A = ufloat(1574, 23)
 Z = a * unp.sqrt(b * np.pi)
-Q = 4 * Z / (0.0538 * A * W * t)
+Q = 4 * Z / (0.0538 * A * (W/100)  * t)
 
-#print(Z)
-#print(unp.sqrt(Z))
+#print(Z, unp.sqrt(Z), Q)
 
-E = np.log(E)
-Q = np.log(unp.nominal_values(Q))
+#E = np.log(E)
+Q = unp.nominal_values(Q)
 #print(E)
 
-params, covariance_matrix = np.polyfit(E, Q, deg=1, cov=True)
+def exp(x, a, b):
+    return a*x**b
 
+params, covariance_matrix = optimize.curve_fit(exp, E, Q)
 errors = np.sqrt(np.diag(covariance_matrix))
 
 print('a = {:.3f} ± {:.4f}'.format(params[0], errors[0]))
 print('b = {:.3f} ± {:.4f}'.format(params[1], errors[1]))
 
-def gerade(x, m, b):
-    return m*x+b
+z = np.linspace(np.min(E), np.max(E))
 
-z = np.linspace(4, 8)
-
-plt.plot(E, Q, 'bx', label='Data')
-plt.plot(z, gerade(z, *params), 'r-', label='Linear Regression')
-plt.xlabel(r'$ln(E / 1keV)$')
-plt.ylabel(r'$ln(Q)$')
+plt.plot(E, Q, 'bx', label='152Eu')
+plt.plot(z, exp(z, *params), 'r-', label='Exponential Fit')
+plt.xlabel(r'$E \;/\; $keV')
+plt.ylabel(r'$Q$')
 plt.legend(loc='best')
 
 plt.tight_layout()

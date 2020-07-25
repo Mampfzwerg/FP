@@ -1,20 +1,22 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \select@language {german}
-\contentsline {section}{\numberline {1}Theorie}{3}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}Wechselwirkung von Gammaquanten mit Materie}{3}{subsection.1.1}% 
-\contentsline {subsubsection}{\numberline {1.1.1}Photo-Effekt}{3}{subsubsection.1.1.1}% 
-\contentsline {subsubsection}{\numberline {1.1.2}Compton-Effekt}{3}{subsubsection.1.1.2}% 
-\contentsline {subsubsection}{\numberline {1.1.3}Paarbildung}{4}{subsubsection.1.1.3}% 
-\contentsline {subsection}{\numberline {1.2}Aufbau und Wirkungsweise eines Germaniumdetektors}{6}{subsection.1.2}% 
-\contentsline {subsection}{\numberline {1.3}Durch Germaniumdetektor erzeugtes Spektrum eines monochromatischen Gammastrahlers}{6}{subsection.1.3}% 
-\contentsline {section}{\numberline {2}Aufbau und Durchführung}{7}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Elektronische Beschaltung eines Germaniumdetektors}{7}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}Messprogramm}{8}{subsection.2.2}% 
-\contentsline {section}{\numberline {3}Auswertung}{8}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Energiekalibrierung anhand des Spektrums von $\ce {^{152}}$Europium}{8}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Bestimmung der Effizienz bzw. Vollenergienachweiswahrscheinlichkeit anhand des Spektrums von $\ce {^{152}}$Europium}{10}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Untersuchung des monochromatischen Gammaspektrums von $\ce {^{137}}$Caesium}{13}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Aktivitätsbestimmung von $\ce {^{125}}$Stibnit oder $\ce {^{133}}$Barium}{17}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}Nuklididentifikation eines unbekannten kristallinen Strahlers}{19}{subsection.3.5}% 
-\contentsline {section}{\numberline {4}Literaturverzeichnis}{20}{section.4}% 
+\contentsline {section}{\numberline {1}Theorie}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Wechselwirkung von Gammaquanten mit Materie}{3}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Photo-Effekt}{3}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Compton-Effekt}{3}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Paarbildung}{4}{subsubsection.1.1.3}
+\contentsline {subsection}{\numberline {1.2}Aufbau und Wirkungsweise eines Germaniumdetektors}{6}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Durch Germaniumdetektor erzeugtes Spektrum eines monochromatischen Gammastrahlers}{6}{subsection.1.3}
+\contentsline {section}{\numberline {2}Aufbau und Durchführung}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Elektronische Beschaltung eines Germaniumdetektors}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Messprogramm}{8}{subsection.2.2}
+\contentsline {section}{\numberline {3}Auswertung}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Energiekalibrierung anhand des Spektrums von $\ce {^{152}}$Europium}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Bestimmung der Effizienz bzw. Vollenergienachweiswahrscheinlichkeit anhand des Spektrums von $\ce {^{152}}$Europium}{10}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Untersuchung des monochromatischen Gammaspektrums von $\ce {^{137}}$Caesium}{12}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Halb- und Zehntelwertsbreite}{13}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Comptonkante und Rückstreulinie}{14}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Aktivitätsbestimmung von $\ce {^{125}}$Antimon oder $\ce {^{133}}$Barium}{17}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Nuklididentifikation eines unbekannten kristallinen Strahlers}{19}{subsection.3.5}
+\contentsline {section}{\numberline {4}Literaturverzeichnis}{21}{section.4}

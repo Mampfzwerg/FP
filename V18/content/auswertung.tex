@@ -5,7 +5,7 @@
 
 \subsection{Energiekalibrierung anhand des Spektrums von $\ce{^{152}}$Europium}
 
-Zur Energiekalibrierung des Detektors wird das Spektrum eines $\ce{^{152}Eu}$-Strahlers aufgenommen, welches in Abbildung
+Zur Energiekalibrierung des Detektors wird das Spektrum eines $\ce{^{152}}$Europium-Strahlers aufgenommen, welches in Abbildung
 \ref{fig:plot1} zu sehen ist.
 
 
@@ -15,30 +15,30 @@ Kanalnummern $\mu_0$ in Beziehung gesetzt.
 Die Peaks werden als Gaußverteilungen der Form 
 
 \begin{equation}
-  f(x) = a \cdot \text{exp}\left( - \frac{(x-\mu_0)^2}{b}\right) + c
+  f(x) = a \cdot \text{exp}\left( - \frac{(x-\mu_0)^2}{2\sigma^2}\right) + c
   \label{eqn:gauss}
 \end{equation}
 
 genähert. Dazu wird die Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy verwendet.
 
-Die den Peakenergien $E$ zugeordneten Näherungsparameter sind in Tabelle \ref{tab:mess1} aufgelistet.
+Die den Peakenergien $E$ zugeordneten Fitparameter sind in Tabelle \ref{tab:mess1} aufgelistet.
 
-Mit den Wertepaaren der Peakenergien $E$ und der mittleren Kanalnummern $\mu$ wird eine lineare Regression der Form
+Mit den Wertepaaren der Peakenergien $E$ und der mittleren Kanalnummer $\mu_0$ wird eine lineare Regression der Form
 
 \begin{equation}
-  E(\mu) = m \cdot \mu_0 + d
+  E(\mu_0) = m \cdot \mu_0 + d
   \label{eqn:eich}
 \end{equation}
   
-durchgeführt, die in Abildung \ref{fig:plot5} dargestellt ist.
+durchgeführt, die in Abbildung \ref{fig:plot5} dargestellt ist.
 Die Regressionsparameter betragen
 
 \begin{align*}
-  m &= \num{0.403 +- 0.000} \\
-  d &= \num{-2.683 +- 0.051} \; .
+  m &= \num{0.403}\;\frac{\si{\kilo\eV}}{\text{channel}} \\
+  d &= \num{-2.68 +- 0.05}\;\text{channel} \; .
 \end{align*}
 
-Die statistischen Fehler der Regressionskonstanten sind mit $\SI{0.0}{\percent}$ und $\SI{1.9}{\percent}$ sehr gering.
+Die statistischen Fehler der Regressionsparameter sind mit $\SI{0}{\percent}$ und $\SI{1.9}{\percent}$ sehr gering.
 
 \begin{figure}[H]
   \centering
@@ -54,19 +54,19 @@ Die statistischen Fehler der Regressionskonstanten sind mit $\SI{0.0}{\percent}$
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c c c}
   \toprule
-  $ E \;/\; \si{\kilo\eV}$ & $\mu_0$ & $a$ & $b$ & $c$ \\
+  $ E \;/\; \si{\kilo\eV}$ & $\mu_0 \;/\; \text{channel}$ & $a \;/\; \text{channel}$ & $2\sigma^2 \;/\; \text{channel}^2$ & $c \;/\; \text{channel}$ \\
   \midrule
-        121,78 &  308,80 $\pm$ 0,01 & 3493,0 $\pm$ 15,0 &  3,5 $\pm$ 0,0 & 100,3 $\pm$ 1,3 \\
-        244,70 &  613,80 $\pm$ 0,03 &  535,0 $\pm$  9,0 &  4,2 $\pm$ 0,2 &  45,6 $\pm$ 1,1 \\
-        344,30 &  860,70 $\pm$ 0,01 & 1140,0 $\pm$  6,0 &  5,5 $\pm$ 0,1 &  24,4 $\pm$ 0,6 \\
-        411,12 & 1026,51 $\pm$ 0,09 &   74,7 $\pm$  3,5 &  5,7 $\pm$ 0,6 &  18,9 $\pm$ 0,8 \\
-        443,96 & 1107,93 $\pm$ 0,06 &   94,2 $\pm$  3,0 &  6,4 $\pm$ 0,5 &  16,7 $\pm$ 0,5 \\
-        778,90 & 1938,62 $\pm$ 0,05 &  143,3 $\pm$  2,4 & 14,3 $\pm$ 0,5 &  11,7 $\pm$ 0,3 \\
-        867,37 & 2158,39 $\pm$ 0,17 &   42,5 $\pm$  2,1 & 17,1 $\pm$ 2,0 &  10,7 $\pm$ 0,4 \\
-        964,08 & 2398,18 $\pm$ 0,06 &  120,3 $\pm$  2,2 & 19,3 $\pm$ 0,8 &   6,4 $\pm$ 0,5 \\
-       1085,90 & 2700,41 $\pm$ 0,14 &   67,5 $\pm$  2,2 & 30,2 $\pm$ 2,3 &   5,3 $\pm$ 0,5 \\
-       1112,10 & 2765,02 $\pm$ 0,11 &   88,5 $\pm$  2,6 & 23,2 $\pm$ 1,7 &   5,6 $\pm$ 0,9 \\
-       1408,00 & 3499,69 $\pm$ 0,07 &   90,7 $\pm$  1,4 & 28,9 $\pm$ 1,1 &   0,9 $\pm$ 0,3 \\
+        121,78 &  308,804 $\pm$ 0,006 & 3493,0 $\pm$ 15,0 &  3,53 $\pm$ 0,04 & 100,3 $\pm$ 1,3 \\
+        244,70 &  613,798 $\pm$ 0,027 &  535,0 $\pm$  9,0 &  4,15 $\pm$ 0,16 &  45,6 $\pm$ 1,1 \\
+        344,30 &  860,70  $\pm$ 0,01  & 1140,0 $\pm$  6,0 &  5,51 $\pm$ 0,07 &  24,4 $\pm$ 0,6 \\
+        411,12 & 1026,51  $\pm$ 0,09  &   74,7 $\pm$  3,5 &  5,7  $\pm$ 0,6  &  18,9 $\pm$ 0,8 \\
+        443,96 & 1107,93  $\pm$ 0,06  &   94,2 $\pm$  3,0 &  6,4  $\pm$ 0,5  &  16,7 $\pm$ 0,5 \\
+        778,90 & 1938,62  $\pm$ 0,05  &  143,3 $\pm$  2,4 & 14,3  $\pm$ 0,5  &  11,7 $\pm$ 0,4 \\
+        867,37 & 2158,39  $\pm$ 0,17  &   42,5 $\pm$  2,1 & 17,1  $\pm$ 2,0  &  10,7 $\pm$ 0,4 \\
+        964,08 & 2398,18  $\pm$ 0,06  &  120,3 $\pm$  2,2 & 19,3  $\pm$ 0,8  &   6,4 $\pm$ 0,5 \\
+       1085,90 & 2700,41  $\pm$ 0,14  &   67,5 $\pm$  2,2 & 30,2  $\pm$ 2,3  &   5,3 $\pm$ 0,5 \\
+       1112,10 & 2765,02  $\pm$ 0,11  &   88,5 $\pm$  2,6 & 23,2  $\pm$ 1,7  &   5,6 $\pm$ 0,9 \\
+       1408,00 & 3499,69  $\pm$ 0,07  &   90,7 $\pm$  1,4 & 28,9  $\pm$ 1,1  &   0,9 $\pm$ 0,4 \\
   \bottomrule
   \end{tabular}
   \end{table}
@@ -108,17 +108,17 @@ Die Aktivität am Messtag wird bestimmt als
 \end{equation}
 
 Mit einer Anfangsaktivität $A_0 = \SI{4130 +- 60}{\becquerel}$ am 01.10.2000 und der Halbwertszeit
-$t_{\sfrac{1}{2}} = \SI{4943 +- 5}{\day}$ ergibt sich nach einer Zeit von $t = \SI{7177}{\day}$
-eine Aktivität von $A_{25.05.2020} = \SI{1510 +- 22}{\becquerel}$.
-Der statistische Fehler von $A_{25.05.2020}$ ergibt sich nach 
+$t_{\sfrac{1}{2}} = \SI{4943 +- 5}{\day}$ ergibt sich nach einer Zeit von $t_\text{d} = \SI{6877}{\day}$
+am 31.07.2019 eine Aktivität von $A(t_\text{d}) = \SI{1574 +- 23}{\becquerel}$.
+Der statistische Fehler von $A(t_\text{d})$ ergibt sich nach 
 Gaußscher Fehlerfortpflanzung aus denen von $A_0$ und $t_{\sfrac{1}{2}}$.
 
 Zuletzt sind noch die Zählraten $Z$ der Peaks zu bestimmen. Dazu werden die gefitteten Gaußnäherungen integriert. 
-Der konstante Parameter $b$ wird dabei vernachlässigt, da er das Niveau des umgebenden Spektrums angibt und somit nicht zur 
+Der konstante Parameter $2\sigma^2$ wird dabei vernachlässigt, da er das Niveau des umgebenden Spektrums angibt und somit nicht zur 
 Zählrate $Z$ des Peaks beiträgt. Aus der Integration folgt dann
 
 \begin{equation}
-  Z = \int_{-\infty}^\infty \; a \cdot \text{exp}\left( - \frac{(x-\mu_0)^2}{b}\right) \; \text{d}x = a \sqrt{b\pi} \; .
+  Z = \int_{-\infty}^\infty \; a \cdot \text{exp}\left( - \frac{(x-\mu_0)^2}{2\sigma^2}\right) \; \text{d}x = a \sqrt{2\sigma^2\pi} \; .
   \label{eqn:rate}
 \end{equation}
 
@@ -128,28 +128,27 @@ In der erweiterten Tabelle \ref{tab:mess2} sind die errechneten Effizienzen $Q$,
 Emmisionswahrscheinlichkeiten $W$ [1] aufgeführt.
 
 Um eine Potenzfunktion mit Zusammenhang zwischen Effizienz und Energie zu bestimmen,
-werden die logarithmierte Effizienzen der Peaks gegen deren logarithmierten Energien aufgetragen und eine
-lineare Regression der Form
+wird ein Fit einer Potenzfunktion der Form
 
 \begin{equation}
-  \text{ln}(Q) = n \cdot \text{ln}(\frac{E}{\SI{1}{\kilo\eV}}) + e
+    Q(E) = n \cdot (\frac{E}{\SI{1}{\kilo\eV}})^e
 \end{equation}
 
 durchgeführt, die in Abbildung \ref{fig:plot6} dargestellt ist.
+Dazu wird die Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy genutzt.
 
-Es ergeben sich die Regressionsparameter
+Es ergeben sich die Fitparameter
 
 \begin{align*}
-  n &= \num{-0.934 +- 0.035} \\
-  e &= \num{-0.742 +- 0.221} \; 
+  n &= \num{29.37 +- 4.82} \\
+  e &= \num{-0.86 +- 0.03} \; 
 \end{align*}
 
 und somit der Zusammenhang
 
 \begin{equation}
   \label{eqn:eff}
-  Q(E) = \text{e}^e \cdot \left(\frac{E}{\SI{1}{\kilo\eV}}\right)^n 
-  \approx \num{0.476} \cdot \left(\frac{E}{\SI{1}{\kilo\eV}}\right)^{\num{-0.934}} \; .
+  Q(E) \approx \num{29.37} \cdot (\frac{E}{\SI{1}{\kilo\eV}})^{\num{-0.86}} \; .
 \end{equation}
 
 \begin{table}
@@ -160,27 +159,29 @@ und somit der Zusammenhang
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c c c c}
   \toprule
-  $E \;/\; \si{\kilo\eV}$ & $W \;\text{in}\; \si{\percent}$ & $a$ & $b$ & $Z$ & $Q$ \\
+  $E \;/\; \si{\kilo\eV}$ & $W \;\text{in}\; \si{\percent}$ & $a \;/\; \text{channel}$ & $2\sigma^2 \;/\; \text{channel}^2$ 
+  & $Z$ & $Q$ \\
   \midrule
-        121,78 & 28,6 & 3493,0 $\pm$ 15,0 &  3,5 $\pm$ 0,0 & 11582,64 $\pm$ 107,62 & 0.0048506 $\pm$  7,37 $\cdot 10^{-5}$ \\
-        244,70 &  7,6 &  535,0 $\pm$  9,0 &  4,2 $\pm$ 0,2 &  1943,36 $\pm$  44,08 & 0.0030626 $\pm$  9,98 $\cdot 10^{-5}$ \\
-        344,30 & 26,5 & 1140,0 $\pm$  6,0 &  5,5 $\pm$ 0,1 &  4738,72 $\pm$  68,84 & 0.0021417 $\pm$  3,85 $\cdot 10^{-5}$ \\
-        411,12 &  2,2 &   74,7 $\pm$  3,5 &  5,7 $\pm$ 0,6 &   316,11 $\pm$  17,78 & 0.0017209 $\pm$ 12,38 $\cdot 10^{-5}$ \\
-        443,96 &  3,1 &   94,2 $\pm$  3,0 &  6,4 $\pm$ 0,5 &   422,39 $\pm$  20,55 & 0.0016320 $\pm$  8,56 $\cdot 10^{-5}$ \\
-        778,90 & 12,9 &  143,3 $\pm$  2,4 & 14,3 $\pm$ 0,5 &   960,48 $\pm$  30,99 & 0.0008918 $\pm$  2,52 $\cdot 10^{-5}$ \\
-        867,37 &  4,2 &   42,5 $\pm$  2,1 & 17,1 $\pm$ 2,0 &   311,50 $\pm$  17,65 & 0.0008883 $\pm$  6,92 $\cdot 10^{-5}$ \\
-        964,08 & 14,6 &  120,3 $\pm$  2,2 & 19,3 $\pm$ 0,8 &   936,74 $\pm$  30,61 & 0.0007685 $\pm$  2,40 $\cdot 10^{-5}$ \\
-       1085,90 & 10,2 &   67,5 $\pm$  2,2 & 30,2 $\pm$ 2,3 &   657,48 $\pm$  25,64 & 0.0007720 $\pm$  4,03 $\cdot 10^{-5}$ \\
-       1112,10 & 13,6 &   88,5 $\pm$  2,6 & 23,2 $\pm$ 1,7 &   755,55 $\pm$  27,49 & 0.0006654 $\pm$  3,27 $\cdot 10^{-5}$ \\
-       1408,00 & 21,0 &   90,7 $\pm$  1,4 & 28,9 $\pm$ 1,1 &   864,23 $\pm$  29,40 & 0.0004929 $\pm$  1,41 $\cdot 10^{-5}$ \\
+        121,78 & 28,6 & 3493,0 $\pm$ 15,0 &  3,53 $\pm$ 0,04 & 11583 $\pm$ 108 & 0,465  $\pm$ 0,007 \\
+        244,70 &  7,6 &  535,0 $\pm$  9,0 &  4,15 $\pm$ 0,16 &  1943 $\pm$  44 & 0,29   $\pm$ 0,01  \\
+        344,30 & 26,5 & 1140,0 $\pm$  6,0 &  5,51 $\pm$ 0,07 &  4739 $\pm$  69 & 0,205  $\pm$ 0,004 \\
+        411,12 &  2,2 &   74,7 $\pm$  3,5 &  5,7  $\pm$ 0,6  &   316 $\pm$  18 & 0,165  $\pm$ 0,012 \\
+        443,96 &  3,1 &   94,2 $\pm$  3,0 &  6,4  $\pm$ 0,5  &   422 $\pm$  21 & 0,157  $\pm$ 0,009 \\
+        778,90 & 12,9 &  143,3 $\pm$  2,4 & 14,3  $\pm$ 0,5  &   960 $\pm$  31 & 0,0856 $\pm$ 0,0025\\
+        867,37 &  4,2 &   42,5 $\pm$  2,1 & 17,1  $\pm$ 2,0  &   312 $\pm$  18 & 0,085  $\pm$ 0,007 \\
+        964,08 & 14,6 &  120,3 $\pm$  2,2 & 19,3  $\pm$ 0,8  &   937 $\pm$  31 & 0,0737 $\pm$ 0,0024\\
+       1085,90 & 10,2 &   67,5 $\pm$  2,2 & 30,2  $\pm$ 2,3  &   657 $\pm$  26 & 0,074  $\pm$ 0,004 \\
+       1112,10 & 13,6 &   88,5 $\pm$  2,6 & 23,2  $\pm$ 1,7  &   756 $\pm$  28 & 0,064  $\pm$ 0,003 \\
+       1408,00 & 21,0 &   90,7 $\pm$  1,4 & 28,9  $\pm$ 1,1  &   864 $\pm$  30 & 0,0473 $\pm$ 0,0014\\
   \bottomrule
   \end{tabular}
   \end{table}
 
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{content/plot6.pdf}
-  \caption{Lineare Regression der logarithmierten Effizienzen abhängig von den logarithmierten Energien}
+  \caption{Gefittete Potenzfunktion der Güte in Abhängigkeit der Energie}
   \label{fig:plot6}
 \end{figure}
 
@@ -188,7 +189,7 @@ und somit der Zusammenhang
 
 \subsection{Untersuchung des monochromatischen Gammaspektrums von $\ce{^{137}}$Caesium}
 
-Das gemessene Spektrum von $\ce{^{137}Cs}$ ist in den Abbildungen \ref{fig:plot2} und \ref{fig:plot21} dargestellt.
+Das gemessene Spektrum von $\ce{^{137}}$Caesium ist in den Abbildungen \ref{fig:plot2} und \ref{fig:plot21} dargestellt.
 Um die Lage des Photopeaks bzw. der Vollenergielinie zu bestimmen, wird dieser durch eine Gaußglocke genähert, die in Abbildung
 \ref{fig:plot22} dargestellt ist.
 
@@ -196,12 +197,12 @@ Die Näherung erfolgt mittels der Funktion \textit{scipy.optimize.curve\_fit} au
 das Maximum der Gaußglocke ergibt sich die Kanalnummer
 
 \begin{equation*}
-  \mu_{0,\text{Photo}} = \num{1647.72} \approx \num{1648} \; ,
+  \mu_{0,\text{Photo}} = \num{1648 +- 1} \text{channel}\; ,
 \end{equation*}
 
 die als Zentrum des Photopeaks angenommen wird.
 
-Mit der Energieeichung \eqref{eqn:eich} lässt sich die Energie des Photopeaks als
+Mit der Energie-Eichung \eqref{eqn:eich} lässt sich die Energie des Photopeaks als
 
 \begin{equation*}
   E_\text{Photo} = \SI{661.35 +- 0.05}{\kilo\eV}
@@ -210,32 +211,34 @@ Mit der Energieeichung \eqref{eqn:eich} lässt sich die Energie des Photopeaks a
 bestimmen.
 
 Der Literaturwert beträgt $E_\text{Photo, Lit} = \SI{661.657}{\kilo\eV}$ [2]. Die Abweichung vom Literaturwert 
-von ca. $\SI{0.3}{\kilo\eV}$ liegt über der statistischen Abweichung der Energieeichung, 
+von ca. $\SI{0.3}{\kilo\eV}$ liegt über der statistischen Abweichung der Energie-Eichung, 
 ist mit $\SI{0.046}{\percent}$ aber dennoch sehr klein.
 
-Die maximale Ereignisanzahl des gaußgenäherten Photopeaks aus Abbildung \ref{fig:plot22} beträgt $\num{1639.91}$.
+\subsubsection{Halb- und Zehntelwertsbreite}
+
+Die maximale Ereignisanzahl des gaußgenäherten Photopeaks aus Abbildung \ref{fig:plot22} beträgt $\num{1640}$.
 Es lassen sich die Halb- und Zehntelwertsbreiten 
 
 \begin{align*}
-  \mu_{0, \sfrac{1}{2}} &\approx \num{5.37} \\
-  \mu_{0, \sfrac{1}{10}} &\approx \num{10.02}
+  \mu_{0, \sfrac{1}{2}} &\approx \num{5.37}\text{channel} \\
+  \mu_{0, \sfrac{1}{10}} &\approx \num{10.02}\text{channel}
 \end{align*} 
 
 ablesen.
 
-Mit der Energieeichung \eqref{eqn:eich} lassen sich diese in die Energien
+Mit der Energie-Eichung \eqref{eqn:eich} lassen sich diese in die Energienintervalle
 
 \begin{align*}
-  \Delta E_{\sfrac{1}{2}} &\approx \SI{0.52 +- 0.05}{\kilo\eV} \\
-  \Delta E_{\sfrac{1}{10}} &\approx \SI{1.36 +- 0.05}{\kilo\eV}
+  \Delta E_{\sfrac{1}{2}}  &= \SI{662.43 +- 0.05}{\kilo\eV} - \SI{660.27 +- 0.05}{\kilo\eV} \\
+  \Delta E_{\sfrac{1}{10}} &= \SI{663.37 +- 0.05}{\kilo\eV} - \SI{659.33 +- 0.05}{\kilo\eV}
 \end{align*}
 
 umrechnen.
 
-Dabei ist das Verhältnis zwischen Halb- Zehntelwertsbreiten
+Dabei ist das Verhältnis zwischen Halb- und Zehntelwertsbreiten
 
 \begin{equation}
-  \kappa = \frac{\mu_{0, \sfrac{1}{10}}}{\mu_{0, \sfrac{1}{2}}} = \frac{\Delta E_{\sfrac{1}{10}}}{\Delta E_{\sfrac{1}{2}}} = \num{1.8659}
+  \kappa = \frac{\mu_{0, \sfrac{1}{10}}}{\mu_{0, \sfrac{1}{2}}} = \num{1.866}
 \end{equation}
 
 und weicht damit um nur $\SI{2.35}{\percent}$ von dem für Gaußverteilungen typischen Wert von $\kappa = \num{1.823}$ ab.
@@ -247,25 +250,21 @@ Zum Vergleich mit der gemessenen kann die Halbwertsbreite der Gaußverteilung wi
   &= \num{2.35} \cdot \sqrt{\num{0.1}\cdot \SI{661.35 +- 0.05}{\kilo\eV} \cdot \SI{2.9}{\eV}} = \SI{1029.16 +- 0.04}{\eV} \; .
 \end{align}
 
-Dabei beschreibt $\sigma$ die Standartabweichung der Gaußverteilung. $E_\text{Ex}$ gibt die
-Exzitonenbildungsenergie für Germanium bei einer Temperatur von $\SI{77}{\kelvin}$ an und der Fano-Faktor $F$
-berücksichtigt, dass Fluktuationen in der Ladungsträger- bzw. Exzitonenerzeugung
-durch Fluktuation der Photonenanregung ausgeglichen werden.
+Dabei beschreibt $\sigma$ die Standardabweichung der Gaußverteilung und $E_\text{Ex}$ die
+Bildungsenergie von Exzitonen (Elektron-Loch-Paare) für Germanium bei einer Temperatur von $\SI{77}{\kelvin}$. 
+Der Fano-Faktor $F$ berücksichtigt, dass Fluktuationen in der Erzeugung von Exzitonen
+durch Fluktuation der Anregung mit Gammaquanten ausgeglichen werden.
 
-Die gemessene Halbwertsbreite $\Delta E_{\sfrac{1}{2}} \approx \SI{0.52 +- 0.05}{\kilo\eV}$ weicht um etwa
-\SI{49.47}{\percent} von der theoretischen $\Delta E_{\sfrac{1}{2}, \text{theo}} = \SI{1029.16 +- 0.04}{\eV}$ ab.
+\subsubsection{Comptonkante und Rückstreulinie}
 
-Dieser Fehler resultiert unter anderem aus Ablesefehlern und der Näherung des Photopeaks als Gaußverteilung.
-Die Näherung weicht für die niedrigen Wertepaare, von denen die Zehntelwertsbreite abhängt, stärker ab, als am Rest des Peaks. \\
-
-Die Comptonkante liegt etwa bei der Kanalnummer $\mu_{0,\text{K}} = \num{1180}$ und der Rückstreupeak etwa bei
-$\mu_{0, \text{R}} = \num{490}$.
+Die Comptonkante liegt etwa bei der Kanalnummer $\mu_{0,\text{K}} = \num{1180 +- 25}\text{channel}$ und der Rückstreupeak etwa bei
+$\mu_{0, \text{R}} = \num{490 +- 25}\text{channel}$.
 
 Dies entspricht den Energien
 
 \begin{align*}
-  E_\text{K} &= \SI{472.86 +- 0.05}{\kilo\eV} \\
-  E_\text{R} &= \SI{194.79 +- 0.05}{\kilo\eV} \; .
+  E_\text{K} &= \SI{473 +- 10}{\kilo\eV} \\
+  E_\text{R} &= \SI{195 +- 10}{\kilo\eV} \; .
 \end{align*}
 
 Berechnet werden können die Energien nach den Gleichungen \eqref{eqn:Compton} und \eqref{eqn:Kante} zu
@@ -275,7 +274,7 @@ Berechnet werden können die Energien nach den Gleichungen \eqref{eqn:Compton} u
   E_\text{R, theo} &= \frac{E_\text{Photo}}{1 + 2 \epsilon} =\SI{184.299 +- 0.004}{\kilo\eV} \; .
 \end{align*}
 
-Die Abweichungen zwischen gemessenen und berechneten Energien sind mit $\SI{0.88}{\percent}$ und $\SI{5.69}{\percent}$ klein. 
+Die Abweichungen zwischen gemessenen und berechneten Energien sind mit $\SI{0.85}{\percent}$ und $\SI{5.81}{\percent}$ klein. 
 
 Zur Bestimmung der Zählraten werden für die des Comptonkontinuums die Ereignisanzahlen linksseitig der Comptonkante
 und für die des Photopeaks die innerhalb des Peaks gezählt: 
@@ -297,7 +296,7 @@ aufgelisteten Absorptionswahrscheinlichkeiten.
 
 \begin{table}
   \centering
-  \caption{Energien, Extinktionskoeffizienten und Absorpionswahrscheinlichkeiten für den Photo- und Comtoneffekt des $\ce{^{152}Eu}$-Strahlers}
+  \caption{Energien, Extinktionskoeffizienten und Absorptionswahrscheinlichkeiten für den Photo- und Comtoneffekt des $\ce{^{152}Eu}$-Strahlers}
   \label{tab:mess3}
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c }
@@ -313,10 +312,10 @@ aufgelisteten Absorptionswahrscheinlichkeiten.
 
 Der Vergleich der Zählraten bzw. Linieninhalte mit den Absorptionswahrscheinlichkeiten zeigt, dass die Ereignisanzahl im Photopeak 
 $5 \sfrac{1}{2}$-mal geringer und die Absorptionswahrscheinlichkeit über $30$-mal kleiner ist, als im Comptonkontinuum.
-Daraus ist zu schließen, dass der Comptoneffekt Einfluss auf den Photopeak hat. Compton-gestreute Photonen können im 
+Daraus ist zu schließen, dass der Comptoneffekt Einfluss auf den Photopeak hat. Compton-gestreute Gammaquanten können im 
 Detektor noch photoelektrisch wechselwirken.
 
-\begin{figure}{H}
+\begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{content/plot21.pdf}
   \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Zur Erkennung
@@ -324,7 +323,7 @@ Detektor noch photoelektrisch wechselwirken.
   \label{fig:plot21}
 \end{figure}
 
-\begin{figure}{H}
+\begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{content/plot22.pdf}
   \caption{Gemessener und gaußgenäherter Photopeak eines $\ce{^{137}Cs}$-Strahlers}
@@ -335,7 +334,7 @@ Detektor noch photoelektrisch wechselwirken.
   \centering
   \includegraphics[scale=0.7]{content/plot2.pdf}
   \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Hier ist der
-  Photopeak bzw. Vollenergielinie gut zu erkennen.}
+  Photopeak bzw. die Vollenergielinie gut zu erkennen.}
   \label{fig:plot2}
 \end{figure}
 
@@ -343,7 +342,7 @@ Detektor noch photoelektrisch wechselwirken.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Aktivitätsbestimmung von  $\ce{^{125}}$Stibnit oder  $\ce{^{133}}$Barium }
+\subsection{Aktivitätsbestimmung von  $\ce{^{125}}$Antimon oder  $\ce{^{133}}$Barium }
 
 Zur Identifikation, welches Nuklid das in Abbildung \ref{fig:plot3} abgebildete Spektrum besitzt, werden die Peaks gemäß
 Gleichung \eqref{eqn:gauss} mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy
@@ -357,8 +356,8 @@ gaußgenähert.
   \label{fig:plot3}
 \end{figure}
 
-Aus den Fitparametren lassen sich nach Gleichung \eqref{eqn:eich} die Energien $E$, nach Gleichung \eqref{eqn:eff} 
-die Effizienzen $Q$ und nach Gleichung \eqref{eqn:rate} die Zählraten $Z$ berechnen.
+Aus den Fitparametren lassen sich nach Gleichung \eqref{eqn:eich} die Energien $E$, nach Gleichung 
+\eqref{eqn:eff} die Effizienzen $Q$ und nach Gleichung \eqref{eqn:rate} die Zählraten $Z$ berechnen.
 
 Nach Umstellung der Gleichung \eqref{eqn:akt} ergibt sich die Aktivität
 
@@ -376,16 +375,19 @@ Diese gefitteten Parameter sind in Tabelle \ref{tab:mess4} und die errechneten G
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c c c}
   \toprule
-  $E \;/\; \si{\kilo\eV}$ & $\mu_0$ & $a$ & $b$ & $c$ \\
+  $E \;/\; \si{\kilo\eV}$ & $\mu_0 \;/\; \text{channel}$ & $a \;/\; \text{channel}$ & 
+  $2\sigma^2 \;/\; \text{channel}^2$ & $c \;/\; \text{channel}$ \\
   \midrule
      81,01 $\pm$ 0,05 & 207,667 $\pm$ 0,023 & 2400 $\pm$ 40 & 3,06 $\pm$ 0,11 & 99,0 $\pm$ 7,0 \\
     276,39 $\pm$ 0,05 & 692,477 $\pm$ 0,026 &  301 $\pm$  5 & 4,08 $\pm$ 0,15 & 20,0 $\pm$ 0,9 \\
-    302,84 $\pm$ 0,05 & 758,120 $\pm$ 0,016 &  685 $\pm$  6 & 4,53 $\pm$ 0,10 & 17,4 $\pm$ 1,3 \\
+    302,84 $\pm$ 0,05 & 758,120 $\pm$ 0,016 &  685 $\pm$  6 & 4,5  $\pm$ 0,1  & 17,4 $\pm$ 1,3 \\
     355,98 $\pm$ 0,05 & 889,976 $\pm$ 0,008 & 1769 $\pm$  7 & 5,46 $\pm$ 0,05 &  8,9 $\pm$ 1,6 \\
-    383,82 $\pm$ 0,05 & 959,058 $\pm$ 0,035 &  231 $\pm$  4 & 5,37 $\pm$ 0,23 &  6,3 $\pm$ 0,9 \\
+    383,82 $\pm$ 0,05 & 959,06  $\pm$ 0,04  &  231 $\pm$  4 & 5,37 $\pm$ 0,23 &  6,3 $\pm$ 0,9 \\
   \bottomrule
   \end{tabular}
 \end{table}
+
+
 
 \begin{table}
   \centering
@@ -396,18 +398,19 @@ Diese gefitteten Parameter sind in Tabelle \ref{tab:mess4} und die errechneten G
   \toprule
   $E \;/\; \si{\kilo\eV}$ & $W \;\text{in}\; \si{\percent}$ & $Z$ & $Q$ & $A \;/\; \si{\becquerel}$ \\
   \midrule
-     81,01 $\pm$ 0,05 & 34,1 & 7440 $\pm$ 180 & 0,0079 $\pm$ 0,0021 &   550 $\pm$  150 \\
-    276,39 $\pm$ 0,05 &  0,5 & 1078 $\pm$  27 & 0,0025 $\pm$ 0,0007 & 17000 $\pm$ 5000 \\
-    302,84 $\pm$ 0,05 & 18,3 & 2580 $\pm$  40 & 0,0023 $\pm$ 0,0007 &  1200 $\pm$  400 \\
-    355,98 $\pm$ 0,05 & 62,1 & 7330 $\pm$  40 & 0,0020 $\pm$ 0,0006 &  1200 $\pm$  400 \\
-    383,82 $\pm$ 0,05 &  8,9 &  949 $\pm$  26 & 0,0018 $\pm$ 0,0006 &  1140 $\pm$  350 \\
+     81,01 $\pm$ 0,05 & 34,1 & 7440 $\pm$ 180 & 0,68 $\pm$ 0,14 &   640 $\pm$ 140  \\
+    276,39 $\pm$ 0,05 &  0,5 & 1078 $\pm$  27 & 0,24 $\pm$ 0,06 & 18000 $\pm$ 4000 \\
+    302,84 $\pm$ 0,05 & 18,3 & 2580 $\pm$  40 & 0,22 $\pm$ 0,05 &  1280 $\pm$ 310  \\
+    355,98 $\pm$ 0,05 & 62,1 & 7330 $\pm$  40 & 0,19 $\pm$ 0,05 &  1220 $\pm$ 300  \\
+    383,82 $\pm$ 0,05 &  8,9 &  949 $\pm$  26 & 0,18 $\pm$ 0,04 &  1180 $\pm$ 290  \\
   \bottomrule
   \end{tabular}
 \end{table}
 
-Aus dem Vergleich der berechneten Energien mit den Literaturwerten der Energiespektren von $\ce{^{125}Sb}$ und $\ce{^{133}Ba}$
-lässt sich erkennen, dass die gemessenen Energien denen des $3$., $5$., $6$., $7$., und $8$. Peaks des $\ce{^{133}Ba}$-Spektrums
-entsprechen. Die Energien und Emmisionswahrscheinlichkeiten des Referenzspektrums sind in Tabelle \ref{tab:mess6} aufgeführt. \\
+Aus dem Vergleich der berechneten Energien mit den Literaturwerten der Energiespektren von $\ce{^{125}}$Antimon und 
+$\ce{^{133}}$Barium lässt sich erkennen, dass die gemessenen Energien einigen der Peakenergien des
+$\ce{^{133}}$Barium-Spektrums entsprechen. Die Energien und Emmisionswahrscheinlichkeiten des Referenzspektrums 
+sind in Tabelle \ref{tab:mess6} aufgeführt. \\
 
 \begin{table}
   \centering
@@ -430,7 +433,7 @@ entsprechen. Die Energien und Emmisionswahrscheinlichkeiten des Referenzspektrum
   \end{tabular}
 \end{table}
 
-Zur Bestimmung der Aktivität $A$ des vorliegenden $\ce{^{133}Ba}$-Strahlers wird der Mittelwert der Aktivitäten der letzten drei
+Zur Bestimmung der Aktivität $A$ des vorliegenden $\ce{^{133}}$Barium-Strahlers wird der Mittelwert der Aktivitäten der letzten drei
 Peaks genommen, da die ersten beiden Werte stark nach unten und oben abweichen.
 Die mittlere Aktivität beträgt $\bar{A} = \SI{1180 +- 383}{\becquerel}$.
 
@@ -448,7 +451,7 @@ Das vollständige Spektrum des Kristalls ist in Abbildung \ref{fig:plot41} abgeb
   \label{fig:plot41}
 \end{figure}
 
-Zur Untersuchung der sieben signifkanten Peaks werden diese gemäß Gleichung \eqref{eqn:gauss} 
+Zur Untersuchung der Peaks werden diese gemäß Gleichung \eqref{eqn:gauss} 
 mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy gaußgenähert.
 Dies ist in Abbildung \ref{fig:plot4} zu sehen.
 
@@ -456,12 +459,12 @@ Dies ist in Abbildung \ref{fig:plot4} zu sehen.
   \centering
   \includegraphics[scale=0.7]{content/plot4.pdf}
   \caption{Gemessenes und gaußgenähertes Spektrum eines unbekannten kristallinen Strahlers,
-           abgeschnitten ab Kanalnummer $\num{1700}$}
+           abgeschnitten ab Kanalnummer $\num{6000}$}
   \label{fig:plot4} 
 \end{figure}
 
-Die Fitparameter, Energien $E$, sowie die identifizierten Nuklide, deren Referenzenergien $E_\text{N}$ und 
-Emmisionswahrscheinlichkeiten $W$ [1] sind in Tabelle \ref{tab:mess7} aufgelistet. \\
+Die Kanalnummer $\mu_0$, Energien $E$, sowie die identifizierten Nuklide und deren Referenzenergien $E_\text{N}$[1]
+sind in Tabelle \ref{tab:mess7} aufgelistet. \\
 
 \begin{table}
   \centering
@@ -470,22 +473,32 @@ Emmisionswahrscheinlichkeiten $W$ [1] sind in Tabelle \ref{tab:mess7} aufgeliste
   \sisetup{table-format=2.1}
   \begin{tabular}{c c c c c c c}
   \toprule
-  $\mu_0$ & $a$ & $b$ & $c$ & $E \;/\; \si{\kilo\eV}$ & $E_\text{N} \;/\; \si{\kilo\eV}$ & Nuklid \\
+  $\mu_0 \;/\; \text{channel}$ & $E \;/\; \si{\kilo\eV}$ & $E_\text{N} \;/\; \si{\kilo\eV}$ & Nuklid \\
   \midrule
-   197,82 &  -2054373,96 &   -8490,82 &  2056192,47 &  77,04 $\pm$ 0,05 &   - &               - \\
-   237,03 &  -4951747,22 &  -65164,91 &  4953165,50 &  92,84 $\pm$ 0,05 &  93 & $\ce{^{234}Th}$ \\
-   468,05 & -12252338,86 &  -90236,30 & 12254032,57 & 185,94 $\pm$ 0,05 & 186 & $\ce{^{226}Ra}$ \\
-   607,09 & -22934205,13 & -180267,05 & 22935710,52 & 241,97 $\pm$ 0,05 & 242 & $\ce{^{214}Pb}$ \\
-   739,04 & -76310651,18 & -294905,26 & 76313418,70 & 295,15 $\pm$ 0,05 & 295 & $\ce{^{214}Pb}$ \\  
-   879,60 & -27221198,74 & -143724,37 & 27224703,53 & 351,80 $\pm$ 0,05 & 352 & $\ce{^{214}Pb}$ \\
-  1517,94 &  -8988277,11 & -103001,94 &  8990390,62 & 609,05 $\pm$ 0,05 & 609 & $\ce{^{214}Bi}$ \\
+   197,82 &   77,04 $\pm$ 0,05 &    - &               - \\
+   237,03 &   92,84 $\pm$ 0,05 &   93 & $\ce{^{234}Th}$ \\
+   468,05 &  185,94 $\pm$ 0,05 &  186 & $\ce{^{226}Ra}$ \\
+   607,09 &  241,97 $\pm$ 0,05 &  242 & $\ce{^{214}Pb}$ \\
+   739,04 &  295,15 $\pm$ 0,05 &  295 & $\ce{^{214}Pb}$ \\  
+   879,60 &  351,80 $\pm$ 0,05 &  352 & $\ce{^{214}Pb}$ \\
+  1517,94 &  609,05 $\pm$ 0,05 &  609 & $\ce{^{214}Bi}$ \\
+  1656,86 &  665,03 $\pm$ 0,05 &    - &               - \\
+  1912,46 &  768,04 $\pm$ 0,05 &  769 & $\ce{^{214}Bi}$ \\
+  2323,78 &  933,80 $\pm$ 0,05 &  935 & $\ce{^{214}Bi}$ \\
+  2785,74 & 1119,97 $\pm$ 0,05 & 1120 & $\ce{^{214}Bi}$ \\
+  3077,75 & 1237,65 $\pm$ 0,05 & 1210 & $\ce{^{210}Tl}$ \\
+  3424,39 & 1377,35 $\pm$ 0,05 & 1378 & $\ce{^{214}Bi}$ \\
+  4384,27 & 1764,18 $\pm$ 0,05 & 1764 & $\ce{^{214}Bi}$ \\
+  5475,32 & 2203,87 $\pm$ 0,05 & 2204 & $\ce{^{214}Bi}$ \\
   \bottomrule
   \end{tabular}
 \end{table}
 
-Mit den gefundenen Energien lassen sich die Nuklide $\ce{^{234}Th}$, $\ce{^{226}Ra}$, $\ce{^{214}Pb}$ und
-$\ce{^{214}Bi}$ identifizieren. Diese sind Bestandteile der Zerfallsreihe von $\ce{^{238}Uran}$.
-Die niedrigste Peakenergie kann zwar keinem der Nuklide der Zerfallsreihe zugeordnet werden, dennoch kann davon ausgegangen
+
+Das gemessene Spektrum weist charakteristische Linien der Nuklide
+$\ce{^{234}}$Thorium, $\ce{^{226}}$Radium, $\ce{^{214}}$Plumbum (Blei), $\ce{^{214}}$Bismut und
+$\ce{^{210}}$Thallium auf. Diese sind Bestandteile der Zerfallsreihe von $\ce{^{238}Uran}$.
+Zwei Peakenergien können zwar keinem der Nuklide der Zerfallsreihe zugeordnet werden, dennoch kann davon ausgegangen
 werden, dass es sich bei der unbekannten Strahlungsquelle um ein Urangestein handelt.
 Der nicht dazu passende Peak kann entweder aus einer anderen Zerfallsreihe stammen oder es handelt sich um eine Störung
 wie beispielsweise einen Rückstreupeak einer anderen Linie.

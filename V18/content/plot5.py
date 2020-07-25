@@ -16,10 +16,10 @@ def gerade (x, m, b):
 
 z = np.linspace(np.min(x) - 100, np.max(x) + 100)
 
-plt.plot(x, E, 'bx', label='Data')
+plt.plot(x, E, 'bx', label='152Eu')
 plt.plot(z, gerade (z, *params), 'r-', label='Linear Regression')
-plt.xlabel(r'$\mu_0$')
-plt.ylabel(r'$E \: / \: keV$')
+plt.xlabel(r'$\mu_0\: / \:$ channel')
+plt.ylabel(r'$E \: / \:$ keV')
 plt.legend(loc='best')
 
 plt.tight_layout()
