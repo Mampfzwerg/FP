@@ -1,15 +1,76 @@
+\section{Diskussion}
+\label{sec:Diskussion}
 
+Die Ergebnisse der Energiekalibrierung und Effizienzbestimmung des Detektors anhand des 
+Spektrums von $\ce{^{152}}$Europium sind in den Abbildungen \ref{fig:plot5} und \ref{fig:plot6}
+veranschaulicht. 
+Außerdem sind die statistischen Fehler der Regressionsparameter der Energiekallibrierung mit $\SI{0}{\percent}$ 
+und $\SI{1.9}{\percent}$ sehr gering.\\
 
-Die gemessene Halbwertsbreite $\Delta E_{\sfrac{1}{2}} \approx \SI{0.52 +- 0.05}{\kilo\eV}$ weicht um etwa
-\SI{49.47}{\percent} von der theoretischen $\Delta E_{\sfrac{1}{2}, \text{theo}} = \SI{1029.16 +- 0.04}{\eV}$ ab.
+Bei der Untersuchung des monochromatischen Gammaspektrums von $\ce{^{137}}$Caesium
+weicht die gemessene Energie des Photopeaks
 
-Dieser Fehler resultiert unter anderem aus Ablesefehlern und der Näherung des Photopeaks als Gaußverteilung.
-Die Näherung weicht für die niedrigen Wertepaare, von denen die Zehntelwertsbreite abhängt, besonders stark ab.
-Am restlichen Peak ist ihre Abweichung geringer. \\
+\begin{equation*}
+    E_\text{Photo} = \SI{661.35 +- 0.05}{\kilo\eV}
+  \end{equation*}
+  
+leicht, um etwa $\SI{0.05}{\percent}$, vom Literaturwert $E_\text{Photo, Lit} = \SI{661.657}{\kilo\eV}$ [2] ab. 
+
+Das Verhältnis zwischen Halb- und Zehntelwertsbreiten des mit einer Gaußverteilung genäherten Photopeaks
+
+\begin{equation}
+  \kappa = \frac{\mu_{0, \sfrac{1}{10}}}{\mu_{0, \sfrac{1}{2}}} = \num{1.866}\; .
+\end{equation}
+
+weicht um nur $\SI{2.35}{\percent}$ von dem für Gaußverteilungen typischen Wert von $\kappa = \num{1.823}$ ab.
+
+Die daraus bestimmte Energie-Halbwertsbreite $\Delta E_{\sfrac{1}{2}} = \SI{2.2 +- 0.1}{\kilo\eV}$ weicht um etwa
+$\SI{113.77}{\percent}$ von der theoretischen $\Delta E_{\sfrac{1}{2}, \text{theo}} = \SI{1029.16 +- 0.04}{\eV}$ ab.
+Die beiden Werte teilen jedoch dieselbe Größenordnung.
+Die Abweichung resultiert unter anderem aus Ablesefehlern und der Näherung des Photopeaks als Gaußverteilung.
+
+Die Energien, bei denen sich die Comptonkante und der Rückstreupeak befinden wurden zu
+
+\begin{align*}
+    E_\text{K} &= \SI{473 +- 10}{\kilo\eV} \\
+    E_\text{R} &= \SI{195 +- 10}{\kilo\eV} \; .
+\end{align*}
+
+bestimmt und weichen mit $\SI{0.85}{\percent}$ und $\SI{5.81}{\percent}$ minimal von den berechneten Werten
+
+\begin{align*}
+    E_\text{K, theo} &= \SI{477.05 +- 0.05}{\kilo\eV} \\
+    E_\text{R, theo} &= \SI{184.299 +- 0.004}{\kilo\eV}
+\end{align*}
+
+ab.
+
+Der Vergleich der Zählraten bzw. Linieninhalte des Photopeaks und Comptonkontinuums
+
+\begin{align*}
+    Z_\text{Photo} &= \num{9510} \\
+    Z_\text{Compton} &= \num{33795}
+\end{align*}
+
+mit den Absorptionswahrscheinlichkeiten aus Tabelle \ref{tab:mess3} zeigt, dass die Ereignisanzahl im Photopeak 
+$3 \sfrac{1}{2}$-mal geringer und die Absorptionswahrscheinlichkeit über $30$-mal kleiner ist, als im Comptonkontinuum.
+Daraus ist zu schließen, dass der Comptoneffekt Einfluss auf den Photopeak hat. Compton-gestreute Gammaquanten können im 
+Detektor noch photoelektrisch wechselwirken.\\
+
+Bei der Aktivitätsbestimmung von  $\ce{^{125}}$Antimon oder  $\ce{^{133}}$Barium konnten
+die in Tabelle \ref{tab:mess5} aufgelisteten Aktivitäten bestimmt werden und die Quelle durch den
+Vergleich gemessener Peakenergien mit Referenzsprektren als $\ce{^{133}}$Barium identifiziert werden.
+Die gemittelte Aktivität beträgt $\bar{A} = \SI{1180 +- 383}{\becquerel}$.\\
+
+Die Nuklididentifikation eines unbekannten kristallinen Strahlers ergab die in Tabelle \ref{tab:mess7}
+aufgelisteten Peakenergien und ließen eine Identifikation der Nuklide 
+$\ce{^{234}}$Thorium, $\ce{^{226}}$Radium, $\ce{^{214}}$Plumbum (Blei), $\ce{^{214}}$Bismut und
+$\ce{^{210}}$Thallium zu. Diese sind Bestandteile der Zerfallsreihe von $\ce{^{238}Uran}$ und lassen
+darauf schließen, dass es sich bei dem unbekannten Strahler um ein Urangestein handelt.
 
 
 \section{Literaturverzeichnis}
-\label{sec:Diskussion}
+\label{sec:Literaturverzeichnis}
 
 [1] Praktikumsanleitung. Versuch V18 - Der Reinst-Germanium-Detektor als Instrument
 der Gamma-Spektroskopie:

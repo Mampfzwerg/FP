@@ -4,6 +4,7 @@ from scipy import optimize
 from scipy.optimize import curve_fit
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+from scipy.integrate import quad
 
 y = np.genfromtxt('mess2.txt', unpack=True)
 x = np.arange(y.size)
@@ -21,7 +22,14 @@ m = ufloat(par[0], np.sqrt(cov[0][0]))
 a = ufloat(par[1], np.sqrt(cov[1][1]))
 b = ufloat(par[2], np.sqrt(cov[2][2]))
 c = ufloat(par[3], np.sqrt(cov[3][3]))
-print(m, a, b, c)
+#print(m, a, b, c)
+
+m = par[0]
+a = par[1]
+b = par[2]
+c = par[3]
+I = quad(gauss, 1640, 1655, args=(m,a,b,c))
+print(I)
 
 z = np.linspace(1640, 1655, 200)
 
@@ -34,4 +42,4 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('plot22.pdf')
 
-print(gauss(1647.72, *par))
+#print(gauss(1647.72, *par))

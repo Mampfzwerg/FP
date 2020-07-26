@@ -20,10 +20,9 @@ Die Peaks werden als Gaußverteilungen der Form
 \end{equation}
 
 genähert. Dazu wird die Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy verwendet.
-
 Die den Peakenergien $E$ zugeordneten Fitparameter sind in Tabelle \ref{tab:mess1} aufgelistet.
-
-Mit den Wertepaaren der Peakenergien $E$ und der mittleren Kanalnummer $\mu_0$ wird eine lineare Regression der Form
+Mit den Wertepaaren der Peakenergien $E$ und der mittleren Kanalnummer $\mu_0$ wird eine lineare Regression 
+der Form
 
 \begin{equation}
   E(\mu_0) = m \cdot \mu_0 + d
@@ -38,16 +37,16 @@ Die Regressionsparameter betragen
   d &= \num{-2.68 +- 0.05}\;\text{channel} \; .
 \end{align*}
 
-Die statistischen Fehler der Regressionsparameter sind mit $\SI{0}{\percent}$ und $\SI{1.9}{\percent}$ sehr gering.
-
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{content/plot1.pdf}
+  \includegraphics[scale=0.6]{content/plot1.pdf}
   \caption{Gemessenes Spektrum eines $\ce{^{152}Eu}$-Strahlers, abgeschnitten ab Kanalnummer $\num{4000}$}
   \label{fig:plot1}
 \end{figure}
 
+
 \begin{table}
+  \small
   \centering
   \caption{Gefittete Parameter der Gaußnäherungen der charakteristischen Peaks des $\ce{^{152}Eu}$-Spektrums}
   \label{tab:mess1}
@@ -73,7 +72,7 @@ Die statistischen Fehler der Regressionsparameter sind mit $\SI{0}{\percent}$ un
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{content/plot5.pdf}
+  \includegraphics[scale=0.6]{content/plot5.pdf}
   \caption{Lineare Regression der Energie-Kanalnummer-Wertepaare des $\ce{^{152}Eu}$-Strahlers}
   \label{fig:plot5}
 \end{figure}
@@ -180,7 +179,7 @@ und somit der Zusammenhang
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.7]{content/plot6.pdf}
+  \includegraphics[scale=0.6]{content/plot6.pdf}
   \caption{Gefittete Potenzfunktion der Güte in Abhängigkeit der Energie}
   \label{fig:plot6}
 \end{figure}
@@ -201,7 +200,6 @@ das Maximum der Gaußglocke ergibt sich die Kanalnummer
 \end{equation*}
 
 die als Zentrum des Photopeaks angenommen wird.
-
 Mit der Energie-Eichung \eqref{eqn:eich} lässt sich die Energie des Photopeaks als
 
 \begin{equation*}
@@ -209,10 +207,6 @@ Mit der Energie-Eichung \eqref{eqn:eich} lässt sich die Energie des Photopeaks 
 \end{equation*}
 
 bestimmen.
-
-Der Literaturwert beträgt $E_\text{Photo, Lit} = \SI{661.657}{\kilo\eV}$ [2]. Die Abweichung vom Literaturwert 
-von ca. $\SI{0.3}{\kilo\eV}$ liegt über der statistischen Abweichung der Energie-Eichung, 
-ist mit $\SI{0.046}{\percent}$ aber dennoch sehr klein.
 
 \subsubsection{Halb- und Zehntelwertsbreite}
 
@@ -238,10 +232,8 @@ umrechnen.
 Dabei ist das Verhältnis zwischen Halb- und Zehntelwertsbreiten
 
 \begin{equation}
-  \kappa = \frac{\mu_{0, \sfrac{1}{10}}}{\mu_{0, \sfrac{1}{2}}} = \num{1.866}
+  \kappa = \frac{\mu_{0, \sfrac{1}{10}}}{\mu_{0, \sfrac{1}{2}}} = \num{1.866}\; .
 \end{equation}
-
-und weicht damit um nur $\SI{2.35}{\percent}$ von dem für Gaußverteilungen typischen Wert von $\kappa = \num{1.823}$ ab.
 
 Zum Vergleich mit der gemessenen kann die Halbwertsbreite der Gaußverteilung wie folgt genähert und berechnet werden:
 
@@ -273,26 +265,76 @@ Berechnet werden können die Energien nach den Gleichungen \eqref{eqn:Compton} u
   E_\text{K, theo} &= E_\text{Photo} \cdot \frac{2 \epsilon}{1 + 2 \epsilon} = \SI{477.05 +- 0.05}{\kilo\eV} \\
   E_\text{R, theo} &= \frac{E_\text{Photo}}{1 + 2 \epsilon} =\SI{184.299 +- 0.004}{\kilo\eV} \; .
 \end{align*}
+ 
 
-Die Abweichungen zwischen gemessenen und berechneten Energien sind mit $\SI{0.85}{\percent}$ und $\SI{5.81}{\percent}$ klein. 
+\subsubsection{Inhalte und Absorptionswahrscheinlichkeiten des Photopeaks und Comptonkontinuums}
 
-Zur Bestimmung der Zählraten werden für die des Comptonkontinuums die Ereignisanzahlen linksseitig der Comptonkante
-und für die des Photopeaks die innerhalb des Peaks gezählt: 
+Zur Bestimmung des Inhalte bzw. der Zählraten wird die Funktion \textit{scipy.integrate.quad} 
+aus der Python-Bibliothek SkiPy verwendet.
+Für den in Abbildung \ref{fig:plot22} gefitteten Photopeak ergibt das die Zählrate:
 
-\begin{align*}
-  Z_\text{Compton} &= \num{53860} \\
-  Z_\text{Photo} &= \num{9506} \; .
-\end{align*}
+\begin{equation*}
+    Z_\text{Photo} = \num{9510} \; .
+\end{equation*}
+
+Zur Bestimmung der Zählrate des durch den Rückstreupeak verfälschten Comptonkontinuums wird dieses
+in Abbildung \ref{fig:klein} nach dem Klein-Nishina-Wirkungsquerschnitt in Gleichung \eqref{eqn:klein} gefittet.
+Dazu wird der weitgehend unverfäschte Bereich zwischen dem Rückstreupeak und der Comptonkante mit den
+Kanalnummern $\num{750}$ bis $\num{1180}$ gewählt.
+Der Fitparameter ergibt sich zu
+
+\begin{equation*}
+  \sigma_{Th} = (\num{4.45 +- 0.04})\cdot 10^{-12}\si{\square\meter} \; .
+\end{equation*}
+
+Für die Comptonkante ergibt sich nach Integration des Fits von Kanalnummer $\num{0}$ bis $\num{1180}$ 
+die Zählrate:
+
+\begin{equation*}
+  Z_\text{Compton} = \num{33795} \; .
+\end{equation*}
 
 Nach Gleichung \eqref{eqn:Strahl} ergibt sich für die Absorptionswahrscheinlichkeit:
 
 \begin{equation}
-  W(D) = 1 - \text{e}^{- \mu D} \; .
+  W(D) = 1 - \text{e}^{- \kappa D} \; .
 \end{equation}
 
-Der Extinktionskoeffizient lässt sich für verschiedene Energien aus Abbildung \ref{fig:Ext} ablesen.
+Der Extinktionskoeffizient $\kappa$ lässt sich für verschiedene Energien aus Abbildung \ref{fig:Ext} ablesen.
 Für eine Kristalllänge von $D = \SI{4.5}{\centi\meter}$ ergeben sich dann die in Tabelle \ref{tab:mess3}
 aufgelisteten Absorptionswahrscheinlichkeiten.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{content/plot2.pdf}
+  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Hier ist der
+  Photopeak bzw. die Vollenergielinie gut zu erkennen.}
+  \label{fig:plot2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{content/plot22.pdf}
+  \caption{Gemessener und gaußgenäherter Photopeak eines $\ce{^{137}Cs}$-Strahlers}
+  \label{fig:plot22}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{content/plot21.pdf}
+  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Zur Erkennung
+    des Compton-Kontinuums, des Rückstreupeaks und der Compton-Kante wurde ein kleinerer Bereich der Ereignisanzahl gewählt.}
+  \label{fig:plot21}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{content/kleinnishina.pdf}
+  \caption{Gemessene Comptonkante eines $\ce{^{137}Cs}$-Strahlers von Kanalnummer $\num{750}$ bis $\num{1180}$,
+  gefittet nach dem Klein-Nishina-Wirkungsquerschnitt \eqref{eqn:klein}}
+  \label{fig:klein}
+\end{figure}
 
 \begin{table}
   \centering
@@ -303,41 +345,12 @@ aufgelisteten Absorptionswahrscheinlichkeiten.
   \toprule
   $ $ & $\text{Photoeffekt}$ & $\text{Comptoneffekt}$ \\
   \midrule
-  $E \;/\; \si{\kilo\eV}$                 & 661,35 & 0,00 bis 472,86  \\
-  $\mu \;/\; \frac{1}{\si{\centi\meter}}$ & 0,006  & 0,85 bis 0,45 \\
-  $W \;/\; \si{\percent}$                 & 2,66   & 86,80 bis 97,82 \\
+  $E \;/\; \si{\kilo\eV}$                 & 661,35 & 661,35 \\
+  $\kappa \;/\; \frac{1}{\si{\centi\meter}}$ & 0,006  & 0,4    \\
+  $W \;/\; \si{\percent}$                 & 2,66   & 83,47\\
   \bottomrule
   \end{tabular}
 \end{table}
-
-Der Vergleich der Zählraten bzw. Linieninhalte mit den Absorptionswahrscheinlichkeiten zeigt, dass die Ereignisanzahl im Photopeak 
-$5 \sfrac{1}{2}$-mal geringer und die Absorptionswahrscheinlichkeit über $30$-mal kleiner ist, als im Comptonkontinuum.
-Daraus ist zu schließen, dass der Comptoneffekt Einfluss auf den Photopeak hat. Compton-gestreute Gammaquanten können im 
-Detektor noch photoelektrisch wechselwirken.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.7]{content/plot21.pdf}
-  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Zur Erkennung
-    des Compton-Kontinuums, des Rückstreupeaks und der Compton-Kante wurde ein kleinerer Bereich der Ereignisanzahl gewählt.}
-  \label{fig:plot21}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.7]{content/plot22.pdf}
-  \caption{Gemessener und gaußgenäherter Photopeak eines $\ce{^{137}Cs}$-Strahlers}
-  \label{fig:plot22}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.7]{content/plot2.pdf}
-  \caption{Gemessenes Spektrum eines $\ce{^{137}Cs}$-Strahlers, abgeschnitten ab Kanalnummer $\num{2000}$. Hier ist der
-  Photopeak bzw. die Vollenergielinie gut zu erkennen.}
-  \label{fig:plot2}
-\end{figure}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -347,14 +360,6 @@ Detektor noch photoelektrisch wechselwirken.
 Zur Identifikation, welches Nuklid das in Abbildung \ref{fig:plot3} abgebildete Spektrum besitzt, werden die Peaks gemäß
 Gleichung \eqref{eqn:gauss} mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy
 gaußgenähert.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{content/plot3.pdf}
-  \caption{Gemessenes und genähertes Spektrum eines $\ce{^{125}Sb}$- oder  $\ce{^{133}Ba}$-Strahlers,
-           abgeschnitten ab Kanalnummer $\num{1200}$}
-  \label{fig:plot3}
-\end{figure}
 
 Aus den Fitparametren lassen sich nach Gleichung \eqref{eqn:eich} die Energien $E$, nach Gleichung 
 \eqref{eqn:eff} die Effizienzen $Q$ und nach Gleichung \eqref{eqn:rate} die Zählraten $Z$ berechnen.
@@ -368,7 +373,16 @@ Nach Umstellung der Gleichung \eqref{eqn:akt} ergibt sich die Aktivität
 mit dem Raumwinkel $\Omega \approx \num{0.0538} \pi$ und einer Messzeit von $t_m = \SI{3771}{\second}$.
 Diese gefitteten Parameter sind in Tabelle \ref{tab:mess4} und die errechneten Größen in Tabelle \ref{tab:mess5} aufgelistet.
 
-\begin{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.65]{content/plot3.pdf}
+  \caption{Gemessenes und genähertes Spektrum eines $\ce{^{125}Sb}$- oder  $\ce{^{133}Ba}$-Strahlers,
+           abgeschnitten ab Kanalnummer $\num{1200}$}
+  \label{fig:plot3}
+\end{figure}
+
+\begin{table}[H]
   \centering
   \caption{Fitparameter der Gaußnäherungen des $\ce{^{125}Sb}$- oder $\ce{^{133}Ba}$-Strahlers}
   \label{tab:mess4}
@@ -387,9 +401,7 @@ Diese gefitteten Parameter sind in Tabelle \ref{tab:mess4} und die errechneten G
   \end{tabular}
 \end{table}
 
-
-
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Aktiviäten und zu deren Berechnung notwendige Größen des $\ce{^{125}Sb}$- oder $\ce{^{133}Ba}$-Strahlers}
   \label{tab:mess5}
@@ -410,7 +422,11 @@ Diese gefitteten Parameter sind in Tabelle \ref{tab:mess4} und die errechneten G
 Aus dem Vergleich der berechneten Energien mit den Literaturwerten der Energiespektren von $\ce{^{125}}$Antimon und 
 $\ce{^{133}}$Barium lässt sich erkennen, dass die gemessenen Energien einigen der Peakenergien des
 $\ce{^{133}}$Barium-Spektrums entsprechen. Die Energien und Emmisionswahrscheinlichkeiten des Referenzspektrums 
-sind in Tabelle \ref{tab:mess6} aufgeführt. \\
+sind in Tabelle \ref{tab:mess6} aufgeführt.
+
+Zur Bestimmung der Aktivität $A$ des vorliegenden $\ce{^{133}}$Barium-Strahlers wird der Mittelwert der Aktivitäten der letzten drei
+Peaks genommen, da die ersten beiden Werte stark nach unten und oben abweichen.
+Die mittlere Aktivität beträgt $\bar{A} = \SI{1180 +- 383}{\becquerel}$.
 
 \begin{table}
   \centering
@@ -433,10 +449,6 @@ sind in Tabelle \ref{tab:mess6} aufgeführt. \\
   \end{tabular}
 \end{table}
 
-Zur Bestimmung der Aktivität $A$ des vorliegenden $\ce{^{133}}$Barium-Strahlers wird der Mittelwert der Aktivitäten der letzten drei
-Peaks genommen, da die ersten beiden Werte stark nach unten und oben abweichen.
-Die mittlere Aktivität beträgt $\bar{A} = \SI{1180 +- 383}{\becquerel}$.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Nuklididentifikation %und Aktivitätsbestimmung 
@@ -444,27 +456,30 @@ Die mittlere Aktivität beträgt $\bar{A} = \SI{1180 +- 383}{\becquerel}$.
 
 Das vollständige Spektrum des Kristalls ist in Abbildung \ref{fig:plot41} abgebildet.
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{content/plot41.pdf}
-  \caption{Gemessenes Spektrum eines unbekannten kristallinien Strahlers}
-  \label{fig:plot41}
-\end{figure}
+
 
 Zur Untersuchung der Peaks werden diese gemäß Gleichung \eqref{eqn:gauss} 
 mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy gaußgenähert.
 Dies ist in Abbildung \ref{fig:plot4} zu sehen.
 
+Die Kanalnummer $\mu_0$, Energien $E$, sowie die identifizierten Nuklide und deren Referenzenergien $E_\text{N}$[1]
+sind in Tabelle \ref{tab:mess7} aufgelistet. \\
+
 \begin{figure}
   \centering
-  \includegraphics[scale=0.7]{content/plot4.pdf}
+  \includegraphics[scale=0.6]{content/plot41.pdf}
+  \caption{Gemessenes Spektrum eines unbekannten kristallinien Strahlers}
+  \label{fig:plot41}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{content/plot4.pdf}
   \caption{Gemessenes und gaußgenähertes Spektrum eines unbekannten kristallinen Strahlers,
            abgeschnitten ab Kanalnummer $\num{6000}$}
   \label{fig:plot4} 
 \end{figure}
 
-Die Kanalnummer $\mu_0$, Energien $E$, sowie die identifizierten Nuklide und deren Referenzenergien $E_\text{N}$[1]
-sind in Tabelle \ref{tab:mess7} aufgelistet. \\
 
 \begin{table}
   \centering
