@@ -9,8 +9,9 @@
 \contentsline {section}{\numberline {3}Aufbau und Durchführung}{6}{section.3}
 \contentsline {section}{\numberline {4}Auswertung}{7}{section.4}
 \contentsline {subsection}{\numberline {4.1}Bestimmung der Heizraten}{7}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Bestimmung der Aktivierungsenergie $W$ nach der Approximationsmethode}{7}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Bestimmung der Aktivierungsenergie $W$ nach der Integrationsmethode}{8}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Temperaturabhängigkeit der Relaxationszeiten}{9}{subsection.4.4}
-\contentsline {section}{\numberline {5}Diskussion}{14}{section.5}
-\contentsline {section}{\nonumberline Literatur}{15}{section*.10}
+\contentsline {subsection}{\numberline {4.2}Bestimmung des Untergrunds}{7}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Bestimmung der Aktivierungsenergie $W$ nach der Approximationsmethode}{8}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Bestimmung der Aktivierungsenergie $W$ nach der Integrationsmethode}{10}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Temperaturabhängigkeit der Relaxationszeiten}{11}{subsection.4.5}
+\contentsline {section}{\numberline {5}Diskussion}{15}{section.5}
+\contentsline {section}{\nonumberline Literatur}{16}{section*.10}

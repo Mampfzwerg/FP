@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 2.9 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -34,7 +34,7 @@
       \strng{authornamehash}{2821a70f99517ac7757c95300d43e95c}
       \strng{authorfullhash}{2821a70f99517ac7757c95300d43e95c}
       \field{sortinit}{D}
-      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Versuchsanleitung V48-Dipolrelaxation in Ionenkristallen}
@@ -45,6 +45,35 @@
       \verb https://moodle.tu-dortmund.de/pluginfile.php/1136044/mod_resource/content/1/V48.pdf
       \endverb
       \warn{\item Entry 'Anleitung' (lit.bib): Invalid format '20.06.2020' of date field 'date' - ignoring}
+    \endentry
+    \entry{Buch}{book}{}
+      \name{author}{1}{}{%
+        {{hash=953a2ae22df7ddfdadc6253711f35fb3}{%
+           family={J.\bibnamedelimi Rolfe},
+           familyi={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={R.\bibnamedelimi Muccillo},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           prefix={und},
+           prefixi={u\bibinitperiod}}}%
+      }
+      \strng{namehash}{953a2ae22df7ddfdadc6253711f35fb3}
+      \strng{fullhash}{953a2ae22df7ddfdadc6253711f35fb3}
+      \strng{bibnamehash}{953a2ae22df7ddfdadc6253711f35fb3}
+      \strng{authorbibnamehash}{953a2ae22df7ddfdadc6253711f35fb3}
+      \strng{authornamehash}{953a2ae22df7ddfdadc6253711f35fb3}
+      \strng{authorfullhash}{953a2ae22df7ddfdadc6253711f35fb3}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{"Effect of Irradiation on Impurity–Vacancy Dipoles in KBr Crystals Doped with Strontium". In: physica status solidi (b) 61.2 (), S. 579–587}
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/pssb.2220610223
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/pssb.2220610223
+      \endverb
+      \warn{\item Entry 'Buch' (lit.bib): Invalid format '30.07.2020' of date field 'date' - ignoring}
     \endentry
   \enddatalist
 \endrefsection

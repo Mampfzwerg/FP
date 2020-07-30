@@ -16,17 +16,40 @@ Die Heizraten der beiden Messreihen ergeben sich also zu
   H_2 &= \SI{1.65 +- 0.25}{\kelvin\per\minute} \; .
 \end{align*}
 
+\subsection{Bestimmung des Untergrunds}
+
+Die Messwerte in den Tabellen \ref{tab:mess1} und \ref{tab:mess2} enthalten einen exponentiellen Untergrund, der
+die Messung verfälscht. Dieser wird nach der Form
+
+\begin{equation}
+  bgr(T) = c \cdot \text{e}^{d \cdot T}
+\end{equation}
+
+mithilfe der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy genähert. 
+Dazu werden für die erste Messreihe der zweite bis achte und 43. Messwert in den Abbildungen
+\ref{fig:plot1} und \ref{fig:plot3} als Stützpunkte gewählt 
+und für die zweite Messreihe der zweite bis achte und 44. in den Abbildungen \ref{fig:plot2} und \ref{fig:plot4}.
+
+Die Parameter ergeben sich zu:
+
+\begin{align*}
+  c_1 &= (\num{1.63 +- 0.35})\cdot 10^{-6} \si{\pico\ampere} \\
+  d_1 &= \num{0.0462 +- 0.0008} \si{\per\kelvin}\\
+  c_2 &= (\num{6.0 +- 0.8})\cdot 10^{-6} \si{\pico\ampere}\\
+  d_2 &= \num{0.0411 +- 0.0005} \si{\per\kelvin}\; .
+\end{align*}
+
 \subsection{Bestimmung der Aktivierungsenergie $W$ nach der Approximationsmethode}
 
 Die Messdaten der beiden Messreihen sind in den Tabellen \ref{tab:mess1} und \ref{tab:mess2} aufgeführt.
-In den Abbildungen \ref{fig:plot1} und \ref{fig:plot2} wird der Depolarisationsstrom $I$ natürlich logarithmiert und in Abhängigkeit der Temperatur $T$
+In den Abbildungen \ref{fig:plot1} und \ref{fig:plot2} wird der Depolarisationsstrom $I$ in Abhängigkeit der Temperatur $T$
 aufgetragen.
 
 Zur Bestimmung der Aktivierungsenergie $W$ werden die Graphen in den Temperaturintervallen
 
 \begin{align*}
-  I_1 &= [\SI{221.35}{\kelvin}, \; \SI{253.75}{\kelvin}] \\
-  I_2 &= [\SI{224.35}{\kelvin}, \; \SI{257.15}{\kelvin}]
+  I_1 &= [\SI{238.65}{\kelvin}, \; \SI{258.35}{\kelvin}] \\
+  I_2 &= [\SI{239.85}{\kelvin}, \; \SI{258.65}{\kelvin}]
 \end{align*}
 
 gemäß der Exponentialfunktion 
@@ -41,15 +64,15 @@ mittels der Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothe
 Die Fitparameter $a$ in den Exponenten ergeben sich also zu
 
 \begin{align*}
-  a_1 &= (\num{-7.04 +- 0.16})\cdot 10^3 \si{\kelvin} \\
-  a_2 &= (\num{-6.52 +- 0.15})\cdot 10^3 \si{\kelvin} \; .
+  a_1 &= (\num{-6.2 +- 0.5})\cdot 10^3 \si{\kelvin} \\
+  a_2 &= (\num{-6.6 +- 0.5})\cdot 10^3 \si{\kelvin} \; .
 \end{align*}
 
 Durch den Vergleich mit Gleichung \eqref{eqn:exp} ergeben sich die Aktivierungsenergien
 
 \begin{align*}
-  W_1 &= -a_1 \cdot k_\text{B} = \SI{0.606 +- 0.014}{\eV} \\
-  W_2 &= -a_2 \cdot k_\text{B} = \SI{0.562 +- 0.013}{\eV}  \; .
+  W_1 &= -a_1 \cdot k_\text{B} = \SI{0.54 +- 0.04}{\eV} \\
+  W_2 &= -a_2 \cdot k_\text{B} = \SI{0.57 +- 0.04}{\eV}  \; .
 \end{align*}
 
 Die gemittelten Temperaturen der Depolarisationsstrommaxima lassen sich als
@@ -64,36 +87,31 @@ berechnen.
 Daraus ergeben sich die materialspezifischen Relaxationszeiten durch Umstellung der Gleichung \eqref{eqn:relax} zu
 
 \begin{align*}
-  \tau_{0,1} &= (\num{0.46 +- 0.30}) \cdot 10^{-12} \si{\second}\\
-  \tau_{0,2} &= (\num{8.00 +- 5.00}) \cdot 10^{-12} \si{\second} \; .
+  \tau_{0,1} &= (\num{1.0 +- 1.9}) \cdot 10^{-11} \si{\second}\\
+  \tau_{0,2} &= (\num{0.6 +- 1.0}) \cdot 10^{-11} \si{\second} \; .
 \end{align*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{content/plot1.pdf}
+  \caption{Exponentiell gefittete $I(T)$-Messwerte mit der Heizrate $H_1 = \SI{1.60 +- 0.28}{\kelvin\per\minute}$}
+  \label{fig:plot1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{content/plot2.pdf}
+  \caption{Exponentiell gefittete $I(T)$-Messwerte mit der Heizrate $H_2 = \SI{1.65 +- 0.25}{\kelvin\per\minute}$}
+  \label{fig:plot2}
+\end{figure}
+
 
 \subsection{Bestimmung der Aktivierungsenergie $W$ nach der Integrationsmethode}
 
 Für diese Methode werden erneut die Werte in den Tabellen \ref{tab:mess1} und \ref{tab:mess2} verwendet.
-Um die Integration nicht von dem gemessenen exponentiellen Untergrund verfälschen zu lassen, wird dieser 
-nach der Form 
-
-\begin{equation}
-  bgr(T) = c \cdot \text{e}^{d \cdot T}
-\end{equation}
-
-gefittet. Dazu werden für die erste Messreihe der zweite bis achte und 43. Messwert in Abbildung \ref{fig:plot3} als Stützpunkte gewählt 
-und für die zweite Messreihe der zweite bis achte und 44. in Abbildung \ref{fig:plot4}.
-In beiden Abbildungen ist der Depolarisationsstrom $I(T)$ gegen die Temperatur $T$ aufgetragen.
-Zur Approximation dient erneut die Funktion \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy.
-
-Die Parameter ergeben sich zu:
-
-\begin{align*}
-  c_1 &= (\num{1.63 +- 0.35})\cdot 10^-6 \si{\pico\ampere} \\
-  d_1 &= \num{0.0462 +- 0.0008} \si{\per\kelvin}\\
-  c_2 &= (\num{6.0 +- 0.8})\cdot 10^-6 \si{\pico\ampere}\\
-  d_2 &= \num{0.0411 +- 0.0005} \si{\per\kelvin}\; .
-\end{align*}
 
 Nach Approximationsvorschrift \eqref{eqn:fit} und Gleichung \eqref{eqn:int} ergeben sich die
-Fitparameter 
+Näherungsparameter 
 
 \begin{align*}
   a_{1,\text{int}} &\approx \num{-18.134} \cdot 10^3 \si{\kelvin} \\
@@ -116,37 +134,6 @@ und materialspezifischen Relaxationszeiten durch Umstellung der Gleichung \eqref
 
 Zur Integration dient das Paket \textit{scipy.integrate} aus der Python-Bibliothek SkiPy.
 
-\subsection{Temperaturabhängigkeit der Relaxationszeiten}
-
-Zum Vergleich der für die Heizraten $H_1$ und $H_2$ nach den beiden Methoden und Gleichung \eqref{eqn:rel} berechneten 
-Relaxationszeiten $\tau(T)$ sind diese in Abbildung \ref{fig:plot5} abgebildet.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.75]{content/plot5.pdf}
-  \caption{Die nach den Näherungs- und Integrationsmethode bestimmten Relaxationszeiten für die Heizraten $H_1$ und $H_2$}
-  \label{fig:plot5}
-\end{figure}
-
-
-
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.7]{content/plot1.pdf}
-  \caption{Exponentiell gefittete $I(T)$-Messwerte mit der Heizrate $H_1 = \SI{1.60 +- 0.28}{\kelvin\per\minute}$}
-  \label{fig:plot1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.7]{content/plot2.pdf}
-  \caption{Exponentiell gefittete $I(T)$-Messwerte mit der Heizrate $H_2 = \SI{1.65 +- 0.25}{\kelvin\per\minute}$}
-  \label{fig:plot2}
-\end{figure}
-
-
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.7]{content/plot3.pdf}
@@ -160,6 +147,19 @@ Relaxationszeiten $\tau(T)$ sind diese in Abbildung \ref{fig:plot5} abgebildet.
   \caption{Integrierte $I(T)$-Messwerte mit der Heizrate $H_2 = \SI{1.65 +- 0.25}{\kelvin\per\minute}$}
   \label{fig:plot4}
 \end{figure}
+
+\subsection{Temperaturabhängigkeit der Relaxationszeiten}
+
+Zum Vergleich der für die Heizraten $H_1$ und $H_2$ nach den beiden Methoden und Gleichung \eqref{eqn:rel} berechneten 
+Relaxationszeiten $\tau(T)$ sind diese in Abbildung \ref{fig:plot5} abgebildet.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.65]{content/plot5.pdf}
+  \caption{Die nach den Näherungs- und Integrationsmethode bestimmten Relaxationszeiten für die Heizraten $H_1$ und $H_2$}
+  \label{fig:plot5}
+\end{figure}
+
 
 
 \begin{table}

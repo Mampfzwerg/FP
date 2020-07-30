@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018)  (format=lualatex 2018.9.30)  21 JUL 2020 02:11
+This is LuaTeX, Version 1.07.0 (TeX Live 2018)  (format=lualatex 2018.9.30)  30 JUL 2020 14:43
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.087 seconds (./header.tex
+luaotfload | main : initialization completed in 0.085 seconds (./header.tex
 (/home/marek/.local/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
 (/home/marek/.local/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -898,24 +898,24 @@ Lua module: polyglossia 2013/05/11 1.3 Polyglossia)
 ldf
 File: gloss-german.ldf polyglossia: module for german
 Module polyglossia Info: Language data for german
-(polyglossia)            righthyphenmin	2
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            synonyms	table: 0x5456970
-(polyglossia)            hyphenation	
-(polyglossia)            loader	loadhyph-de-1901.tex
 (polyglossia)            patterns	hyph-de-1901.pat.txt
+(polyglossia)            righthyphenmin	2
+(polyglossia)            loader	loadhyph-de-1901.tex
+(polyglossia)            hyphenation	
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            synonyms	table: 0x5274b00
 (polyglossia)            patterns: hyph-de-1901.pat.txt on input line 6
 Module polyglossia Info: Language german was not yet loaded; created with id 4 o
 n input line 6
 Module polyglossia Info: Language german already loaded; id is 4 on input line 6
 
 Module polyglossia Info: Language data for ngerman
-(polyglossia)            righthyphenmin	2
-(polyglossia)            lefthyphenmin	2
-(polyglossia)            synonyms	table: 0x5456b40
-(polyglossia)            hyphenation	
-(polyglossia)            loader	loadhyph-de-1996.tex
 (polyglossia)            patterns	hyph-de-1996.pat.txt
+(polyglossia)            righthyphenmin	2
+(polyglossia)            loader	loadhyph-de-1996.tex
+(polyglossia)            hyphenation	
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            synonyms	table: 0x5274cd0
 (polyglossia)            patterns: hyph-de-1996.pat.txt on input line 68
 Module polyglossia Info: Language ngerman was not yet loaded; created with id 8 
 on input line 68
@@ -2287,18 +2287,19 @@ Package biblatex Info: Automatic encoding selection.
 
 \openout4 = main.bcf
 Package biblatex Info: Trying to load bibliographic data...
-
-
-Package biblatex Warning: File 'main.bbl' is wrong format version - expected 2.9
-.
-
 Package biblatex Info: ... file 'main.bbl' found.
-(./main.bbl
+ (./main.bbl
 
 Package biblatex Warning: Biber reported the following issues
 (biblatex)                with 'Anleitung':
 (biblatex)                - Entry 'Anleitung' (lit.bib): Invalid format '20.06.2
 020' of date field 'date' - ignoring.
+
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'Buch':
+(biblatex)                - Entry 'Buch' (lit.bib): Invalid format '30.07.2020' 
+of date field 'date' - ignoring.
 
 )
 Package biblatex Info: Reference section=0 on input line 11.
@@ -2390,7 +2391,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 129.
 
 [5]) (./content/durchfuehrung.tex
-<content/Aufbau.png, id=70, 858.20625pt x 487.8225pt>
+<content/Aufbau.png, id=72, 858.20625pt x 487.8225pt>
 File: content/Aufbau.png Graphic file (type png)
 <use content/Aufbau.png>
 Package luatex.def Info: content/Aufbau.png  used on input line 6.
@@ -2398,82 +2399,83 @@ Package luatex.def Info: content/Aufbau.png  used on input line 6.
 ) (./content/auswertung.tex [6<./content/Aufbau.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
+(hyperref)                removing `math shift' on input line 42.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 19.
+(hyperref)                removing `math shift' on input line 42.
 
-LaTeX Font Info:    Calculating math sizes for size <7.63434> on input line 36.
-LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 7.63445pt on input line 36.
-LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.34409pt on input line 36.
-LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 3.81721pt on input line 36.
-LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 7.63422pt on input line 36.
-LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 5.34392pt on input line 36.
-LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 3.81711pt on input line 36.
 [7]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 71.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 71.
-
-[8]
-<content/plot5.pdf, id=119, 462.52798pt x 346.89601pt>
-File: content/plot5.pdf Graphic file (type pdf)
-<use content/plot5.pdf>
-Package luatex.def Info: content/plot5.pdf  used on input line 126.
-(luatex.def)             Requested size: 346.89513pt x 260.17136pt.
+LaTeX Font Info:    Calculating math sizes for size <7.63434> on input line 59.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 127.
+(Font)              scaled to size 7.63445pt on input line 59.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 5.34409pt on input line 59.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 3.81721pt on input line 59.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 127.
-<content/plot1.pdf, id=120, 462.52798pt x 346.89601pt>
+(Font)              scaled to size 7.63422pt on input line 59.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
+(Font)              scaled to size 5.34392pt on input line 59.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
+(Font)              scaled to size 3.81711pt on input line 59.
+<content/plot1.pdf, id=112, 462.52798pt x 346.89601pt>
 File: content/plot1.pdf Graphic file (type pdf)
 <use content/plot1.pdf>
-Package luatex.def Info: content/plot1.pdf  used on input line 137.
+Package luatex.def Info: content/plot1.pdf  used on input line 96.
 (luatex.def)             Requested size: 323.76736pt x 242.82555pt.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 97.
+LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 97.
 
-Underfull \hbox (badness 2165) in paragraph at lines 138--138
+Underfull \hbox (badness 2165) in paragraph at lines 97--97
 [][]|\TU/lmr/m/n/10 Ex-po-nen-ti-ell ge-fit-te-te $\TU/LatinModernMath(1)/m/n/1
 0 𝐼(𝑇)$\TU/lmr/m/n/10 -Messwerte mit der Heiz-ra-te $\TU/LatinModernMath(
 1)/m/n/10 𝐻[] =
  []
 
-[9<./content/plot5.pdf>]
-<content/plot2.pdf, id=184, 462.52798pt x 346.89601pt>
+[8]
+<content/plot2.pdf, id=119, 462.52798pt x 346.89601pt>
 File: content/plot2.pdf Graphic file (type pdf)
 <use content/plot2.pdf>
-Package luatex.def Info: content/plot2.pdf  used on input line 144.
+Package luatex.def Info: content/plot2.pdf  used on input line 103.
 (luatex.def)             Requested size: 323.76736pt x 242.82555pt.
 
-Underfull \hbox (badness 2165) in paragraph at lines 145--145
+Underfull \hbox (badness 2165) in paragraph at lines 104--104
 [][]|\TU/lmr/m/n/10 Ex-po-nen-ti-ell ge-fit-te-te $\TU/LatinModernMath(1)/m/n/1
 0 𝐼(𝑇)$\TU/lmr/m/n/10 -Messwerte mit der Heiz-ra-te $\TU/LatinModernMath(
 1)/m/n/10 𝐻[] =
  []
 
-<content/plot3.pdf, id=185, 462.52798pt x 346.89601pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 109.
+
+[9<./content/plot1.pdf><./content/plot2.pdf>]
+<content/plot3.pdf, id=242, 462.52798pt x 346.89601pt>
 File: content/plot3.pdf Graphic file (type pdf)
 <use content/plot3.pdf>
-Package luatex.def Info: content/plot3.pdf  used on input line 152.
+Package luatex.def Info: content/plot3.pdf  used on input line 139.
 (luatex.def)             Requested size: 323.76736pt x 242.82555pt.
-[10<./content/plot1.pdf><./content/plot2.pdf>]
-<content/plot4.pdf, id=286, 462.52798pt x 346.89601pt>
+<content/plot4.pdf, id=243, 462.52798pt x 346.89601pt>
 File: content/plot4.pdf Graphic file (type pdf)
 <use content/plot4.pdf>
-Package luatex.def Info: content/plot4.pdf  used on input line 159.
+Package luatex.def Info: content/plot4.pdf  used on input line 146.
 (luatex.def)             Requested size: 323.76736pt x 242.82555pt.
-) (./content/diskussion.tex
-[11<./content/plot3.pdf><./content/plot4.pdf>] [12] [13]
+ [10<./content/plot3.pdf>]
+<content/plot5.pdf, id=301, 462.52798pt x 346.89601pt>
+File: content/plot5.pdf Graphic file (type pdf)
+<use content/plot5.pdf>
+Package luatex.def Info: content/plot5.pdf  used on input line 158.
+(luatex.def)             Requested size: 300.63962pt x 225.47972pt.
+
+[11<./content/plot4.pdf>]) (./content/diskussion.tex [12<./content/plot5.pdf>]
+[13] [14]
 Underfull \hbox (badness 10000) in paragraph at lines 29--34
 
  []
@@ -2483,9 +2485,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
-) [14]
+) [15]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
- [15]
+ [16]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
  (./main.aux
 Module polyglossia Info: Language ngerman already loaded; id is 8 on input line 
@@ -2493,26 +2495,31 @@ Module polyglossia Info: Language ngerman already loaded; id is 8 on input line
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 25.
-Package rerunfilecheck Info: File `main.aux' has not changed.
-(rerunfilecheck)             Checksum: B544F451B8C2CE4E1D8FF15FF892D969;12449.
+
+
+Package rerunfilecheck Warning: File `main.aux' has changed. Rerun.
+
+Package rerunfilecheck Info: Checksums for `main.aux':
+(rerunfilecheck)             Before: 94C93F783A048B6C6AEB8893D39E546E;13047
+(rerunfilecheck)             After:  1D3C6117140C55514AC564B9A2D2A219;13110.
 Package rerunfilecheck Info: File `main.toc' has not changed.
-(rerunfilecheck)             Checksum: EEC2B35A8A847F9DE9E84DFDEFDB6EB9;1306.
+(rerunfilecheck)             Checksum: F3AAAEF78BCB06A423DB3BD1F0F88FE2;1399.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 42996 strings out of 494407
+ 43003 strings out of 494407
  100000,1648299 words of node,token memory allocated
  770 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 43 attribute, 77 glue_spec
 , 43 attribute_list, 1 write, 1 pdf_action nodes
-   avail lists: 1:3,2:2525,3:158,4:31,5:223,6:30,7:5549,8:115,9:738,10:13,11:379
+   avail lists: 1:3,2:2401,3:158,4:39,5:215,6:32,7:5470,8:108,9:697,10:13,11:379
 
- 45684 multiletter control sequences out of 65536+600000
- 355 fonts using 133884207 bytes
- 61i,21n,107p,9101b,3153s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 45688 multiletter control sequences out of 65536+600000
+ 355 fonts using 133883615 bytes
+ 61i,21n,107p,9101b,3209s stack positions out of 5000i,500n,10000p,200000b,100000s
 </home/marek/.local/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmmono10-re
 gular.otf></home/marek/.local/texlive/2018/texmf-dist/fonts/opentype/public/lm/l
 mromancaps10-regular.otf></home/marek/.local/texlive/2018/texmf-dist/fonts/opent
@@ -2528,10 +2535,10 @@ entype/public/lm/lmroman10-regular.otf></home/marek/.local/texlive/2018/texmf-di
 st/fonts/opentype/public/lm/lmroman12-regular.otf></home/marek/.local/texlive/20
 18/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></home/marek/.local/tex
 live/2018/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf>
-Output written on main.pdf (15 pages, 210456 bytes).
+Output written on main.pdf (16 pages, 219621 bytes).
 
-PDF statistics: 540 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 131072)
- 105 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 576 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
+ 51 named destinations out of 1000 (max. 131072)
+ 113 words of extra memory for PDF output out of 10000 (max. 100000000)
 

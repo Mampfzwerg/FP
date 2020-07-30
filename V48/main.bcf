@@ -1977,6 +1977,8 @@
   <bcf:section number="0">
     <bcf:citekey order="1">Anleitung</bcf:citekey>
     <bcf:citekey order="2">Anleitung</bcf:citekey>
+    <bcf:citekey order="3">Buch</bcf:citekey>
+    <bcf:citekey order="4">Buch</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
