@@ -1,0 +1,236 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+Zunächst wird eine Justage für eine möglichst große Amplitude des FID und eine Minimierung des Imaginärteils durchgeführt. 
+Diese führt zu folgenden Werten
+
+\begin{align}
+  \omega_\text{L} &= \SI{0}{\mega\hertz},\\
+  \phi &= \SI{-0}{\degree}
+\end{align}
+
+für die Lamorfrequenz $\omega_\text{L}$ und die Phase $\phi$. Die Pulslängen des $\SI{90}{\degree}$ und des $\SI{180}{\degree}$
+ergeben sich zu 
+
+\begin{align}
+  \symup{\Delta} t_{90} &= \SI{0}{\micro\second},\\
+  \symup{\Delta} t_{180} &= \SI{0}{\micro\second}.
+\end{align}
+
+Die Temperaturmessungen zu Beginn der Messungen und als Abschluss dieser, ergeben als Temperaturen innerhalb des Magneten: 
+
+\begin{align}
+  T_\text{Beginn} &= \SI{0}{\celsius},\\
+  T_\text{Ende} &= \SI{0}{\celsius}.
+\end{align}
+
+\subsection{Bestimmung der Spin-Gitter Relaxationszeit}
+
+In diesem Abschnitt soll die Spin-Gitter Relaxationszeit $T_1$ bestimmt werden. Hierzu wurde die Spannungsamplitude der 
+induzierten Spannung für verschiedene Pulsabstände $\tau$ gemessen. Die Messwerte sind in Tabelle \ref{tab:mess1} zu finden.
+
+\begin{table}
+  \centering
+  \caption{Messwerte zur Bestimmung der Relaxationszeit $T_1$. Es wurde die Spannungsamplitude $U$ für verschiedene Pulsabstände $\tau$ gemessen.}
+  \label{tab:mess1}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $\tau \,/\, \si{\milli\second}$ & $U \,/\, \si{\volt}$ & $\tau \,/\, \si{\volt}$
+  & $U \,/\, \si{\volt}$\\
+  \midrule 
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Diese Messwerte wurden graphisch dargestellt in Abbildung ... . Mit der Gleichung \eqref{eqn:SGR} wird eine Ausgleichsrechnung
+anhand von 
+
+\begin{equation*}
+  U\left(\tau\right) = U_0 \left(1-2\exp{\left(-\frac{\tau}{T_1}\right)}\right) + U_1
+\end{equation*}
+
+durchgeführt. Dabei dient $U_1$ zum Ausgleich der Nulllinie. 
+Die Parameter der Ausgleichsrechnung ergeben sich mittels \textit{python} zu:
+
+\begin{align}
+  U_0 &= \SI{0(0)}{\volt},\\
+  T_1 &= \SI{0(0)}{\milli\second},\\
+  U_1 &= \SI{0(0)}{\volt}.
+\end{align}
+
+\subsection{Bestimmung der Spin-Spin Relaxationszeit}
+
+Die Bestimmung der Relaxationszeit $T_2$ erfolgt mithilfe der Meiboom-Gill-Methode. Anschließend wird die Carr-Purcell-Methode 
+betrachtet, die allerdings kein Ergebnis für $T_2$ liefern kann.
+
+\subsubsection{Meiboom-Gill-Methode}
+
+Das von der Meiboom-Gill Methode gelieferte Signal ist in Abbildung ... zu sehen. Mithilfe der Funktion \textit{scipy.signal.find\_peaks}\cite{scipy} 
+ZITIEREN werden die Peaks mit positiver Spannungsamplitude $U$ aus dem Signal herausgefiltert. Die Bestimmung der Peaks erfolgt 
+dabei über die CSV-Datei des Signals. Die so erhaltenen Messwerte sind in Tabelle \ref{tab:mess2} aufgeführt und in Abbildung ... 
+graphisch dargestellt. 
+
+\begin{table}
+  \centering
+  \caption{Herausgefilterte Peaks des Signals zur Bestimmung von $T_2$.}
+  \label{tab:mess2}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $t \,/\, \si{second}$ & $U \,/\, \si{\volt}$ & $t \,/\, \si{\second}$
+  & $U \,/\, \si{\volt}$\\
+  \midrule 
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Mit der Gleichung \eqref{eqn:MGM} wird eine Ausgleichsrechnung anhand von 
+
+\begin{equation*}
+  U\left(t\right) = U_0 \exp{\left(-\frac{t}{T_2}\right)} + U_2
+\end{equation*}
+
+durchgeführt, wobei $t = 2\tau$ gilt und $U_2$ die Verschiebung der Nulllinie ist. 
+
+Die Parameter der Ausgleichsrechnung ergeben sich mittels \textit{python} zu:
+
+\begin{align}
+  U_0 &= \SI{0(0)}{\volt},\\
+  T_2 &= \SI{0(0)}{\second},\\
+  U_2 &= \SI{0(0)}{\volt}.
+\end{align}
+
+\subsubsection{Carr-Purcell-Methode}
+
+Um genaue Ergebnisse zu erhalten, ist eine exakte Einstellung der Pulslänge für den $\SI{180}{\degree}$-Puls notwendig. Dies ist 
+in der Praxis nicht umsetzbar und würde zu großen Fehlern führen. Es ergibt sich aus dieser Methode demnach lediglich ein Signal,
+das in Abbildung .. zu sehen ist. $T_2$ kann daraus nicht bestimmt werden.  
+
+\subsection{Bestimmung der Magnetfeldgradientenstärke}
+
+Zur Bestimmung der Gradientenstärke $G$ wird das gut sichbare Echo in Abbildung ... fouriertransformiert.
+
+Die Fouriertransformation erfolgt mittels \textit{numpy}\cite{numpy} und ergibt ein Spektrum, welches in Abbildung ... zu sehen ist. 
+
+Mit dem Durchmesser des Proberöhrchens $d = \SI{4.2}{\milli\metre}$, dem gyromagnetischem Verhältnis für Protonen 
+$\gamma = \SI{2.67e8}{\per\second\tesla}$ und dem Durchmesser des Halbkreises im Spektrum des Echos $d_\text{f} \approx \SI{0}{\hertz}$
+ergibt sich $G$ zu 
+
+\begin{equation*}
+  G = \frac{2\pi d_\text{f}}{\gamma d} = \SI{0}{\tesla\per\metre}.
+\end{equation*}
+
+\subsection{Bestimmung der Diffusionskonstante}
+
+Zur Bestimmung der Diffusionskonstante $D$ werden die gemessenen Spannungsamplituden $U$ für verschiedene Pulsabstände $\tau$ aus 
+Tabelle... in Abbildung ... graphisch dargestellt.  
+
+\begin{table}
+  \centering
+  \caption{Gemessene Spannungsamplituden $U\left(\tau\right)$ zur Bestimmung der Diffusionskonstante $D$.}
+  \label{tab:mess3}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $\tau \,/\, \si{\milli\second}$ & $U \,/\, \si{\volt}$ & $\tau \,/\, \si{\milli\second}$
+  & $U \,/\, \si{\volt}$\\
+  \midrule 
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+      0 & 0 & 0 & 0\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Mit der Gleichung \eqref{eqn:DK} wird eine Ausgleichsrechnung anhand von 
+
+\begin{equation*}
+  U\left(2\tau\right) = U_0 \exp{\left(-\frac{-2\tau}{T_2}\right)} \exp{\left(-\frac{2}{3}D\gamma^2G^2\tau^3\right)} + U_3
+\end{equation*}
+
+durchgeführt. 
+
+
+
+
+Die Parameter der Ausgleichsrechnung ergeben sich mittels \textit{python} zu:
+
+\begin{align}
+  U_0 &= \SI{0(0)}{\volt},\\
+  D &= \SI{0(0)}{\metre^2\per\second},\\
+  U_3 &= \SI{0(0)}{\volt}.
+\end{align}
+
+Um die $\tau^3$-Abhängigkeit zu überprüfen kann noch eine lineare Regression mit 
+
+\begin{equation}
+  \ln{\left(U\left(\tau\right)\right)}-\frac{2\tau}{T_2} = a\tau^3+b
+\end{equation}
+
+durchgeführt werden. Dies ist in Abbildung ... zu sehen. Die Regressionsparameter ergeben sich zu 
+
+\begin{align*}
+  a &= \SI{0(0)}{\per\second^3},\\
+  b &= \num{0(0)},
+\end{align*}
+
+womit die $\tau^3$-Abhängigkeit in etwa bestätigt werden kann\dots
+
+\subsection{Bestimmung des Molekülradius}
+
+Der Molekülradius kann mithilfe der Stokes-Formel bestimmt werden:
+
+\begin{equation*}
+  D = \frac{k_\text{B}T}{6\pi\eta r} \rightleftarrows r = \frac{k_\text{B}T}{6 \pi\eta D}.
+\end{equation*}
+
+Mit $T = \SI{0}{\kelvin}$ und einer Viskosität $\eta = \SI{890.2}{\micro\pascal\second}$\cite{vis} ergibt sich ein Molekülradius
+von
+
+\begin{equation}
+  r = \SI{0(0)}{\metre}.
+\end{equation}
+
+Zur Berechnung eines Vergleichwertes wird angenommen, dass die Molküle in einer hexagonal dichtesten Kugelpackung angeordnet 
+sind. Die Raumfüllung beträgt dort $\SI{74}{\percent}$. Mit einer Molekülmasse von $m = \frac{M_\text{mol}}{N_\text{A}} = \SI{2.99e-26}{\kilo\gram}$
+und einer Dichte von $\rho=\SI{995}{\kilo\gram\per\metre^3}$\cite{rho} ergibt sich
+
+\begin{equation}
+  r_\text{hcp} = \left(\frac{m\cdot 0.74}{\frac{4}{3}\pi\rho}\right)^{\frac{1}{3}} = \SI{1.74e-10}{\metre}.
+\end{equation}
+
+
+%\begin{figure}
+%  \centering
+%  \includegraphics{plot.pdf}
+%  \caption{Plot.}
+%  \label{fig:plot}
+%\end{figure}
