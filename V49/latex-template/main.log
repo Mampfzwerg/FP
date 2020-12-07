@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.12.4)  5 DEC 2020 18:58
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020)  (format=lualatex 2020.12.4)  7 DEC 2020 21:34
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -1695,7 +1695,6 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
 {/home/sara/.local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package tocbasic Info: character protrusion at toc deactivated on input line 15.
 
- (./main.toc)
 \tf@toc=\write4
 
 \openout4 = main.toc
@@ -1703,29 +1702,117 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 15.
 
 ] (./content/theorie.tex) (./content/durchfuehrung.tex)
 (./content/auswertung.tex
+
+LaTeX Warning: Reference `tab:mess1' on page 3 undefined on input line 30.
+
 LaTeX Font Info:    Font shape `TU/LatinModernMath(2)/m/n' will be
 (Font)              scaled to size 5.00053pt on input line 34.
 LaTeX Font Info:    Font shape `TU/LatinModernMath(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 34.
- [3] [4] [5] [6]) (./content/diskussion.tex) [7]
-(./main.aux)
+
+LaTeX Warning: Reference `fig:plot1' on page 3 undefined on input line 59.
+
+<content/plot1.pdf, id=20, 462.528pt x 346.896pt>
+File: content/plot1.pdf Graphic file (type pdf)
+<use content/plot1.pdf>
+Package luatex.def Info: content/plot1.pdf  used on input line 63.
+(luatex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+LaTeX Warning: Reference `eqn:SGR' on page 3 undefined on input line 68.
+
+[3] [4<./content/plot1.pdf>]
+
+LaTeX Warning: Reference `fig:mgm' on page 5 undefined on input line 91.
+
+<content/mgm.png, id=91, 803.0pt x 541.02126pt>
+File: content/mgm.png Graphic file (type png)
+<use content/mgm.png>
+Package luatex.def Info: content/mgm.png  used on input line 95.
+(luatex.def)             Requested size: 321.1943pt x 216.40466pt.
+
+LaTeX Warning: Reference `tab:mess2' on page 5 undefined on input line 104.
+
+
+LaTeX Warning: Reference `fig:plot2.py' on page 5 undefined on input line 104.
+
+<content/plot2.pdf, id=93, 462.528pt x 346.896pt>
+File: content/plot2.pdf Graphic file (type pdf)
+<use content/plot2.pdf>
+Package luatex.def Info: content/plot2.pdf  used on input line 132.
+(luatex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+LaTeX Warning: Reference `eqn:MGM' on page 5 undefined on input line 137.
+
+[5<./content/mgm.png>] [6<./content/plot2.pdf>]
+
+LaTeX Warning: Reference `fig:cpm' on page 7 undefined on input line 157.
+
+<content/scope_6.png, id=156, 803.0pt x 541.02126pt>
+File: content/scope_6.png Graphic file (type png)
+<use content/scope_6.png>
+Package luatex.def Info: content/scope_6.png  used on input line 161.
+(luatex.def)             Requested size: 321.1943pt x 216.40466pt.
+
+LaTeX Warning: Reference `fig:mfg' on page 7 undefined on input line 168.
+
+<content/scope_8.png, id=157, 803.0pt x 541.02126pt>
+File: content/scope_8.png Graphic file (type png)
+<use content/scope_8.png>
+Package luatex.def Info: content/scope_8.png  used on input line 172.
+(luatex.def)             Requested size: 321.1943pt x 216.40466pt.
+
+LaTeX Warning: Reference `fig:trafoecho' on page 7 undefined on input line 177.
+
+<content/echo_gradient.pdf, id=159, 462.528pt x 346.896pt>
+File: content/echo_gradient.pdf Graphic file (type pdf)
+<use content/echo_gradient.pdf>
+Package luatex.def Info: content/echo_gradient.pdf  used on input line 181.
+(luatex.def)             Requested size: 323.76738pt x 242.82553pt.
+[7<./content/scope_6.png>] [8<./content/scope_8.png><./content/echo_gradient.pdf
+>]
+
+LaTeX Warning: Reference `tab:mess3' on page 9 undefined on input line 197.
+
+
+LaTeX Warning: Reference `fig:plot4' on page 9 undefined on input line 197.
+
+
+LaTeX Warning: Reference `eqn:DK' on page 9 undefined on input line 224.
+
+<content/plot4.pdf, id=193, 462.528pt x 346.896pt>
+File: content/plot4.pdf Graphic file (type pdf)
+<use content/plot4.pdf>
+Package luatex.def Info: content/plot4.pdf  used on input line 234.
+(luatex.def)             Requested size: 323.76738pt x 242.82553pt.
+
+LaTeX Warning: Reference `eqn:DK' on page 9 undefined on input line 247.
+
+[9]
+
+LaTeX Warning: Reference `fig:plot5' on page 10 undefined on input line 259.
+
+<content/plot5.pdf, id=204, 462.528pt x 346.896pt>
+File: content/plot5.pdf Graphic file (type pdf)
+<use content/plot5.pdf>
+Package luatex.def Info: content/plot5.pdf  used on input line 263.
+(luatex.def)             Requested size: 323.76738pt x 242.82553pt.
+[10<./content/plot4.pdf>]) (./content/diskussion.tex [11<./content/plot5.pdf>]) [12] (./main.aux)
 
 Package rerunfilecheck Warning: File `main.aux' has changed. Rerun.
 
 Package rerunfilecheck Info: Checksums for `main.aux':
-(rerunfilecheck)             Before: 5814594A58B87115C2E64FB223F93B18;8870
-(rerunfilecheck)             After:  FCEB101F98063DF02A65E8D311A03735;9582.
-
-Package rerunfilecheck Warning: File `main.toc' has changed. Rerun.
-
-Package rerunfilecheck Info: Checksums for `main.toc':
-(rerunfilecheck)             Before: 91F8C1F3C5E6F588F5D2E50B7FCEC108;1165
-(rerunfilecheck)             After:  713D64C64BF8AA794BD18A4B2296C550;1230.
+(rerunfilecheck)             Before: A94A2480D3289E625EEA47CD1B285758;8
+(rerunfilecheck)             After:  8C32ED1B0BB3E14CA1605DD1AA7C906A;12249.
 
 LaTeX Warning: There were undefined references.
 
 
-Package biblatex Warning: Please rerun LaTeX.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 
@@ -1733,13 +1820,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 35734 strings out of 479005
+ 35841 strings out of 479005
  100000,1977958 words of node,token memory allocated
- 824 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 1 glyph, 55 attribute, 82 gl
-ue_spec, 29 attribute_list, 1 write, 2 pdf_action nodes
-   avail lists: 1:2,2:1481,3:255,4:33,5:424,6:38,7:4421,8:93,9:792,10:8,11:311
- 54041 multiletter control sequences out of 65536+600000
+ 822 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 dir, 2 glue, 4 kern, 1 glyph, 61 attribute, 78 gl
+ue_spec, 32 attribute_list, 1 write, 2 pdf_action nodes
+   avail lists: 1:2,2:1600,3:289,4:55,5:439,6:41,7:4623,8:92,9:866,10:10,11:326
+ 54090 multiletter control sequences out of 65536+600000
  230 fonts using 85000155 bytes
  110i,19n,114p,10617b,2933s stack positions out of 5000i,500n,10000p,200000b,200000s
 </home/sara/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmmono10-reg
@@ -1749,18 +1836,18 @@ omancaps10-regular.otf></home/sara/.local/texlive/2020/texmf-dist/fonts/opentype
 fonts/opentype/public/lm/lmroman5-regular.otf></home/sara/.local/texlive/2020/te
 xmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></home/sara/.local/texliv
 e/2020/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></home/sara/.local
-/texlive/2020/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></ho
-me/sara/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-regular
-.otf></home/sara/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm-math/la
-tinmodern-math.otf></home/sara/.local/texlive/2020/texmf-dist/fonts/opentype/pub
-lic/lm/lmroman10-regular.otf></home/sara/.local/texlive/2020/texmf-dist/fonts/op
+/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></home/s
+ara/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm-math/latinmodern-mat
+h.otf></home/sara/.local/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroma
+n8-regular.otf></home/sara/.local/texlive/2020/texmf-dist/fonts/opentype/public/
+lm-math/latinmodern-math.otf></home/sara/.local/texlive/2020/texmf-dist/fonts/op
 entype/public/lm/lmroman12-regular.otf></home/sara/.local/texlive/2020/texmf-dis
 t/fonts/opentype/public/lm/lmsans10-bold.otf></home/sara/.local/texlive/2020/tex
 mf-dist/fonts/opentype/public/lm/lmroman12-bold.otf>
-Output written on main.pdf (7 pages, 71466 bytes).
+Output written on main.pdf (12 pages, 250132 bytes).
 
-PDF statistics: 245 PDF objects out of 1000 (max. 8388607)
- 195 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 131072)
+PDF statistics: 466 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 131072)
  97 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -19,6 +19,31 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{radius}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=366be13c21bc1855d91d544afa537ff9}{%
+           family={Edward},
+           familyi={E\bibinitperiod},
+           given={John\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{366be13c21bc1855d91d544afa537ff9}
+      \strng{fullhash}{366be13c21bc1855d91d544afa537ff9}
+      \strng{bibnamehash}{366be13c21bc1855d91d544afa537ff9}
+      \strng{authorbibnamehash}{366be13c21bc1855d91d544afa537ff9}
+      \strng{authornamehash}{366be13c21bc1855d91d544afa537ff9}
+      \strng{authorfullhash}{366be13c21bc1855d91d544afa537ff9}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Chemical Education}
+      \field{title}{Molecular volumes and the Stokes-Einstein equation}
+      \field{year}{1970}
+      \verb{doi}
+      \verb 10.1021/ed047p261
+      \endverb
+    \endentry
     \entry{vis}{article}{}
       \name{author}{1}{}{%
         {{hash=7e4b8c66fe79b057768253547175a080}{%
@@ -99,6 +124,28 @@
       \verb{url}
       \verb https://www.numpy.org
       \endverb
+    \endentry
+    \entry{diff}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=cc2426786020e986a88d48944839e7a6}{%
+           family={u.a.},
+           familyi={u\bibinitperiod},
+           given={DC\bibnamedelima Chang},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc2426786020e986a88d48944839e7a6}
+      \strng{fullhash}{cc2426786020e986a88d48944839e7a6}
+      \strng{bibnamehash}{cc2426786020e986a88d48944839e7a6}
+      \strng{authorbibnamehash}{cc2426786020e986a88d48944839e7a6}
+      \strng{authornamehash}{cc2426786020e986a88d48944839e7a6}
+      \strng{authorfullhash}{cc2426786020e986a88d48944839e7a6}
+      \field{sortinit}{u}
+      \field{sortinithash}{77a6935510e008adcf5b555e7b4f0711}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{title}{Spin echo studies on cellular water}
+      \field{year}{1972}
     \endentry
     \entry{scipy}{article}{}
       \name{author}{35}{}{%
