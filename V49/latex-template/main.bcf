@@ -2351,13 +2351,17 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">programme.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">scipy</bcf:citekey>
-    <bcf:citekey order="2">numpy</bcf:citekey>
-    <bcf:citekey order="3">vis</bcf:citekey>
-    <bcf:citekey order="4">rho</bcf:citekey>
-    <bcf:citekey order="5">diff</bcf:citekey>
-    <bcf:citekey order="6">diff</bcf:citekey>
-    <bcf:citekey order="7">radius</bcf:citekey>
+    <bcf:citekey order="1">spinecho</bcf:citekey>
+    <bcf:citekey order="2">spinecho</bcf:citekey>
+    <bcf:citekey order="3">Anleitung2</bcf:citekey>
+    <bcf:citekey order="4">Anleitung2</bcf:citekey>
+    <bcf:citekey order="5">scipy</bcf:citekey>
+    <bcf:citekey order="6">numpy</bcf:citekey>
+    <bcf:citekey order="7">vis</bcf:citekey>
+    <bcf:citekey order="8">rho</bcf:citekey>
+    <bcf:citekey order="9">diff</bcf:citekey>
+    <bcf:citekey order="10">diff</bcf:citekey>
+    <bcf:citekey order="11">radius</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
