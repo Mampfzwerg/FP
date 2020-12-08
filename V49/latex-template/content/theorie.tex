@@ -12,7 +12,7 @@ In diesem Verfahren ist eine Probe von einem möglichst homogenem externen Magne
 magnetischen Momente und die daran gekoppelten Spins der Kerne parallel zu $\vec{B_0}$ ausrichten. 
 Diese Orientierungen ergeben eine makroskopische Magnetisierung
 $\vec{M}$ der Probe. Durch Anlegen eines magnetischen Wechselfeldes werden die Spins aus ihrer Ausgangslage
-parrallel zu $\vec{B_O}$ ausgelenkt und relaxieren nach den charakteristischen Zeiten $T_1$ und $T_2$ wieder zurück.
+parrallel zu $\vec{B_0}$ ausgelenkt und relaxieren nach den charakteristischen Zeiten $T_1$ und $T_2$ wieder zurück.
 Dabei führen ihre magnetischen Momente eine sogenannte Lamorpräzession mit der Lamorfrequenz 
 $\omega_\text{L} \approx \SI{21.7}{\mega\hertz}$ um die $B_0$-Achse durch und die zeitliche
 Änderung von $\vec{M}$ kann durch die Blochschen Gleichungen
@@ -34,12 +34,13 @@ Auf die magnetischen Momente wirkt schließlich ein Drehmoment
 
 Die beiden Relaxationen werden nach der Spin-Echo-Methode durch eine Auslenkung von $\SI{90}{\degree}$
 und eine dadurch resultierende Spinausrichtung senkrecht zu $\vec{B_0}$ hervorgerufen.
-Für die transversale Magnetisierung ergibt sich also der mit der Zeit exponentiell abnehmende Verlauf
+Für die transversale Magnetisierung ergibt sich also der mit der Zeit $T_2$ exponentiell abnehmende Verlauf
 \begin{equation}
     M_\text{x,y} \left(\tau\right) = M_0 \exp{\left(-\frac{2\tau}{T_2}\right)} \; .
     \label{eqn:MGM}
 \end{equation}
-Damit erstarkt die longitudinale Magnetisierung mit dem Verlauf 
+
+und für die longitudinale Magnetisierung der von $T_1$ abhängige Verlauf 
 
 \begin{equation}
     M_\text{z}\left(\tau\right) = M_0 \left(1-2\exp{\left(-\frac{\tau}{T_1}\right)}\right) \; .
@@ -59,8 +60,8 @@ und erzeugen dadurch ein Spin-Echo-Signal. Dieses Verfahren ist schematisch in \
   Die Methode der Carr-Purcell-Pulzsequenz erlaubt eine Bestimmung von $T_2$ indem statt einem mehrere
   $\SI{180}{\degree}$-Pulse hinter einander geschaltet werden. Die Spin-Echos werden nach dieser
   Methode mit der Zeit kleiner, da sich immer mehr Spins durch $\vec{B_0}$ ausrichten.
-  Es ergiben sich für verschiedene Atome unterschiedliche charakteristische Relaxationszeiten, 
-  die gemessen werden und duch die z.B. Verbindungen genauer untersucht werden können.
+  Es ergeben sich unterschiedliche charakteristische Relaxationszeiten für verschiedene Atome, 
+  die gemessen werden und durch die z.B. Verbindungen genauer untersucht werden können.
   Die Meiboom-Gill-Methode basiert auf einer ähnlichen um \SI{90}{\degree} phasenverschobenen Pulsfolge, 
   die ein alternierendes Vorzeichen der Amplitude besitzt. Durch diese Verschiebung heben sich die 
   Ungenauigkeiten des Drehwinkels auf.
@@ -83,12 +84,12 @@ ergibt sich die Diffusionszeit
     T_D = \frac{3}{D \gamma^2 G^2 \tau^2} \; .
 \end{equation}
 
-Dadurch wird der zeitliche Verlauf der transversalen Magnetisierung zu 
+Dadurch wird der zeitliche Verlauf der transversalen Magnetisierung erweitert zu 
 \begin{equation}
-    M_\text{x,y} \left(2\tau\right) = M_0 \exp{\left(-\frac{2\tau}{T_2}\right)} \exp{\left(-\frac{2}{3}D\gamma^2G^2\tau^3\right)} 
+    M_\text{x,y} \left(2\tau\right) = M_0 \exp{\left(-\frac{2\tau}{T_2}\right)} \exp{\left(-\frac{2}{3}D\gamma^2G^2\tau^3\right)} \; .
     \label{eqn:DK}
 \end{equation}
-erweitert. Die Diffusionskonstante ergibt sich mit der Viskosität $\eta$ und dem Molekülradius $r$ zu
+Die Diffusionskonstante ergibt sich mit der Viskosität $\eta$ und dem Molekülradius $r$ zu
 \begin{equation}
     D = \frac{k_\text{B}T}{6\pi \eta r} \; .
 \end{equation}
