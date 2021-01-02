@@ -8,7 +8,7 @@ import uncertainties.unumpy as unp
 fig, ax1 = plt.subplots()
 
 phi, I = np.genfromtxt('data/detektorscan1.UXD', unpack=True)
-ax1.plot(phi, I, 'x', color='#00BFFF', label='1. Detetorscan')
+ax1.plot(phi, I, 'x', color='#00BFFF', label='1. Detektorscan')
 
 def gauss(phi, mu, si, a, b):
     return a / np.sqrt(2 * np.pi * si**2)* np.exp(-(phi - mu)**2 / (2 * si**2)) + b
@@ -29,12 +29,13 @@ Ix = np.zeros(200) + 0.5 * Imax
 phix = np.linspace(unp.nominal_values(mu)-0.051, unp.nominal_values(mu)+0.051, 200)
 ax1.plot(phix, Ix, '-', color='#A901DB', label='Halbwertsbreite')
 
+print(Imax, np.max(I))
 
 ax2 = ax1.twinx()
 ax2.grid(linestyle='dotted', which="both")
 
 ax1.set_xlim(np.min(phi), np.max(phi))
-ax1.set_xlabel(r'Winkel $\phi$ (°)')
+ax1.set_xlabel(r'Winkel $\alpha_i$ (°)')
 ax1.set_ylabel(r'Intensität')
 ax1.set_ylim(-5e4, Imax+5e4)
 ax2.set_ylabel(r'Reflektivität')
@@ -49,11 +50,13 @@ plt.close()
 fig, ax1 = plt.subplots()
 
 phi, I = np.genfromtxt('data/zscan1.UXD', unpack=True)
-ax1.plot(phi, I, 'x', color='#00BFFF', label='1. Detetorscan')
+ax1.plot(phi, I, 'x', color='#00BFFF', label='1. Z-Scan')
 
 Imax = np.max(I)
+print(Imax)
 Ix = np.zeros(200) + 0.5 * Imax
-phix = np.linspace(phi[17], phi[22], 200)
+phix = np.linspace(phi[16], phi[23], 200)
+print(phi[23] - phi[16])
 ax1.plot(phix, Ix, '-', color='#A901DB', label='Strahlbreite')
 
 
@@ -70,3 +73,34 @@ ax1.legend(loc='center right')
 
 plt.tight_layout()
 plt.savefig('plot2.pdf')
+plt.close()
+##################################################################################################################
+
+fig, ax1 = plt.subplots()
+
+phi, I = np.genfromtxt('data/rockingscan1.UXD', unpack=True)
+ax1.plot(phi, I, 'x', color='#00BFFF', label='1. Rockingscan')
+
+ax1.plot(phi[4], I[4], 'x', color='#A901DB', label='Geometriewinkel')
+ax1.plot(phi[41], I[41], 'x', color='#A901DB')
+print(phi[4], phi[41])
+
+ImaxG = 1636650
+Imax = np.max(I)
+
+ax2 = ax1.twinx()
+ax2.grid(linestyle='dotted', which="both")
+
+ax1.set_xlim(np.min(phi), np.max(phi))
+ax1.set_xlabel(r'Winkel $\alpha_i$ (°)')
+ax1.set_ylabel(r'Intensität')
+ax1.set_ylim(-5e4, Imax+5e4)
+ax2.set_ylabel(r'Reflektivität')
+ax2.set_ylim(-5e4/ImaxG, (Imax+5e4)/ImaxG)
+ax1.legend(loc='center right')
+
+plt.tight_layout()
+plt.savefig('plot3.pdf')
+plt.close()
+##################################################################################################################
+
