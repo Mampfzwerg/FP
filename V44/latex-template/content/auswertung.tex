@@ -54,14 +54,15 @@ Aus diesem lässt sich anhand der Differenz der Höhen rechts und links der nega
 die Strahldicke als etwa
 
 \begin{equation*}
-    d_\text{S} = \SI{0.28}{\milli\meter}
+    d_0 = \SI{0.28}{\milli\meter}
 \end{equation*}
 
 bestimmen. Zudem übersteigt hier die maximale Intensität die des Detektorscans mit 
 
-\begin{equation*}
+\begin{equation}
     I_\text{max,z} = \num{1636650} \; ,
-\end{equation*}
+    \label{eqn:imax}
+\end{equation}
 
 mit welcher die Reflektivitäten der folgenden Scans normiert werden sollen.
 
@@ -78,17 +79,71 @@ können links und rechts des Intensitätspeaks die beiden Geometriewinkel $\alph
 abgelesen werden, deren Intensitäten gerade nicht verschwindend sind. 
 Zusammen mit dem gemitteltem Winkel $\alpha_g$ ergeben sich diese zu
 
+\vspace{-25pt}
 \begin{align*}
     \alpha_{g,1} &= \SI{-0.84}{\degree} \; , \\
     \alpha_{g,2} &= \SI{0.64}{\degree} \; , \\
     \alpha_{g} = \sfrac{1}{2}|\alpha_{g,1} &- \alpha_{g,2}| = \SI{0.74}{\degree} \; .
 \end{align*}
 
+
+\section{Scananwendung zur Vermessung eines mit Polystyrol beschichteten Silizium-Wafers}
+
+Für die eigentliche Messung wurden ein Reflektivitäts- und ein Diffuser Scan angewandt und deren Daten aufbereitet,
+sodass sich die in Abbildung \ref{fig:plot4} dargestellten Ergebnisse zeigen.
+Zur Bestimmung der Reflektivitäten werden die Intensitäten auf die fünffache maximale Intensität des 
+Z-Scans \eqref{eqn:imax} normiert. Damit wird berücksichtigt, dass die Messdauer im Vergleich zu den Justagemessungen
+von $\SI{1}{\second}$ auf $\SI{5}{\second}$ erhöht wurde.
+Weiterhin werden die Daten statt in Winkelabhängigkeit, in Abhängigkeit des Wellenvektorübertrags 
+$q = \frac{4\pi}{\lambda} \cdot \text{sin} \left(\frac{\pi}{180}\alpha_i\right)$ dargestellt.\\
+
+Schließlich werden zur Eliminierung von Rückstreueffekten im Schichtsystem, die Messdaten des Diffusen Scans
+von den eigentlichen abgezogen.
+Es erfolgt eine weitere Korrektur um den Geometriefaktor, welcher sich aus der Strahlbreite $d_0$ und dem 
+Geometriewinkel $\alpha_g$ nach den Gleichungen \eqref{eqn:geome} bestimmen lässt. 
+Diese verhindert die Unterrepräsentation sehr kleiner Winkel, für die nicht die gesamte Strahlbreite am Wafer 
+reflektiert wird.\\
+
+Anschließend werden die Positionen der Minima der Kiessig-Oszillationen mit Hilfe der Funktion
+\textit{scipy.signal.find\_peaks} aus der Python-Bibliothek SkiPy bestimmt.
+Aus deren Abständen kann die Schichtdicke des Polysterol(PS)-Films auf dem Silizium(Si)-Wafer bestimmt werden
+
+\vspace{-20pt}
+\begin{equation*}
+    d_\text{PS} = (\num{882.43 +- 0.04}) \cdot 10^{-10} \si{\meter} \; .
+\end{equation*}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.7]{content/plot3.pdf}
+    \includegraphics[scale=0.7]{content/plot4.pdf}
     \vspace{-10pt}
-    \caption{Intensität des Rockingscans in Abhängigkeit des Einfallswinkels $\alpha_i$.}
-    \label{fig:plot3}
+    \caption{Vermessungsdaten der Reflektivität PS-Si-Wafers in Abhängigkeit des Wellenvektorübertrages $q$.
+            Zur Übersichtlichkeit sind einige Messdaten auf der logarithmischen Skala um 0,1 tiefer geschoben.}
+    \label{fig:plot4}
 \end{figure}
+
+Zuletzt wird mithilfe der Parrat-Algorithmus eine Theoriekurve an die 
+korrigierten Messdaten durch Variation einiger Parameter gefittet.
+Diese Parameter beinhalten Brechungsindizes $n$ der drei Materialien, 
+die Rauigkeiten $\sigma$ der beiden Grenzflächen und die Schichtdicke $d_\text{PS}$.
+
+\vspace{-35pt}
+\begin{align*}
+    n_\text{Luft} &= 1 \; ,\\
+    n_\text{PS} &= 1 - \num{0.7e-6} \; ,\\
+    n_\text{Si} &= 1 - \num{6.7e-6} \; ,\\
+    \sigma_\text{Luft-PS} &= \SI{7.9e-10}{\meter} \; ,\\
+    \sigma_\text{PS-Si} &= \SI{5.7e-10}{\meter} \; ,\\
+    d_\text{PS} &= \SI{855e-10}{\meter} \; .
+\end{align*}
+
+Die kritischen Winkel der Totalreflexion der beiden Materialien
+lassen sich aus den Korrekturen $\delta$ der Brechungsindizes 
+$n = 1 - \delta$ berechnen zu
+
+\vspace{-20pt}
+\begin{align*}
+    \alpha_\text{c,PS} &= \SI{0.068}{\degree} \; ,\\
+    \alpha_\text{c,Si} &= \SI{0.210}{\degree} \; .\\
+\end{align*}
 
