@@ -48,13 +48,13 @@ und für die longitudinale Magnetisierung der von $T_1$ abhängige Verlauf
 \end{equation}
 
 Bei Anlegung eines auf den $\SI{90}{\degree}$ folgenden $\SI{180}{\degree}$-Pulses relaxieren die Spins erst nach einer Zeit $T$
-und erzeugen dadurch ein Spin-Echo-Signal. Dieses Verfahren ist schematisch in \ref{fig:spinecho} dargestellt.
+und erzeugen dadurch ein Spin-Echo-Signal. Dieses Verfahren ist schematisch in \ref{fig:mgm1} dargestellt.
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.4]{content/spinecho.png}
     \caption{Typische Spin-Echo-Sequenz \cite{spinecho}.}
-    \label{fig:mgm}
+    \label{fig:mgm1}
   \end{figure}
 
   Die Methode der Carr-Purcell-Pulzsequenz erlaubt eine Bestimmung von $T_2$ indem statt einem mehrere
@@ -76,7 +76,7 @@ Aufschluss über jene Ortsabhängigkeit gibt.
 In Folge einer Diffusion können Protonen in Probenbereiche vordringen, in denen ihre Lamorfrequenz nicht mehr
 mit dem änderlichen $\vec{B}$ resonieren. Deshalb nimmt die Echoampliude zeitlich exponentiell mit
 \begin{equation}
-    A(2\tau) = \text{exp}\left(\sfrac{1}{3}D \gamma^2 G^2 \tau^2 (2\tau)^2 \right)
+    A(2\tau) = \text{exp}\left(\sfrac{1}{3}D \gamma^2 G^2 \tau^2 (2\tau) \right)
 \end{equation}
 ab. $G$ beschreibt dabei den Feldgradienten und $D$ den Diffusionskoeffizienten. Als Zeitkonstante
 ergibt sich die Diffusionszeit 
