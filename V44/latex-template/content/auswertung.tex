@@ -74,7 +74,7 @@ mit welcher die Reflektivitäten der folgenden Scans normiert werden sollen.
     \label{fig:plot21}
 \end{figure}
 
-Aus dem in Abbildung \ref{fig:plot3} dargestellten ersten Rockingscans
+Aus dem in Abbildung \ref{fig:plot21} dargestellten ersten Rockingscans
 können links und rechts des Intensitätspeaks die beiden Geometriewinkel $\alpha_{g,i}$
 abgelesen werden, deren Intensitäten gerade nicht verschwindend sind. 
 Zusammen mit dem gemitteltem Winkel $\alpha_g$ ergeben sich diese zu
@@ -86,6 +86,13 @@ Zusammen mit dem gemitteltem Winkel $\alpha_g$ ergeben sich diese zu
     \alpha_{g} = \sfrac{1}{2}|\alpha_{g,1} &- \alpha_{g,2}| = \SI{0.74}{\degree} \; .
 \end{align*}
 
+Alternativ kann der Geometriewinkel auch über Strahlbreite $d_0 = \SI{0.28}{\milli\meter}$ und 
+die Probendicke $D = \SI{20}{\milli\meter}$ bestimmt werden zu
+
+\begin{equation}
+    \alpha'_g = \text{arcsin} \left(\sfrac{d_0}{D}\right) \approx \SI{0.8}{\degree}  \; .
+\end{equation}
+
 
 \section{Scananwendung zur Vermessung eines mit Polystyrol beschichteten Silizium-Wafers}
 
@@ -96,6 +103,15 @@ Z-Scans \eqref{eqn:imax} normiert. Damit wird berücksichtigt, dass die Messdaue
 von $\SI{1}{\second}$ auf $\SI{5}{\second}$ erhöht wurde.
 Weiterhin werden die Daten statt in Winkelabhängigkeit, in Abhängigkeit des Wellenvektorübertrags 
 $q = \frac{4\pi}{\lambda} \cdot \text{sin} \left(\frac{\pi}{180}\alpha_i\right)$ dargestellt.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{content/plot4.pdf}
+    \vspace{-10pt}
+    \caption{Vermessungsdaten der Reflektivität PS-Si-Wafers in Abhängigkeit des Wellenvektorübertrages $q$.
+            Zur Übersichtlichkeit sind einige Messdaten auf der logarithmischen Skala um 0,1 tiefer geschoben.}
+    \label{fig:plot4}
+\end{figure}
 
 Schließlich werden zur Eliminierung von Rückstreueffekten im Schichtsystem, die Messdaten des Diffusen Scans
 von den eigentlichen abgezogen.
@@ -113,16 +129,7 @@ Aus deren Abständen kann die Schichtdicke des Polysterol(PS)-Films auf dem Sili
     d_\text{PS} = (\num{882.43 +- 0.04}) \cdot 10^{-10} \si{\meter} \; .
 \end{equation*}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7]{content/plot4.pdf}
-    \vspace{-10pt}
-    \caption{Vermessungsdaten der Reflektivität PS-Si-Wafers in Abhängigkeit des Wellenvektorübertrages $q$.
-            Zur Übersichtlichkeit sind einige Messdaten auf der logarithmischen Skala um 0,1 tiefer geschoben.}
-    \label{fig:plot4}
-\end{figure}
-
-Zuletzt wird mithilfe der Parrat-Algorithmus eine Theoriekurve an die 
+Weiterhin wird mithilfe des Parrat-Algorithmus eine Theoriekurve an die 
 korrigierten Messdaten durch Variation einiger Parameter gefittet.
 Diese Parameter beinhalten Brechungsindizes $n$ der drei Materialien, 
 die Rauigkeiten $\sigma$ der beiden Grenzflächen und die Schichtdicke $d_\text{PS}$.
@@ -146,4 +153,8 @@ $n = 1 - \delta$ berechnen zu
     \alpha_\text{c,PS} &= \SI{0.068}{\degree} \; ,\\
     \alpha_\text{c,Si} &= \SI{0.210}{\degree} \; .\\
 \end{align*}
+
+\vspace{-20pt}
+Zuletzt werden, durch den Parrat-Algorithmus berechnet, eine Theoriekurve der Reflektivität mit
+ideal glatten Grenzflächen und die Fresnelreflektivität einer Siliziumoberfläche an der Luft eingezeichnet.
 

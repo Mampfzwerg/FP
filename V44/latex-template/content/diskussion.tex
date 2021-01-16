@@ -1,7 +1,21 @@
 \section{Diskussion}
 \label{sec:Diskussion}
 
-Die durch durch die Oszillationsminima abgeschätzte Schichtdicke
+Zuerst lässt sich feststellen, dass die Theoriekurven des Wafers beide Kiessig-Oszillationen im Verlauf aufzeigen.
+Sie gleichen sich im Verlauf stark, spalten sich jedoch für einen größer werdenden Wellenvektorübertrag $q$.
+Die Reflektivität des Wafers mit theoretisch glatten Oberflächen ist dabei größer als mit relastisch rauen 
+Oberflächen. Außerdem liegen beide Theoriekurven signifikant unter der Fresnelreflektivität einer 
+einzelnen Siliziumoberfläche.
+Diese Zusammenhänge sind physikalisch logisch. Glatte Oberflechen reflektieren besser als raue.
+Für die nach verschiedenen Methoden bestimmten Geometriewinkel
+
+\vspace{-10pt}
+\begin{align*}
+    \alpha_g &= \SI{0.74}{\degree} & \alpha'_g &= \SI{0.8}{\degree}
+\end{align*}
+
+ergibt sich eine relative Abweichung von $\SI{7.5}{\percent}$.
+Die durch die Oszillationsminima abgeschätzte Schichtdicke
 
 \vspace{-10pt}
 \begin{equation*}
@@ -36,7 +50,7 @@ $\SI{11.8}{\percent}$ von den Literaturwerten \cite{tolan}
     \delta_\text{Si} &= \num{6.7e-6} \;
 \end{align*}
 
-ab. Diese Abweichungen ergebn sich möglicherweise aus einer 
+ab. Diese Abweichungen ergeben sich möglicherweise aus einer 
 ungenauen Bestimmung der Parameter.
 Die kritischen Winkel 
 
@@ -156,8 +170,13 @@ und er liefert nah an der Theorie liegende Werte.
         linewidth = 0.7, color='#566573', label=r'$\alpha_c$ für Si')
         #
         par = parratt(z) #Aufruf des Parrat-Algorithmus
-        plt.plot(qz, par, linewidth=0.7, color='#F90421', 
-        label='Theoriekurve')
+        par2, r13 = parratt2(z)
+        plt.plot(qz, par, linewidth=0.7, color='#F90421',
+        label='Theoriekurve (raues Si)')
+        plt.plot(qz, par2, linewidth=0.7, color='#FA58AC',
+        label='Theoriekurve (glattes Si)', alpha=0.5)
+        plt.plot(qz, r13, linewidth=0.7, color='#FA58AC',
+        linestyle='dashed', label='Fresnelrefektivität Si', alpha=0.5)
         #
         #
         plt.yscale('log')
@@ -250,5 +269,26 @@ und er liefert nah an der Theorie liegende Werte.
                 pass
         return par
     
+    def parratt2(z):
+        kz1 = k * np.sqrt(np.abs(n1**2 - np.cos(ai)**2))
+        kz2 = k * np.sqrt(np.abs(n2**2 - np.cos(ai)**2))
+        kz3 = k * np.sqrt(np.abs(n3**2 - np.cos(ai)**2))
+        #
+        r12 = (kz1 - kz2) / (kz1 + kz2)
+        r23 = (kz2 - kz3) / (kz2 + kz3)
+        r13 = (kz1 - kz3) / (kz1 + kz3)
+        #
+        x2 = np.exp(0 - (kz2 * z) * 2j) * r23
+        x1 = (r12 + x2) / (1 + r12 * x2)
+        par = np.abs(x1)**2
+        #Strecke vor Beginn der Oszillationen auf 1 setzen
+        for i in np.arange(np.size(par)):
+            if (i <= 296): #296 manuell angepasst
+                par[i] = 1
+                r13[i] = 1
+            else:
+                pass
+        return par, r13
+
     plotten(x, y)
 \end{lstlisting}
