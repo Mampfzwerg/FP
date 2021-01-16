@@ -70,12 +70,15 @@ def plotten(phi, I):
     ax1.axvline(x=qcrit_Si, ymin=0, ymax=1, linestyle='dashed', linewidth = 0.7, color='#566573', label=r'$\alpha_c$ für Si')
     #
     par = parratt(z) #Aufruf des Parrat-Algorithmus
-    plt.plot(qz, par, linewidth=0.7, color='#F90421', label='Theoriekurve')
+    par2, r13 = parratt2(z)
+    plt.plot(qz, par, linewidth=0.7, color='#F90421', label='Theoriekurve (raues Si)')
+    plt.plot(qz, par2, linewidth=0.7, color='#FA58AC', label='Theoriekurve (glattes Si)', alpha=0.5)
+    plt.plot(qz, r13, linewidth=0.7, color='#FA58AC', linestyle='dashed', label='Fresnelrefektivität Si', alpha=0.5)
     #
     #
     plt.yscale('log')
     plt.grid(alpha = 0.2)
-    ax1.legend(fancybox=True, ncol = 1, loc='upper right')
+    ax1.legend(fancybox=True, ncol = 1, loc='upper right', fontsize='small')
     ax1.set_xlabel('q (1/m)')
     ax1.set_ylabel('Reflektivität')
     fig.tight_layout()
@@ -160,5 +163,26 @@ def parratt(z):
         else:
             pass
     return par
+
+def parratt2(z):
+    kz1 = k * np.sqrt(np.abs(n1**2 - np.cos(ai)**2))
+    kz2 = k * np.sqrt(np.abs(n2**2 - np.cos(ai)**2))
+    kz3 = k * np.sqrt(np.abs(n3**2 - np.cos(ai)**2))
+    #
+    r12 = (kz1 - kz2) / (kz1 + kz2)
+    r23 = (kz2 - kz3) / (kz2 + kz3)
+    r13 = (kz1 - kz3) / (kz1 + kz3)
+    #
+    x2 = np.exp(0 - (kz2 * z) * 2j) * r23
+    x1 = (r12 + x2) / (1 + r12 * x2)
+    par = np.abs(x1)**2
+    #Strecke vor Beginn der Oszillationen auf 1 setzen
+    for i in np.arange(np.size(par)):
+        if (i <= 296): #296 manuell angepasst
+            par[i] = 1
+            r13[i] = 1
+        else:
+            pass
+    return par, r13
 
 plotten(x, y)
