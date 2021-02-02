@@ -171,7 +171,7 @@ def parratt2(z):
     #
     r12 = (kz1 - kz2) / (kz1 + kz2)
     r23 = (kz2 - kz3) / (kz2 + kz3)
-    r13 = (kz1 - kz3) / (kz1 + kz3)
+    r13 = ((kz1 - kz3) / (kz1 + kz3))**2
     #
     x2 = np.exp(0 - (kz2 * z) * 2j) * r23
     x1 = (r12 + x2) / (1 + r12 * x2)

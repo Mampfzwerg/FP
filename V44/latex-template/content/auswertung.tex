@@ -9,11 +9,12 @@
 Der erste Detektorscan wird mittels Funktion 
 \textit{scipy.optimize.curve\_fit} aus der Python-Bibliothek SkiPy nach der Gaußfunktion
 
+\vspace{-9pt}
 \begin{equation}
     f(\alpha_i) = \frac{a}{\sqrt{2 \pi \sigma^2}} \text{exp}\left(- \frac{(\alpha_i - \mu)^2}{2\sigma^2}\right) + b
 \end{equation}
 
-\vspace{+10pt}
+%\vspace{+10pt}
 approximiert und ist in Abbildung \ref{fig:plot1} dargestellt.
 Die Näherungsparameter ergeben sich zu
 \vspace{-25pt}
@@ -38,6 +39,7 @@ Aus den aufgenommenen Daten und des Maximums der Gaußnäherung ergeben sich die
 Intensitäten von 
 \vspace{-25pt}
 
+\vspace{-5pt}
 \begin{align*}
     I_\text{max,detec} &= \num{1618610} \; ,\\
     I_\text{max,gauss} &= \num{1626579.26}
@@ -45,6 +47,7 @@ Intensitäten von
 
 und die Halbwertsbreite der Näherung von
 
+\vspace{-5pt}
 \begin{equation*}
     d_{\sfrac{1}{2}} = \SI{0.12}{\degree} \; .
 \end{equation*}
@@ -53,12 +56,14 @@ In Abbildung \ref{fig:plot21} ist der erste Z-Scan dargestellt.
 Aus diesem lässt sich anhand der Differenz der Höhen rechts und links der negativen Flanke der Intensität
 die Strahldicke als etwa
 
+\vspace{-5pt}
 \begin{equation*}
     d_0 = \SI{0.28}{\milli\meter}
 \end{equation*}
 
 bestimmen. Zudem übersteigt hier die maximale Intensität die des Detektorscans mit 
 
+\vspace{-5pt}
 \begin{equation}
     I_\text{max,z} = \num{1636650} \; ,
     \label{eqn:imax}
@@ -66,7 +71,7 @@ bestimmen. Zudem übersteigt hier die maximale Intensität die des Detektorscans
 
 mit welcher die Reflektivitäten der folgenden Scans normiert werden sollen.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[scale=0.7]{content/plot21.pdf}
     \vspace{-10pt}
@@ -74,7 +79,7 @@ mit welcher die Reflektivitäten der folgenden Scans normiert werden sollen.
     \label{fig:plot21}
 \end{figure}
 
-Aus dem in Abbildung \ref{fig:plot21} dargestellten ersten Rockingscans
+Aus dem in Abbildung \ref{fig:plot3} dargestellten ersten Rockingscans
 können links und rechts des Intensitätspeaks die beiden Geometriewinkel $\alpha_{g,i}$
 abgelesen werden, deren Intensitäten gerade nicht verschwindend sind. 
 Zusammen mit dem gemitteltem Winkel $\alpha_g$ ergeben sich diese zu
@@ -93,6 +98,15 @@ die Probendicke $D = \SI{20}{\milli\meter}$ bestimmt werden zu
     \alpha'_g = \text{arcsin} \left(\sfrac{d_0}{D}\right) \approx \SI{0.8}{\degree}  \; .
 \end{equation}
 
+\vspace{-5pt}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.7]{content/plot3.pdf}
+    \vspace{-10pt}
+    \caption{Intensität des Rockingscans in Abhängigkeit des Einfallswinkels $\alpha_i$.}
+    \label{fig:plot3}
+\end{figure}
+\vspace{-5pt}
 
 \section{Scananwendung zur Vermessung eines mit Polystyrol beschichteten Silizium-Wafers}
 
@@ -104,22 +118,12 @@ von $\SI{1}{\second}$ auf $\SI{5}{\second}$ erhöht wurde.
 Weiterhin werden die Daten statt in Winkelabhängigkeit, in Abhängigkeit des Wellenvektorübertrags 
 $q = \frac{4\pi}{\lambda} \cdot \text{sin} \left(\frac{\pi}{180}\alpha_i\right)$ dargestellt.\\
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.7]{content/plot4.pdf}
-    \vspace{-10pt}
-    \caption{Vermessungsdaten der Reflektivität PS-Si-Wafers in Abhängigkeit des Wellenvektorübertrages $q$.
-            Zur Übersichtlichkeit sind einige Messdaten auf der logarithmischen Skala um 0,1 tiefer geschoben.}
-    \label{fig:plot4}
-\end{figure}
-
 Schließlich werden zur Eliminierung von Rückstreueffekten im Schichtsystem, die Messdaten des Diffusen Scans
 von den eigentlichen abgezogen.
 Es erfolgt eine weitere Korrektur um den Geometriefaktor, welcher sich aus der Strahlbreite $d_0$ und dem 
 Geometriewinkel $\alpha_g$ nach den Gleichungen \eqref{eqn:geome} bestimmen lässt. 
 Diese verhindert die Unterrepräsentation sehr kleiner Winkel, für die nicht die gesamte Strahlbreite am Wafer 
 reflektiert wird.\\
-
 Anschließend werden die Positionen der Minima der Kiessig-Oszillationen mit Hilfe der Funktion
 \textit{scipy.signal.find\_peaks} aus der Python-Bibliothek SkiPy bestimmt.
 Aus deren Abständen kann die Schichtdicke des Polysterol(PS)-Films auf dem Silizium(Si)-Wafer bestimmt werden
@@ -129,12 +133,21 @@ Aus deren Abständen kann die Schichtdicke des Polysterol(PS)-Films auf dem Sili
     d_\text{PS} = (\num{882.43 +- 0.04}) \cdot 10^{-10} \si{\meter} \; .
 \end{equation*}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{content/plot4.pdf}
+    \vspace{-10pt}
+    \caption{Vermessungsdaten der Reflektivität PS-Si-Wafers in Abhängigkeit des Wellenvektorübertrages $q$.
+            Zur Übersichtlichkeit sind einige Messdaten auf der logarithmischen Skala um 0,1 tiefer geschoben.}
+    \label{fig:plot4}
+\end{figure}
+
 Weiterhin wird mithilfe des Parrat-Algorithmus eine Theoriekurve an die 
 korrigierten Messdaten durch Variation einiger Parameter gefittet.
 Diese Parameter beinhalten Brechungsindizes $n$ der drei Materialien, 
 die Rauigkeiten $\sigma$ der beiden Grenzflächen und die Schichtdicke $d_\text{PS}$.
 
-\vspace{-35pt}
+\vspace{-30pt}
 \begin{align*}
     n_\text{Luft} &= 1 \; ,\\
     n_\text{PS} &= 1 - \num{0.7e-6} \; ,\\
