@@ -1,0 +1,279 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+Als erster Schritt wird die am Szintillationsdetektor ankommende Strahlung ohne ein Objekt im Strahlengang gemessen. \\
+Zu sehen ist das nach Abbildung ... erwartete Spektrum. Dieses lässt sich in zwei charakteristische Bereiche teilen: Das 
+Compton-Kontinuum und der Photopeak. Im Compton Kontinuum lässt sich schwach ein Peak feststellen, der von der Rückstrahlung 
+stammt. Die Compton-Kante ist klar zu sehen und tritt bei Energien von etwa $\SI{480}{\kilo\electronvolt}$ auf.\\
+Es wurde hier und in allen folgenden Versuchsteilen eine Zeit von $\symup{\Delta}t = \SI{300}{\second}$ gemessen. Die Counts 
+ergeben sich dabei zu
+
+\begin{equation*}
+  C = 6743 \pm 82.
+\end{equation*}
+
+Mit diesen Messwerten ergibt sich die Eingangsintensität gemäß 
+
+\begin{equation}
+  I_0 = \frac{C}{\symup{\Delta}t} = \SI{22.48+-0.27}{\per\second}.
+  \label{eqn:Int}
+\end{equation}
+
+Der Fehler berechnet sich dabei nach
+
+\begin{equation*}
+  \sigma_{I_0} = \sqrt{\left(\frac{\sigma_\text{C}}{C}\right)^2}I_0.
+\end{equation*}
+
+\subsection{Untersuchung des Aluminiumgehäuses}
+
+Die zu untersuchenden Proben sind von einem Aluminiumgehäuse umgeben, welches unerwünschte Absorptionen verursacht. Um diese
+erkennen zu können, wird ein Würfel bestehend aus dem Aluminiumgehäuse untersucht. Die aufgenommenen Messwerte sind in 
+Tabelle \ref{tab:mess1} dargestellt. 
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für das Aluminiumgehäuse.}
+  \label{tab:mess1}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c}
+  \toprule
+  $\text{Counts} \; C$ & $\symup{\Delta} t \;/\; \si{\second}$ & $\text{Projektionstyp} \;/\; \si{\per\second}$ \\
+  \midrule
+      $\num{6665+-82}$ & 300 & $I_{0,5}$\\
+      $\num{6503+-81}$ & 300 & $I_{0,2}$\\
+      $\num{6375+-80}$ & 300 & $I_{0,8}$\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Diese können als Nullmessung des jeweiligen Projektionstyps angenommen werden. Gemäß Gleichung \eqref{eqn:Int} und deren Fehler, ergeben
+sich die Zählraten zu: 
+
+\begin{align*}
+  I_{0,5} &= \SI{22.2+-0.3}{\per\second},\\ 
+  I_{0,2} &= \SI{21.7+-0.3}{\per\second},\\ 
+  I_{0,8} &= \SI{21.3+-0.3}{\per\second}.   
+\end{align*}
+
+\subsection{Bestimmung des Materials eines homogenen Würfels}
+
+Die untersuchten Projektionen sind gemäß Abbildung ... $I_5$, $I_6$, $I_7$ und $I_8$. Die gemessenen Werte sind in 
+Tabelle \ref{tab:mess2} aufgeführt. 
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für den Würfel zwei.}
+  \label{tab:mess2}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $\text{Counts} \; C$ & $\symup{\Delta} t \;/\; \si{\second}$ & $\text{Projektionstyp}$ & $\text{Zählrate} \;/\; \si{\per\second}$\\
+  \midrule
+      $\num{1063+-33}$ & 300 & $I_{5}$ & $\num{3.5+-0.1}$\\
+      $\num{1090+-33}$ & 300 & $I_{6}$ & $\num{3.6+-0.1}$\\
+      $\num{1547+-39}$ & 300 & $I_{7}$ & $\num{5.2+-0.1}$\\
+      $\num{674+-26}$ & 300 & $I_{8}$  & $\num{2.3+-0.1}$\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Aus diesen Werten ergeben sich der Absorptionskoeffizienten gemäß 
+
+\begin{equation*}
+  \mu_i = \frac{1}{l_i}\ln{\left(\frac{I_{0,j}}{I_i}\right)}
+\end{equation*}
+
+Dabei bezeichnet $l_i$ die zurückgelegte Strecke der Gammastrahlung durch den Würfel und $I_0,j$ die entsprechende Zählrate. Dieser 
+Zusammenhang führt zu den Werten in Tabelle \ref{tab:mess3}.
+
+\begin{table}[H]
+  \centering
+  \caption{Berechnete Werte der Absorptionskoeffizienten für Würfel zwei.}
+  \label{tab:mess3}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c}
+  \toprule
+  $\text{Projektion}$ & $\mu \;/\; \si{\per\centi\metre}$\\
+  \midrule
+      5 & $\num{0.612+-0.011}$\\
+      6 & $\num{0.604+-0.011}$\\
+      7 & $\num{0.508+-0.010}$\\
+      8 & $\num{0.534+-0.010}$\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Dabei ergibt sich der Fehler mithilfe der Gaußschen Fehlerfortpflanzung:
+
+\begin{equation*}
+  \symup{\Delta} \mu_i = \sqrt{\left(-\frac{\symup{\Delta}I_i}{l_i I_i}\right)^2\left(\frac{\symup{\Delta C_{0,j}}}{l_j C_{0,j}}\right)^2}.
+\end{equation*}
+
+Durch Bildung des Mittelwertes ergibt sich der Absorptionskoeffizient zu 
+
+\begin{equation*}
+  \bar{\mu_2} = \SI{0.564+-0.044}{\per\centi\metre}. 
+\end{equation*}
+
+Bei einem Vergleich mit den Literaturwerten ergibt sich, dass der Würfel mit einer Abweichung von $\SI{0.9}{\percent}$ aus Eisen zu bestehen scheint. 
+
+\subsection{Bestimmung des Materials eines homogenen weiteren Würfels}
+
+Die untersuchten Projektionen sind erneut $I_5$, $I_6$, $I_7$ und $I_8$. Die gemessenen Werte sind in 
+Tabelle \ref{tab:mess4} aufgeführt. 
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für den Würfel drei.}
+  \label{tab:mess4}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $\text{Counts} \; C$ & $\symup{\Delta} t \;/\; \si{\second}$ & $\text{Projektionstyp}$ & $\text{Zählrate} \;/\; \si{\per\second}$\\
+  \midrule
+      $\num{4849+-70}$ & 300 & $I_{5}$ & $\num{16.16+-0.2}$\\
+      $\num{4860+-70}$ & 300 & $I_{6}$ & $\num{16.20+-0.2}$\\
+      $\num{4738+-69}$ & 300 & $I_{7}$ & $\num{15.79+-0.2}$\\
+      $\num{4338+-66}$ & 300 & $I_{8}$  & $\num{14.46+-0.2}$\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Aus diesen Werten ergeben sich erneut die Absorptionskoeffizienten in Tabelle \ref{tab:mess5}.
+
+\begin{table}[H]
+  \centering
+  \caption{Berechnete Werte der Absorptionskoeffizienten für Würfel drei.}
+  \label{tab:mess5}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c}
+  \toprule
+  $\text{Projektion}$ & $\mu \;/\; \si{\per\centi\metre}$\\
+  \midrule
+      5 & $\num{0.106+-0.006}$\\
+      6 & $\num{0.105+-0.006}$\\
+      7 & $\num{0.112+-0.007}$\\
+      8 & $\num{0.095+-0.005}$\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Durch Bildung des Mittelwertes ergibt sich der Absorptionskoeffizient zu 
+
+\begin{equation*}
+  \bar{\mu_3} = \SI{0.105+-0.006}{\per\centi\metre}. 
+\end{equation*}
+
+Bei einem Vergleich mit den Literaturwerten ergibt sich, dass der Würfel mit einer Abweichung von 
+$\SI{9.5}{\percent}$ aus CH20 zu bestehen scheint. 
+
+\subsection{Bestimmung der Materialien in einem zusammengesetzten Würfel}
+
+Der vierte Würfel ist aus unterschiedlichen Materialien zusammengesetzt. Die Messwerte und die Zählraten für die Projektionen 
+sind in Tabelle \ref{tab:mess6} aufgeführt.
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für den Würfel vier.}
+  \label{tab:mess6}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c c}
+  \toprule
+  $\text{Counts} \; C$ & $\symup{\Delta} t \;/\; \si{\second}$ & $\text{Projektion}$ & $\text{Zählrate} \;/\; \si{\per\second}$\\
+  \midrule
+      $\num{3949+-63}$ & 300 & 1 & $\num{13.16+-0.2}$\\
+      $\num{1653+-41}$ & 300 & 2 & $\num{5.51+-0.1}$\\
+      $\num{3641+-60}$ & 300 & 3 & $\num{12.14+-0.2}$\\
+      $\num{2835+-53}$ & 300 & 4 & $\num{9.45+-0.2}$\\
+      $\num{2799+-53}$ & 300 & 5 & $\num{9.33+-0.2}$\\
+      $\num{2735+-53}$ & 300 & 6 & $\num{9.12+-0.2}$\\
+      $\num{3505+-59}$ & 300 & 7 & $\num{11.68+-0.2}$\\
+      $\num{791+-28}$ & 300 & 8 & $\num{2.64+-0.1}$\\
+      $\num{2190+-47}$ & 300 & 9 & $\num{7.30+-0.2}$\\
+      $\num{1493+-39}$ & 300 & 10 & $\num{4.98+-0.1}$\\
+      $\num{1554+-39}$ & 300 & 11 & $\num{5.18+-0.1}$\\
+      $\num{1678+-41}$ & 300 & 12 & $\num{5.59+-0.1}$\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Dann ergibt sich der Vektor der Absorptionskoeffizienten nach Gleichung \eqref{eqn:Abs} zu 
+
+\begin{equation*}
+  \vec{\mu} = 
+    \begin{pmatrix}
+      \mu_1\\
+      \mu_2\\
+      \mu_3\\
+      \mu_4\\
+      \mu_5\\
+      \mu_6\\
+      \mu_7\\
+      \mu_8\\
+      \mu_9\\
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+      \num{0.514+-0.015}\\
+      \num{0.178+-0.010}\\
+      \num{0.381+-0.015}\\
+      \num{0.337+-0.010}\\
+      \num{0.482+-0.013}\\
+      \num{0.199+-0.010}\\
+      \num{0.174+-0.015}\\
+      \num{0.373+-0.010}\\
+      \num{0.562+-0.016}\\
+    \end{pmatrix}
+    \si{\per\centi\metre}
+\end{equation*}
+
+Der Fehler berechnet sich dabei für $\tilde{A} = \left(A^T \cdot A\right)^{-1}A^T$ wie folgt:
+
+\begin{equation*}
+  \sigma_{\mu,i} = \left(\sqrt{\frac{\tilde{A}^2\sigma_\text{C}^2}{C^2}+\frac{\tilde{A}^2\sigma_\text{I}^2}{I_0^2}}\right).
+\end{equation*}
+
+Zum Vergleich werden Literaturwerte benötigt, die sich in Tabelle \ref{tab:lit} finden lassen. 
+
+\begin{table}[H]
+  \centering
+  \caption{Absorptionskoeffizienten $\mu$ in verschiedenenen Materialien \cite{lit}.}
+  \label{tab:lit}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c}
+  \toprule
+  $\text{Material}$ & $\mu$\\
+  \midrule
+      Al & 0,201\\
+      Pb & 1,175\\
+      Fe & 0,569\\
+      Messing & 0,605\\
+      CH20  & 0,116\\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+Damit können die Materialien der einzelnen Würfel in Tabelle \ref{tab:mat} bestimmt werden. 
+
+\begin{table}[H]
+  \centering
+  \caption{Identifizierung der Materialien.}
+  \label{tab:mat}
+  \sisetup{table-format=2.1}
+  \begin{tabular}{c c c}
+  \toprule
+  $\text{Würfel}$ & $\text{Material}$ & $\text{Prozentuale Abweichung}$\\
+  \midrule
+    1 & Fe & 1,1\\
+    2 & Al & 11,4\\
+    3 & Fe & 33\\
+    4 & Al & 67,7\\
+    5 & Fe & 15,5\\
+    6 & Al & 5,5\\
+    7 & Al & 13,4\\
+    8 & Fe & 34,5 \\
+    9 & Fe & 1,2\\
+  \bottomrule
+  \end{tabular}
+\end{table}
