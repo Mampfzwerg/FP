@@ -1,8 +1,8 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-Ziel des Versuches ist die Bestimmung der Materialien und Strukturen
-metallener Würfel. Dazu soll die Gammastrahlentomographie als
+Ziel des Versuches ist die Bestimmung der Materialien einiger verschiedener Würfelstrukturen
+aus verschiedenen Metallen, Legierungen und Kunststoff. Dazu soll die Gammastrahlentomographie als
 bildgebendes Verfahren zur schichtweisen Darstellung der Proben
 angewandt werden und Erkenntnisse über die Licht-Materie-Wechselwirkung liefern.\\
 
@@ -49,16 +49,19 @@ wechselwirken:
     wird ein Teil der Photoenergie in Ruheenergie gewandelt, die mindestens $2 m_e c^2 = \SI{1.02}{\mega\eV}$ beträgt.
 \end{itemize}
 
-Abhängig von der Photonenenergie $E_\gamma$ der Gammaquanten dominieren verschiedene dieser Effekte. 
-Für kleine Energien mit $E_\gamma \leq \SI{100}{\kilo\eV}$ dominiert der Photoeffekt und für
+Abhängig von Materialeigenschaften und der Photoenergie $E_\gamma$ der Gammaquanten dominieren verschiedene dieser Effekte. 
+In diesem Versuch dominiert der Photoeffekt für kleine Energien mit $E_\gamma \leq \SI{100}{\kilo\eV}$ und für
 mittlere Energien im Intervall $\SI{100}{\kilo\eV} \leq E_\gamma \leq \SI{1}{\mega\eV}$ ist der Compton-Effekt ausschlaggebend.
-Für höhere Energien würde die Paarbildung dominieren, jedoch ist die Strahlung des $\ce{^{137}Cs}$ dafür nicht energiereich genug.
+Für höhere Energien würde die Paarbildung dominieren, jedoch ist die Strahlung des $\ce{^{137}Cs}$ dafür nicht energiereich genug
+und Paarbildung damit für diesen Versuch nicht von Bedeutung.
 
 In einem in Abbildung \ref{fig:spektrum} dargestellten beispielhaften $\ce{^{137}Cs}$-Gammaspektrum kann man diese
 Effekte auch an ihren Charakteristika erkennen. So kann man gut das Comptonspektrum mit Rückstreupeak beobachten, welches 
 durch die Comptonkante abgeschlossen wird und dadurch klar vom Photo- bzw. Full Energy Peak unterscheidbar ist.
 Dabei markiert die Comptonkante die maximale Energieabgabe der Gammaquanten durch Streueffekte an den Elektronen.
 Am Photopeak wird die gesamte Energie der Gammaquanten vom Material absorbiert.
+Der Rückstreupeak entsteht durch gemessene Compton-Photonen, die außerhalb der Probe mit Elektronen wechselwirken,
+wenn diese detektiert werden.
 
 \vspace{-5pt}
 \begin{figure}
@@ -82,15 +85,26 @@ und $\vec{I}$ aus allen Anfangs- und abgeschwächten Intensitäten. Die $n \time
 der verschiedenen Schnittgeometrien. 
 Zur Anwendung der Methode der kleinsten wird eine Gewichtung 
 
+\vspace{-5pt}
 \begin{equation}
     W \cdot A \cdot \vec{\mu} = W \cdot \vec{I} \:, \qquad W = Var[\vec{I}]^{-1}
 \end{equation}
+\vspace{-5pt}
 
 angwandt, wobei die Gewichtungsmatrix $W$ aus der Inversen der Kovarianzmatrix $Var[\vec{I}]$ gebildet wird.
 Schließlich ergeben sich $\mu$ und dessen Unsicherheit $Var[\vec{\mu}]$ zu
 
+\vspace{-5pt}
 \begin{equation}
     \vec{\mu} = \left(A^T \cdot W \cdot A\right)^{-1} A^T \cdot W \cdot \vec{I}\:, \qquad Var[\vec{\mu}] = \left(A^T \cdot W \cdot A\right)^{-1} \: .
     \label{eqn:Abs}
 \end{equation}
 
+\subsection{Szintillatoren}
+
+Als Szintillatoren werden Materialien bezeichnet, welche durch energiereiche Strahlung oder auch geladene Teilchen angeregt werden.
+Die aus den Stoßprozessen erhaltene Anregungsenergie emittieren sie in Form von Fluoreszenslicht.
+Als anorganische Szintillatoren können wie in diesem Versuch mit Aktivator-Zentren dotierte Kristalle verwendet werden.
+In ihnen erzeugt die ionisierende Strahlung quasifreie Ladungsträger oder Exzitonen (Elektron-Loch-Paare),
+welche die Aktivator-Zentren anregen. Die Aktivatoren strahlen Licht ab, sobald sie wieder in ihren Grundzustand übergehen.
+Daher müssen Szintillatoren für ihre eigene Lichtemission durchlässig sein.

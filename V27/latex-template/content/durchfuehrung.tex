@@ -1,0 +1,59 @@
+\section{Durchführung}
+\label{sec:Durchführung}
+
+Der Versuchsaufbau ist in Abbildung \ref{fig:aufbau} schematisch dargestellt.
+Eine Cadmium-Spektrallampe ist dem äußeren magnetischen Feld des Elektromagneten ausgesetzt.
+Der restliche optische Aufbau dient zur Analyse ihres Lichtes. Der Srahl wird senkrecht zur
+Magnetfeldrichtung kollimiert und trifft
+auf ein Geradsichtprisma, welches das Spektrum räumlich nach den Wellenlängen auflöst.
+Über den zweiten Spalt kann eine Spektrallinie ausgewählt werden und der Polarisationsfilter
+filtert eine zu untersuchende Polarisation dieser Linie heraus.
+
+\vspace{-5pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{content/aufbau.png}
+    \caption{Versuchsaufbau der Messung \cite{alt}.}
+    \label{fig:aufbau}
+\end{figure}
+
+Für Cadmium sind im wesentlichen zwei Spektrallininen zu beobachten - eine rote und eine blaue.
+Anhand der roten Linie soll der normale Zeeman-Effekt und anhand der blauen der anormale 
+Zeeman-Effekt untersucht werden. 
+
+Die Wellenlängen $\lambda$ der einzelnen Spektrallinien können mithilfe der Lummer-Gehrcke-Platte 
+bestimmt werden, indem ihr Interferenzverhalten verschiedener teilreflektierter Strahlen
+analysiert wird. Konstruktive Interferenz tritt auf, sobald die Bragg-Bedingung
+
+\begin{equation}
+    2 \cdot d \cdot \text{cos}(\beta) = n \cdot \lambda \: , 
+    \qquad n = \frac{\text{sin}(\alpha)}{\text{sin}(\beta)}
+\end{equation}
+
+mit der Plattendicke $d$ und dem Brechungsindex $n$ erfüllt ist.
+Mit eingeschaltetem Magnetfeld verschieben sich die Wellenlängen der 
+optischen Übergänge um $\partial \lambda$ und daraus resultierend
+die Interferenzmaxima um $\partial s$.
+Die maximale Differenz, die zwischen den Wellenlängen zweier Strahlen bestehen darf,
+ohne dass sie sich überlagen sollen, ist definiert als Dispersionsgebiet
+
+\vspace{-15pt}
+\begin{equation}
+    \Delta \lambda_\text{D} = \frac{\lambda^2}{2d} \sqrt{\frac{1}{n^2-1}}\: .
+\end{equation}
+
+Das Auflösungsvermögen der Platte lässt sich dann als
+
+\begin{equation}
+    A = \frac{\lambda}{\Delta \lambda_\text{D}} = \frac{L}{\lambda} (n^2 -1)
+\end{equation}
+
+bestimmen, wobei $L$ die Plattenlänge angibt.
+Zur Eichung des Elektromagneten wird die Hysterese des Magnetfeldes $\vec{B}$ in Abhängigkeit
+des Feldstromes $I$ gemessen. Schließlich werden zur Bestimmung der Zeeman-Aufspaltung der
+Wellenlängen die Interferenzbilder beider Spektrallinien mithilfe einer Digitalkamera
+für die verschiedenen gefilterten Polarisationen aufgenommen. Damit ist auch 
+eine Berechnung der Landé-Faktoren möglich.
+
+\section{Vorbereitungsaufgaben}
+
