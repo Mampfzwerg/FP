@@ -25,6 +25,7 @@ Die Wellenlängen $\lambda$ der einzelnen Spektrallinien können mithilfe der Lu
 bestimmt werden, indem ihr Interferenzverhalten verschiedener teilreflektierter Strahlen
 analysiert wird. Konstruktive Interferenz tritt auf, sobald die Bragg-Bedingung
 
+\vspace{-5pt}
 \begin{equation}
     2 \cdot d \cdot \text{cos}(\beta) = n \cdot \lambda \: , 
     \qquad n = \frac{\text{sin}(\alpha)}{\text{sin}(\beta)}
@@ -37,7 +38,7 @@ die Interferenzmaxima um $\partial s$.
 Die maximale Differenz, die zwischen den Wellenlängen zweier Strahlen bestehen darf,
 ohne dass sie sich überlagen sollen, ist definiert als Dispersionsgebiet
 
-\vspace{-15pt}
+\vspace{-20pt}
 \begin{equation}
     \Delta \lambda_\text{D} = \frac{\lambda^2}{2d} \sqrt{\frac{1}{n^2-1}}\: .
     \label{eqn:lam}
@@ -45,6 +46,7 @@ ohne dass sie sich überlagen sollen, ist definiert als Dispersionsgebiet
 
 Das Auflösungsvermögen der Platte lässt sich dann als
 
+\vspace{-5pt}
 \begin{equation}
     A = \frac{\lambda}{\Delta \lambda_\text{D}} = \frac{L}{\lambda} (n^2 -1)
     \label{eqn:a}
@@ -66,6 +68,7 @@ der Angaben $L = \SI{0.12}{\meter}$, $d = \SI{4}{\milli\meter}$, $n_\text{rot} =
 $n_\text{blau} = \num{1.4635}$ die Dispersionsgebiete und Auflösungsvermögen der beiden 
 Spektrallinien berechnen zu
 
+\vspace{-15pt}
 \begin{align*}
     \lambda_\text{rot} &= \SI{643.8}{\nano\meter}: & \Delta \lambda_\text{D,rot} &= \SI{48.91}{\pico\meter}\:, & A_\text{rot} &= \num{208749}\:, \\
     \lambda_\text{blau} &= \SI{480}{\nano\meter}: & \Delta \lambda_\text{D,blau} &= \SI{27.0}{\pico\meter}\:, & A_\text{blau} &= \num{285458}\:. 
@@ -73,12 +76,30 @@ Spektrallinien berechnen zu
 
 \subsection{Termschemata zu den Spektrallinien}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{content/Zeeman.pdf}
+    \caption{Die Termschemata der möglichen optischen Übergänge.}
+    \label{fig:term}
+\end{figure}
+
+Die beiden Cadmium-Spektrallinien entsprechen Übergängen zwischen Zuständen verschiedener Elektronenkonfigurationen.
+Dabei entspricht die rote Linie den Übergängen $^1P_1 \leftrightarrow ^3S_1$ und die 
+blaue den Übergängen $^3S_1 \leftrightarrow ^3P_1$.\\
+
+Die zugehörigen Quantenzahlen und daraus nach Gleichung \eqref{eqn:lande} berechneten Landé-Faktoren $g_J$ der
+verschiedenen Zustände sind in Tabelle \ref{tab:lande} aufgezeigt. 
+Die Aufspaltungen der Zeeman-Linien $\Delta E = g_{kl} \mu_\text{B} |\vec{B}|$ können nach Gleichung \eqref{eqn:anorm} und mit der 
+Kurzschreibweise $g_{kl} = m_k g_k - m_l g_l$ bestimmt werden und sind für ausgewählte Niveaus in Tabelle \ref{tab:ueber} aufgelistet.
+Schließlich sind die Termschemata der beiden Spektrallinien in Abbildung \ref{fig:term} dargestellt.
+
+\vspace{-10pt}
 \begin{table}[H]
     %\footnotesize
     \centering
     \caption{Quantenzahlen und Landé-Faktoren der Zustände.}
     \vspace{-5pt}
-    \label{tab:exp_setup}
+    \label{tab:lande}
     \begin{tabular}{c|ccc|c}
         \hline 
         Zustand & $L$ & $S$ & $J$ & $g_J$ \\
@@ -90,33 +111,22 @@ Spektrallinien berechnen zu
         $^3P_1$ & $1$ & $1$ & $1$ & $\sfrac{3}{2}$ \\
         \hline 
     \end{tabular}
-    \vspace{-10pt}
 \end{table}
 
 \begin{table}[H]
     %\footnotesize
     \centering
-    \caption{Quantenzahlen und Landé-Faktoren der Zustände.}
+    \caption{Energieniveauunterschiede für ausgeählte Anfangsniveaus mit $m_1$ und\\ optische Übergänge mit $\Delta m$.}
     \vspace{-5pt}
-    \label{tab:exp_setup}
+    \label{tab:ueber}
     \begin{tabular}{c|ccc}
-        \hline 
-        Übergang & $\Delta m = -1$ & $\Delta m = 0$ & $\Delta m = 1$ \\
+         & $\Delta m = -1$ & $\Delta m = 0$ & $\Delta m = +1$ \\
         \hline
-        \hline
-        rot                 & $1$ & $0$ & $1$ \\
-        blau, $m_1 = +1$    & $2$ & $0$ & $1$ \\
-        blau, $m_1 = 0$     & $0$ & $1$ & $2$ \\ 
-        blau, $m_1 = -1$    & $1$ & $1$ & $\sfrac{3}{2}$ \\
-        \hline 
+        rot                 & $-\mu_\text{B}B$              & 0                             & $\mu_\text{B}B$               \\
+        blau, $m_1 = +1$    & $\sfrac{3}{2} \mu_\text{B}B$  & $-\sfrac{1}{2}\mu_\text{B}B$  & -                             \\
+        blau, $m_1 = 0$     & $2\mu_\text{B}B$              & 0                             & $-2\mu_\text{B}B$             \\ 
+        blau, $m_1 = -1$    & -                             & $\sfrac{1}{2}\mu_\text{B}B$   & $-\sfrac{3}{2}\mu_\text{B}B$  \\
     \end{tabular}
-    \vspace{-10pt}
 \end{table}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{content/Zeeman.pdf}
-    \caption{Die Termschemata der möglichen optischen Übergänge.}
-    \label{fig:term}
-\end{figure}
 

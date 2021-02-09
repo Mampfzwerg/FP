@@ -90,6 +90,7 @@ nur die zu $\mu_J$ parallele $\vec{J}$-Komponente wird berücksichtigt - mit dem
 
 \begin{equation}
     g_J = \frac{3J(J+1) + S(S+1) - L(L+1)}{2J(J+1)}\: .
+    \label{eqn:lande}
 \end{equation}
 
 \subsection{Zeeman-Aufspaltung im Magnetfeld}
@@ -108,6 +109,7 @@ die zusätzliche Energie
 
 \begin{equation}
     E_\text{magn} = - \vec{\mu_J} \cdot \vec{B} = m g_J \mu_\text{B} |\vec{B}| \: .
+    \label{eqn:aufspaltung}
 \end{equation}
 
 Für verschiedene Orientierungen spalten sich die Energieniveaus eines Atoms jeweils
@@ -117,34 +119,76 @@ zugehörigen Spektrallinien, was als Zeeman-Effekt bezeichnet wird.
 
 \subsection{Auswahlregeln}
 
+Optische Übergänge zwischen verschiedenen Zeeman-Linien der angeregten
+Zustände und Grundzustände gehen unter der Beachtung der Auswahlregeln des elektrischen Dipolübergangs
+ mit einer Änderung der magnetischen Orientierungsquantenzahl um $\Delta m = 0$ oder $\pm 1$ einher.
+Für die Fälle $\Delta m = \pm 1$ werden linkszirkular $\sigma^{+}-$ oder rechtszirkular $\sigma^{-}$-polarisierte
+Photonen emittiert, welche eine Drehimpulsänderung des Atoms mit Abführung ihres eigenen Drehimpulses ausgleichen,
+sodass der Gesamtdrehimpuls erhalten bleibt. Andernfalls wird linear$\pi$-polarisiertes Licht emittiert,
+welches keine Drehimpulsänderung überträgt.
+
 \subsection{Normaler Zeeman-Effekt}
+
+Der normale Zeeman-Effekt liegt vor, wenn der Gesamtspin der Hüllenelektronen $S = 0$ beträgt und somit 
+der Landé-Faktor für spinlose Zustände immer $g_J = 1$ beträgt.
+Es ergibt sich nach Gleichung \eqref{eqn:aufspaltung} die Zeeman-Verschiebung der Niveaus um
+
+\begin{equation}
+    \Delta E = m \mu_\text{B} |\vec{B}|\: .
+\end{equation}
+
+Die daraus resultierende Zeeman-Aufspaltung ist in Abbildung \ref{fig:norm}
+dargestellt. Die optischen Übergänge sind nach ihrer Lichtpolarisation zur Magnetfeldachse 
+geordnet. 
 
 \vspace{-5pt}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.3]{content/normalerzeeman.png}
-    \caption{Versuchsaufbau der Messung \cite{alt}.}
+    \caption{Schema des normalen Zeeman-Effekts \cite{alt}.}
     \label{fig:norm}
+\end{figure}
+
+
+Die Spektrallinien sind abhängig von ihrer Polarisation und vom Beobachtungswinkel unterschiedlich
+wahrnehmbar. In $\vec{B}$-Richtung bzw. longitudinaler Richtung ist das linear $\pi$-polarisierte Spektrallicht
+nicht zu erkennen, jedoch kann die Händigkeit des zirkular $\sigma^{+}$/$\sigma^{-}$-polarisierten Lichtes
+unterschieden werden. In transversaler Richtung, senkrecht zu $\vec{B}$ ist das $\pi$-polarisierte Licht
+zu sehen, allerdings erscheint zirkular polarisiertes Licht ebenfalls linear polarisiert.
+Dieser Sachverhalt ist auch in Abbildung \ref{fig:pol} dargestellt. Ohne angelegtes Magnetfeld
+wird nur $\pi$-polarisiertes Licht beobachtet.
+
+\vspace{-5pt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{content/polarisation.png}
+    \vspace{-10pt}
+    \vspace{3pt}
+    \caption{Aufspaltungsbilder abhängig vom Beobachtungswinkel \cite{alt}.}
+    \label{fig:pol}
 \end{figure}
 
 \subsection{Anormaler Zeeman-Effekt}
 
-\vspace{-5pt}
+Der anormale Zeeman-Effekt berücksichtigt Zustände, deren Gesamtspin der Elektronenhülle nicht verschwindet: $S \neq 0$.
+Es finden dieselben optischen Auswahlregel des normalen Zeeman-Effektes Anwendung.
+Anders als beim normalen Zeeman-Effekt ist die Aufspaltung zwischen den Unterniveaus vom Spin abhängig, da der 
+Landé-Faktor auch andere Werte als $g_J = 1$ annimmt. Die Energieverschiebung bei Übergängen ergibt sich demnach zu
+
+\vspace{-15pt}
+\begin{equation}
+    E = (m_1 g(L_1,\, S_1,\, J_1) - m_2 g(L_2,\, S_2,\, J_2)) \mu_\text{B} |\vec{B}| + E_0
+    \label{eqn:anorm}
+\end{equation}
+
+mit der Energie $E_0$ ohne eingeschaltetes Magnetfeld und den Landé-Faktoren und magnetischen
+Ordnungszahlen $m_i$ der beiden Übergangsniveaus. Ein beispielhaftes Termschema des
+anormalen Zeeman-Effektes ist in Abbildung \ref{fig:anorm} dargestellt.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.3]{content/polarisation.png}
-    \vspace{-10pt}
-    \vspace{3pt}
-    \caption{Versuchsaufbau der Messung \cite{alt}.}
-    \label{fig:pol}
-\end{figure}
-
-
-\vspace{-5pt}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{content/anormalerzeeman.png}
-    \caption{Versuchsaufbau der Messung \cite{alt}.}
+    \includegraphics[scale=0.4]{content/anormalerzeeman.png}
+    \caption{Schema des anormalen Zeeman-Effekts \cite{alt}.}
     \label{fig:anorm}
 \end{figure}
 
