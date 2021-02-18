@@ -1,210 +1,96 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\subsection{Versuchsziel}
+Ziel dieses Versuches ist es, sich mit dem HeNe-Laser vertraut zu machen. Dafür werden zwei TEM-Moden des Lasers und die
+Stabilitätsbedingung des Resonators untersucht. Desweiteren werden die Polarisation und die Wellenlänge des Lasers bestimmt. 
 
-Ziel des Versuches ist es, die Zeeman-Aufspaltung und Polarisation atomarer Spektrallinien
-unter Einfluss eines äußeren Magnetfeldes zu untersuchen. Die Größe und Vielfalt 
-der Aufspaltung werden für rote und blaue Cd-Spektrallinien der zugehörigen
-optischen Übergänge analysiert.
+Das Wort \textit{Laser} ist eine Abkürzung für den englischen Begriff \textit{"Light Amplification by Stimulated Emission
+of Radiation"}. Ein Laser besteht im Wesentlichen aus drei Komponenten, mit denen es möglich ist, den charakteristischen Laserstrahl zu
+erzeugen. Diese Komponenten sind das aktive Lasermedium, die Pumpquelle und der Resonator, auf die im Folgenden näher 
+eingegangen werden soll. 
 
-\subsection{Elektrondrehimpulse und daran gekoppelte magnetische Momente}
+\subsection{Aktives Lasermedium}
 
-Atomare Hüllenelektronen besitzen einen Bahndrehimpuls $\vec{l}$ und Spin $\vec{s}$
-mit den zugehörigen Beträgen
+Im aktivem Lasermedium finden die optischen Übergänge statt, weswegen dieses das Strahlungsspektrum des Lasers bestimmt. Im Fall des
+HeNe-Lasers fungiert das Neon als aktives Lasermedium. Zunächst wird die Wechselwirkung zwischen Stahlungsfeld und Lasermedium als 
+Zweizustandsystem betrachtet. Es gibt demnach einen Grundzustand mit Besetzungszahl $n_1$ und einen angeregten Zustand mit Besetzungszahl
+$n_2$. Die Wechselwirkung kann im Wesentlichen mit drei Prozessen beschrieben werden.
 
-\vspace{-25pt}
-\begin{align}
-    |\vec{l}| &= \hbar \sqrt{l(l+1)} & |\vec{s}| &= \hbar \sqrt{s(s+1)}
-\end{align}
-
-und Quantenzahlen $l$ und $s = \sfrac{1}{2}$. $l$ kann dabei abhängig von der Hauptquantenzahl $n$,
-welche das Energieniveau der Elektronen angibt, ganzzahlige Werte zwischen $0$ und $n-1$ annehmen.
-Über die Spin-Bahn-Kopplung können den Drehbewegungen der Elektronen die magnetischen Momente 
-
-\vspace{-15pt}
-\begin{align}
-    \vec{\mu_l} &= - \frac{\mu_\text{B}}{\hbar} \cdot \vec{l}, & |\vec{\mu_l}|& = - \mu_\text{B} \sqrt{l(l+1)}\\
-    \vec{\mu_s} &= - g_s \frac{\mu_\text{B}}{\hbar} \cdot \vec{s}, & |\vec{\mu_s}| &= - g_s \mu_\text{B} \sqrt{s(s+1)}
-\end{align}
-
-mit dem Bohrschen Magneton $\mu_B = -\frac{e_0 \hbar}{2 m_0}$ zugeordnet werden.
-Der Landé-Faktor $g_s \approx 2$ beschreibt die magnetomechanische Anomalie des Elektrons.
-
-\subsection{Verschiedene Drehimpulskopplungen}
-
-\subsubsection{jj-Kopplung}
-
-Die  jj-Kopplung dominiert in schweren Atomen hoher Ordnungszahl. 
-Bahndrehimpulse $\l_i$ und Spin $\vec{s_i}$ der einzelnen Elektronen 
-wechselwirken jeweils miteinander und ergeben die Gesamtdrehimpulse
- $\vec{j_i} = \vec{l_i} + \vec{s_i}$. Diese wechselwirken
- mit jenen anderer Elektronen und summieren sich zu einem
- Gesamtdrehimpuls der Elektronenhülle
-
-\begin{equation}
-    \vec{J} = \sum_i \vec{j_i} \; .
-\end{equation}
-
-\vspace{-20pt}
-\subsubsection{LS-Kopplung}
-
-Die LS-Kopplung hingegen dominiert in leichten Atomen niedriger Ordnungszahl
-und ist daher von größerer Bedeutung für diesen Versuch.
-In der Elektronenhülle wechselwirken im Gegensatz zur jj-Kopplung jeweils die Bahndrehimpulse $\vec{l_i}$
-der Elektronen stärker untereinander und das gleiche gilt auch für die Spins $\vec{s_i}$.
-Danach ergeben sich der Bahndrehimpuls $\vec{L}$ und der Spin $\vec{S}$
-der gesamten Elektronenhülle als Summen der Einzelmomente zu
-
-\begin{align}
-    \qquad \vec{L} &= \sum_i \vec{l_i} \:, & |\vec{L}| = \hbar \sqrt{L(L+1)}\\
-    \qquad \vec{S} &= \sum_i \vec{s_i} \:, & |\vec{S}| = \hbar \sqrt{S(S+1)}
-\end{align}
-\vspace{-10pt}
-
-mit der ganzzahligen Quantenzahlen $L$ und $S$, wobei $S$ auch halbzahlig sein kann.  
-An $\vec{L}$ und $\vec{S}$ koppeln die magnetischen Momente
-
-\vspace{-15pt}
-\begin{align}
- |\vec{\mu_L}|& = \mu_\text{B} \sqrt{L(L+1)} \:, &  |\vec{\mu_S}|& = g_S \mu_\text{B} \sqrt{S(S+1)}\: .
-\end{align}
-
-Der Gesamtdrehimpuls der Elektronenhülle ergibt sich schließlich zu
-
-\vspace{-15pt}
-\begin{align}
-    \vec{J} &= \vec{L} + \vec{S} \:, & |\vec{J}| = \hbar \sqrt{J(J+1)} \: .
-\end{align}
-
-Die Quantenzahl $J$ ist abhängig von $S$ ganz- oder halbzahlig.
-Dem Gesamtdrehipuls wird das magnetische Moment
-
-\vspace{-15pt}
-\begin{align}
-    \vec{\mu_J} &= \vec{\mu_L} + \vec{\mu_S} \:, & |\vec{\mu_J}| = g_J \mu_\text{B} \sqrt{J(J+1)}
-\end{align}
-
-zugeordnet. Allerdings stimmen die Richtungen von $\vec{J}$ und $\vec{\mu_J}$ meist nicht überein und
-nur die zu $\mu_J$ parallele $\vec{J}$-Komponente wird berücksichtigt - mit dem zugehörigen Landé-Faktor 
-
-\begin{equation}
-    g_J = \frac{3J(J+1) + S(S+1) - L(L+1)}{2J(J+1)}\: .
-    \label{eqn:lande}
-\end{equation}
-
-\subsection{Zeeman-Aufspaltung im Magnetfeld}
-
-Im äußeren Magnetfeld $\vec{B}$ ist eine Richtungsquantisierung des magnetischen Moments
-$\mu_J$ zu beobachten, welche durch die ganzzahlige magnetische Quantenzahl $m$ beschrieben wird.
-Die Komponente $\mu_{J,z}$ ist dabei ein Vielfaches des Bohrschen Magnetons mit
-
-\vspace{-15pt}
-\begin{align}
-    \mu_{J,z} &= - m g_J \mu_\text{B} \: , & \text{mit}\:\: m &= -J,\, -J+1,\, ...\, 0,\, ...\, J-1,\, J \: . 
-\end{align}
-
-Im Magnetfeld $\vec{B}$ erhält $\vec{\mu_J}$ abhängig von seiner Orientierung zu $\vec{B}$
-die zusätzliche Energie
-
-\begin{equation}
-    E_\text{magn} = - \vec{\mu_J} \cdot \vec{B} = m g_J \mu_\text{B} |\vec{B}| \: .
-    \label{eqn:aufspaltung}
-\end{equation}
-
-Für verschiedene Orientierungen spalten sich die Energieniveaus eines Atoms jeweils
-in $2J+1$ äquidistante Unterniveaus auf. Daraus resultiert eine Aufspaltung
-der möglichen Übergänge zwischen den verschiedenen atomaren Energiezuständen und deren 
-zugehörigen Spektrallinien, was als Zeeman-Effekt bezeichnet wird.
-
-\subsection{Auswahlregeln}
-
-Optische Übergänge zwischen verschiedenen Zeeman-Linien der angeregten
-Zustände und Grundzustände gehen unter der Beachtung der Auswahlregeln des elektrischen Dipolübergangs
- mit einer Änderung der magnetischen Orientierungsquantenzahl um $\Delta m = 0$ oder $\pm 1$ einher.
-Für die Fälle $\Delta m = \pm 1$ werden linkszirkular $\sigma^{+}-$ oder rechtszirkular $\sigma^{-}$-polarisierte
-Photonen emittiert, welche eine Drehimpulsänderung des Atoms mit Abführung ihres eigenen Drehimpulses ausgleichen,
-sodass der Gesamtdrehimpuls erhalten bleibt. Andernfalls wird linear$\pi$-polarisiertes Licht emittiert,
-welches keine Drehimpulsänderung überträgt.
-
-\subsection{Normaler Zeeman-Effekt}
-
-Der normale Zeeman-Effekt liegt vor, wenn der Gesamtspin der Hüllenelektronen $S = 0$ beträgt und somit 
-der Landé-Faktor für spinlose Zustände immer $g_J = 1$ beträgt.
-Es ergibt sich nach Gleichung \eqref{eqn:aufspaltung} die Zeeman-Verschiebung der Niveaus um
-
-\begin{equation}
-    \Delta E = m \mu_\text{B} |\vec{B}|\: .
-\end{equation}
-
-Die daraus resultierende Zeeman-Aufspaltung ist in Abbildung \ref{fig:norm}
-dargestellt. Die optischen Übergänge sind nach ihrer Lichtpolarisation zur Magnetfeldachse 
-geordnet. 
-
-\vspace{-5pt}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.3]{content/normalerzeeman.png}
-    \caption{Schema des normalen Zeeman-Effekts \cite{alt}.}
-    \label{fig:norm}
-\end{figure}
-
-
-Die Spektrallinien sind abhängig von ihrer Polarisation und vom Beobachtungswinkel unterschiedlich
-wahrnehmbar. In $\vec{B}$-Richtung bzw. longitudinaler Richtung ist das linear $\pi$-polarisierte Spektrallicht
-nicht zu erkennen, jedoch kann die Händigkeit des zirkular $\sigma^{+}$/$\sigma^{-}$-polarisierten Lichtes
-unterschieden werden. In transversaler Richtung, senkrecht zu $\vec{B}$ ist das $\pi$-polarisierte Licht
-zu sehen, allerdings erscheint zirkular polarisiertes Licht ebenfalls linear polarisiert.
-Dieser Sachverhalt ist auch in Abbildung \ref{fig:pol} dargestellt. Ohne angelegtes Magnetfeld
-wird nur $\pi$-polarisiertes Licht beobachtet.
-
-\vspace{-5pt}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.2]{content/polarisation.png}
-    \vspace{-10pt}
-    \vspace{3pt}
-    \caption{Aufspaltungsbilder abhängig vom Beobachtungswinkel \cite{alt}.}
-    \label{fig:pol}
-\end{figure}
-
-\subsection{Anormaler Zeeman-Effekt}
-
-Der anormale Zeeman-Effekt berücksichtigt Zustände, deren Gesamtspin der Elektronenhülle nicht verschwindet: $S \neq 0$.
-Es finden dieselben optischen Auswahlregel des normalen Zeeman-Effektes Anwendung.
-Anders als beim normalen Zeeman-Effekt ist die Aufspaltung zwischen den Unterniveaus vom Spin abhängig, da der 
-Landé-Faktor auch andere Werte als $g_J = 1$ annimmt. Die Energieverschiebung bei Übergängen ergibt sich demnach zu
-
-\vspace{-15pt}
-\begin{equation}
-    E = (m_1 g(L_1,\, S_1,\, J_1) - m_2 g(L_2,\, S_2,\, J_2)) \mu_\text{B} |\vec{B}| + E_0
-    \label{eqn:anorm}
-\end{equation}
-
-mit der Energie $E_0$ ohne eingeschaltetes Magnetfeld und den Landé-Faktoren und magnetischen
-Ordnungszahlen $m_i$ der beiden Übergangsniveaus. Ein beispielhaftes Termschema des
-anormalen Zeeman-Effektes ist in Abbildung \ref{fig:anorm} dargestellt.
+Die Absorption, bei der ein Photon ein Atom aus dem Grundzustand in den ersten angeregten Zustand hebt. \\
+Die spontane Emission, bei der das Atom spontan aus dem angeregten Zustand zurück in den Grundzustand fällt, wobei ein Photon in 
+beliebiger Richtung abgestrahlt wird. \\
+Und die stimulierte Emission, bei der ein Atom im angeregten Zustand durch ein eingestrahltes Photon, zurück in den Grundzustand 
+fallen kann. Hier hat das stimulierte Photon dann genau die Gleiche Richtung, Energie, Phasenlänge und Polarisation wie das 
+eingestrahlte Photon. Das ist der relevante Prozess für einen Laser. \\
+Diese Prozesse sind in Abbildung \ref{fig:prozesse} schematisch dargestellt. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{content/anormalerzeeman.png}
-    \caption{Schema des anormalen Zeeman-Effekts \cite{alt}.}
-    \label{fig:anorm}
+    \includegraphics[scale=0.5]{content/prozesse.png}
+    \caption{Schematische Darstelleung der relevanten Prozesse in einem Zweizustandsystem. \cite{prozess}}
+    \label{fig:prozesse}
 \end{figure}
 
+Die Einsteinkoeffizienten $A_{21}$, $B_{21}$ und $B_{12}$ geben dabei ein Maß für die Übergangswahrscheinlichkeiten
+an. 
+Ein Laser lässt sich allerdings nicht komplett durch ein Zweizustandsystem beschreiben. Dies liegt daran, dass die Zustände
+im thermischen Gleichgewicht der Maxwell-Boltzmann Verteilung folgen. Das führt dazu, dass maximal eine Gleichbesetzung der 
+Zustände erreicht werden kann. Demnach wäre eine Besetzungsinversion nicht möglich, was aber das notwendige Kriterium für einen
+Laser ist. 
 
+\subsection{Die Pumpquelle}
 
+Die Pumpquelle fügt dem System Energie hinzu und erzeugt damit die notwendige Besetzungsinversion. Dies funktioniert mit dem 
+Prinzip des Optischen Pumpens. Im Fall des HeNe-Lasers ist das Pumpgas Helium, weswegen kein Zweizustandsystem mehr vorliegt. 
+Dabei wird die Besetzungsinversion durch elektrische Entladung im Laserrohr erzeugt. Folgend geben die so angeregten Helium Atome 
+ihre Anregungsenergie an die Neon Atome durch Stöße ab. Dies kann durch ein Niveauschema dargestellt werden, welches in 
+Abbildung \ref{fig:pump} zu sehen ist. 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{content/pump.png}
+    \caption{Niveauschema eines HeNe-Lasers. \cite{Zeugs}}
+    \label{fig:pump}
+\end{figure}
 
+Es ist zu erkennen, dass die Laserlinie bei $\lambda = \SI{632.8}{\nano\metre}$ beim Übergang von 3s zu 2p am intensivsten ist. 
 
+\subsection{Der Resonator}
 
+Die Verstäkung des Lasers nimmt mit der Länge des Laufweges zu, weswegen ein Resonator diesen Laufweg verlängert. Der Resonator
+besteht aus zwei Spiegeln, welche sich gegenüber stehen. Dabei ist einer totalreflektierend, während der andere eine geringe
+Transmission zulässt, um die Auskopplung des Lasers zu ermöglichen. Dieses Prinzip ist in Abbildung \ref{fig:resonator} schmeatisch dargestellt.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{content/Resonator.png}
+    \caption{Schematische Darstellung eines Resonators. \cite{Zeugs}}
+    \label{fig:resonator}
+  \end{figure}
 
+Die Unterscheidung zwischen Resonatoren erfolgt durch die verwendeten Spiegel. Häufig werden sphärische, planparallele oder eine 
+Kombination dieser Spiegelarten eingesetzt. Ein Resonator wird dann als stabil bezeichnet, wenn die Verluste geringer als die 
+Verstärkung durch stimulierte Emission sind. Die Stabilitätsbedingung ist dann 
 
+\begin{equation}
+    0 \leq g_1 g_2 \leq 1
+    \label{eqn:Stabi}
+\end{equation}
 
+mit Parametern
 
+\begin{equation*}
+    g_i = 1 - \frac{\text{Resonatorlänge } L}{\text{Krümmungsradien Spiegel } r_i}.
+\end{equation*}
 
+In einem Resonator bilden sich stehende Wellen aus, die als Moden $TEM_{lqp}$ bezeichnet werden, wobei $q$ die longitudinale Mode 
+und $l, p$ die transversalen Moden bezeichnen. Demnach wäre $TEM_{00}$ die Grundmode. Für diese hat die Intensität die Form 
+einer Gaußkurve gemäß
 
+\begin{equation*}
+    I(r) = I_0 \exp{\left(\frac{-2r^2}{\omega ^2}\right)}.
+\end{equation*}
 
-
+Moden höherer Ordnung, wie $TEM_{00}$, werden allgemein als Multimoden bezeichnet. Diese machen sich durch unregelmäßige
+Lichtintesität im Strahlprofil bemerkbar und stehen somit für eine schlechtere Stahlqualität. 
 
